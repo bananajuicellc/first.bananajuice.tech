@@ -1,0 +1,55 @@
+html {
+  height: 100%;
+}
+
+body {
+  font-family: OpenSans, Helvetica, Arial, sans;
+  height: 100%;
+  margin: 0;
+  text-align: center;
+}
+
+div.wgf-card {
+  background-color: #eee;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+div.wgf-card div.wgf-card-content {
+  background-color: #fff;
+  height: 42em;
+  margin: 0px auto;
+  max-width: 100%;
+  max-height: 100%;
+  width: 30em;
+}
+
+.wgf-card-image {
+  width: 100%;
+}
+
+div#wgf-menu-button {
+  left: 2px;
+  position: absolute;
+  top: 2px;
+}
+
+div#wgf-next-button {
+  position: absolute;
+  right: 2px;
+  top: 2px;
+}
+
+/* Ghost Buttons
+ * http://www.htmlxprs.com/post/50/bootstrap-ghost-buttons
+ */
+.btn{
+
+	background-color: rgba(255, 255, 255, 0.6);
+	color: black;
+	transition: background .2s ease-in-out, border .2s ease-in-out;
+
+}

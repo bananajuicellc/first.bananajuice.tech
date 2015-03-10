@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<title>Who Goes First?</title>
+<link rel="stylesheet" href="index.css" type="text/css" />
+<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="bower_components/director/build/director.min.js"></script>
+<script src="main.js"></script>
+
+<div class="wgf-card">
+  <div class="wgf-card-content">
+    <img id="wgf-card-image" class="wgf-card-image"
+        src="assets/cards/who-goes-first.png"
+        alt="Who Goes First? A queue of people all facing toward the right." />
+    <div id="wgf-card-text">Test</div>
+  </div>
+</div>
+
+<div id="wgf-menu-button">
+  <!-- Single button -->
+  <div class="btn-group">
+    <button type="button"
+        class="btn dropdown-toggle"
+        data-toggle="dropdown"
+        aria-expanded="false"
+        aria-label="Menu">
+      <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+    </button>
+    <ul class="dropdown-menu" role="menu">
+      <li><a href="#/cards/who-goes-first">#/cards/who-goes-first</a></li>
+      <li class="divider"></li>
+      <li><a href="#">Separated link</a></li>
+    </ul>
+  </div>
+</div>
+
+<div id="wgf-next-button">
+  <a href="#/random-card"
+      class="btn"
+      role="button"
+      aria-label="Next Card">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+  </a>
+</div>
