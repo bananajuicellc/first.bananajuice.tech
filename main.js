@@ -2,41 +2,60 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-var cards = [
-  'award',
-  'baking',
-  'batteries',
-  'bee',
-  'building',
-  'buttons',
-  'drawing',
-  'flat-tire',
-  'foreign-language',
-  'hammock',
-  'junkmail',
-  'light-bulb',
-  'litter-box',
-  'onion',
-  'pizza',
-  'post-office',
-  'postcard',
-  'survey',
-  'train',
-  'trash',
-  'tv'
-]
+var renderCardImage = function (cardId) {
+  return function (element) {
+    var cardImage = new Image();
+    cardImage.src = 'assets/cards/' + cardId + '.png';
+    cardImage.classList.add("wgf-card-image");
+    element.appendChild(cardImage);
+  }
+};
+
+var cards = {
+  'award': renderCardImage('award'),
+  'baking': renderCardImage('baking'),
+  'batteries': renderCardImage('batteries'),
+  'bee': renderCardImage('bee'),
+  'building': renderCardImage('building'),
+  'buttons': renderCardImage('buttons'),
+  'drawing': renderCardImage('drawing'),
+  'flat-tire': renderCardImage('flat-tire'),
+  'foreign-language': renderCardImage('foreign-language'),
+  'hammock': renderCardImage('hammock'),
+  'junkmail': renderCardImage('junkmail'),
+  'light-bulb': renderCardImage('light-bulb'),
+  'litter-box': renderCardImage('litter-box'),
+  'onion': renderCardImage('onion'),
+  'pizza': renderCardImage('pizza'),
+  'post-office': renderCardImage('post-office'),
+  'postcard': renderCardImage('postcard'),
+  'survey': renderCardImage('survey'),
+  'train': renderCardImage('train'),
+  'trash': renderCardImage('trash'),
+  'tv': renderCardImage('tv'),
+  'who-goes-first': renderCardImage('who-goes-first')
+};
+var cardKeys = Object.keys(cards);
 
 var randRange = function (endIndex) {
   return Math.floor(Math.random() * endIndex);
-}
+};
 
 var randomCard = function () {
-  var cardId = cards[randRange(cards.length)];
+  var cardId = cardKeys[randRange(cardKeys.length)];
   location.hash = '#/cards/' + cardId;
 };
+
+var emptyNode = function (node) {
+  while (node.lastChild) {
+    node.removeChild(node.lastChild);
+  }
+  return node;
+};
+
 var viewCard = function (cardId) {
-  var cardImg = document.getElementById('wgf-card-image');
-  cardImg.src = 'assets/cards/' + cardId + '.png';
+  var cardContent = emptyNode(document.getElementById('wgf-card-content'));
+  cards[cardId](cardContent);
 };
 
 var routes = {
