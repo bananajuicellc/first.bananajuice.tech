@@ -1,0 +1,68 @@
+{
+  "card_prompt_award": {
+    "message": "The player who most recently won an award goes first."
+  },
+  "card_prompt_baking": {
+    "message": "The player who most recently baked something goes first."
+  },
+  "card_prompt_batteries": {
+    "message": "The player who most recently changed the batteries in something goes first."
+  },
+  "card_prompt_bee": {
+    "message": "The player who was most recently stung by an insect goes first."
+  },
+  "card_prompt_building": {
+    "message": "The player who most recently built something goes first."
+  },
+  "card_prompt_buttons": {
+    "message": "The player with the most visible buttons on their garments goes first."
+  },
+  "card_prompt_drawing": {
+    "message": "The player who most recently drew or painted something goes first."
+  },
+  "card_prompt_flat_tire": {
+    "message": "The player who most recently had a flat tire goes first."
+  },
+  "card_prompt_foreign_language": {
+    "message": "The player who most recently had a conversation in a foreign language goes first."
+  },
+  "card_prompt_hammock": {
+    "message": "The player who most recently slept in a hammock goes first."
+  },
+  "card_prompt_junkmail": {
+    "message": "The player who received the most junk mail today goes first."
+  },
+  "card_prompt_light_bulb": {
+    "message": "The player who most recently changed a light bulb goes first."
+  },
+  "card_prompt_litter_box": {
+    "message": "The player who most recently cleaned a litter box goes first."
+  },
+  "card_prompt_onion": {
+    "message": "The player who most recently sliced an onion goes first."
+  },
+  "card_prompt_pizza": {
+    "message": "The player who most recently ate pizza goes first."
+  },
+  "card_prompt_post_office": {
+    "message": "The player who most recently went inside a post office goes first."
+  },
+  "card_prompt_postcard": {
+    "message": "The player who most recently sent or received a postcard goes first."
+  },
+  "card_prompt_survey": {
+    "message": "The player who most recently answered a survey goes first."
+  },
+  "card_prompt_train": {
+    "message": "The player who most recently rode a train goes first."
+  },
+  "card_prompt_trash": {
+    "message": "The player who most recently took out the trash or recycling goes first."
+  },
+  "card_prompt_tv": {
+    "message": "The player who watched the most television recently goes first."
+  },
+  "card_prompt_who_goes_first": {
+    "message": "Click the arrow to find out who goes first."
+  }
+}

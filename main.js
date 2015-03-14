@@ -6,8 +6,12 @@ var renderCardImage = function (cardId) {
   return function (element) {
     var cardImage = new Image();
     cardImage.src = 'assets/cards/' + cardId + '.png';
-    cardImage.classList.add("wgf-card-image");
+    cardImage.classList.add('wgf-card-image');
     element.appendChild(cardImage);
+
+    var p = document.createElement('p');
+    p.textContent = chrome.i18n.getMessage('card_prompt_' + cardId);
+    element.appendChild(p);
   }
 };
 
@@ -19,21 +23,21 @@ var cards = {
   'building': renderCardImage('building'),
   'buttons': renderCardImage('buttons'),
   'drawing': renderCardImage('drawing'),
-  'flat-tire': renderCardImage('flat-tire'),
-  'foreign-language': renderCardImage('foreign-language'),
+  'flat_tire': renderCardImage('flat_tire'),
+  'foreign_language': renderCardImage('foreign_language'),
   'hammock': renderCardImage('hammock'),
   'junkmail': renderCardImage('junkmail'),
-  'light-bulb': renderCardImage('light-bulb'),
-  'litter-box': renderCardImage('litter-box'),
+  'light_bulb': renderCardImage('light_bulb'),
+  'litter_box': renderCardImage('litter_box'),
   'onion': renderCardImage('onion'),
   'pizza': renderCardImage('pizza'),
-  'post-office': renderCardImage('post-office'),
+  'post_office': renderCardImage('post_office'),
   'postcard': renderCardImage('postcard'),
   'survey': renderCardImage('survey'),
   'train': renderCardImage('train'),
   'trash': renderCardImage('trash'),
   'tv': renderCardImage('tv'),
-  'who-goes-first': renderCardImage('who-goes-first')
+  'who_goes_first': renderCardImage('who_goes_first')
 };
 var cardKeys = Object.keys(cards);
 
@@ -66,3 +70,4 @@ var routes = {
 var router = Router(routes);
 
 router.init();
+location.hash = '#/cards/who_goes_first';

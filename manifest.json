@@ -1,5 +1,6 @@
 {
     "name": "Who Goes First",
+    "default_locale": "en",
     "description": "A Sample Chrome App",
     "manifest_version": 2,
     "minimum_chrome_version": "23",
