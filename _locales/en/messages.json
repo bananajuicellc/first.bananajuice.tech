@@ -60,7 +60,10 @@
     "message": "The player who most recently took out the trash or recycling goes first."
   },
   "card_prompt_tv": {
-    "message": "The player who watched the most television recently goes first."
+    "message": "The player who watched the most television today goes first."
+  },
+  "card_prompt_walk_dog": {
+    "message": "The player who most recently walked a dog goes first."
   },
   "card_prompt_who_goes_first": {
     "message": "Click the arrow to find out who goes first."

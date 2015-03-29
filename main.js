@@ -12,7 +12,7 @@ var renderCardImage = function (cardId) {
     var p = document.createElement('p');
     p.textContent = chrome.i18n.getMessage('card_prompt_' + cardId);
     element.appendChild(p);
-  }
+  };
 };
 
 var cards = {
@@ -37,6 +37,7 @@ var cards = {
   'train': renderCardImage('train'),
   'trash': renderCardImage('trash'),
   'tv': renderCardImage('tv'),
+  'walk_dog': renderCardImage('walk_dog'),
   'who_goes_first': renderCardImage('who_goes_first')
 };
 var cardKeys = Object.keys(cards);
