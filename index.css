@@ -10,7 +10,6 @@ body {
 }
 
 div.wgf-card {
-  background-color: #26293e;
   height: 100%;
   left: 0px;
   position: absolute;
@@ -27,7 +26,26 @@ div.wgf-card div.wgf-card-content {
 img.wgf-card-image {
   image-rendering:-webkit-optimize-contrast; /* Safari */
   image-rendering:pixelated;                 /* Chrome */
+  left: 0px;
+  position: absolute;
+  top: 0px;
   width: 100%;
+}
+
+div.wgf-card-text {
+  background-color: rgba(255, 255, 255, 0.8);
+  bottom: 20px;
+  max-width: 100%;
+  position: absolute;
+  right: 0px;
+  width: 30em;
+}
+
+@media (min-aspect-ratio: 1/1) {
+  img.wgf-card-image {
+    height: 100%;
+    width: auto;
+  }
 }
 
 div.wgf-card-content p {

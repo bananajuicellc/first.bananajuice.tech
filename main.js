@@ -9,9 +9,12 @@ var renderCardImage = function (cardId) {
     cardImage.classList.add('wgf-card-image');
     element.appendChild(cardImage);
 
+    var cardText = document.createElement('div');
+    cardText.classList.add('wgf-card-text');
     var p = document.createElement('p');
     p.textContent = chrome.i18n.getMessage('card_prompt_' + cardId);
-    element.appendChild(p);
+    cardText.appendChild(p);
+    element.appendChild(cardText);
   };
 };
 
