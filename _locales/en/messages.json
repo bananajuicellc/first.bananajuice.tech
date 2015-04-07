@@ -1,4 +1,8 @@
 {
+  "menu_next_card": {
+    "description": "The message displayed on the 'next card' button. When the player clicks this it displays a new card to help the player pick who goes first.",
+    "message": "Next Card"
+  },
   "card_prompt_award": {
     "message": "The player who most recently won an award goes first."
   },

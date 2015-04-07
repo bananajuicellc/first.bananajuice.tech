@@ -75,3 +75,12 @@ var router = Router(routes);
 
 router.init();
 location.hash = '#/cards/who_goes_first';
+
+var translateMenus = function() {
+  var nextButtonText = document.getElementById('wgf-next-button-text');
+  nextButtonText.textContent = chrome.i18n.getMessage('menu_next_card');
+};
+
+document.addEventListener("DOMContentLoaded", function(event) {
+  translateMenus();
+});
