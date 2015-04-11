@@ -6,6 +6,7 @@ var renderCardImage = function (cardId) {
   return function (element) {
     var cardImage = new Image();
     cardImage.src = 'assets/cards/' + cardId + '.png';
+    cardImage.classList.add('pixel-art');
     cardImage.classList.add('wgf-card-image');
     element.appendChild(cardImage);
 

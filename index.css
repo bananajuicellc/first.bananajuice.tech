@@ -9,6 +9,11 @@ body {
   text-align: center;
 }
 
+img.pixel-art {
+  image-rendering:-webkit-optimize-contrast; /* Safari */
+  image-rendering:pixelated;                 /* Chrome */
+}
+
 div.wgf-card {
   height: 100%;
   left: 0px;
@@ -24,12 +29,17 @@ div.wgf-card div.wgf-card-content {
 }
 
 img.wgf-card-image {
-  image-rendering:-webkit-optimize-contrast; /* Safari */
-  image-rendering:pixelated;                 /* Chrome */
   left: 0px;
   position: absolute;
   top: 0px;
   width: 100%;
+}
+
+@media (min-aspect-ratio: 1/1) {
+  img.wgf-card-image {
+    height: 100%;
+    width: auto;
+  }
 }
 
 div.wgf-card-text {
@@ -39,13 +49,6 @@ div.wgf-card-text {
   right: 0px;
   top: 60%;
   width: 30em;
-}
-
-@media (min-aspect-ratio: 1/1) {
-  img.wgf-card-image {
-    height: 100%;
-    width: auto;
-  }
 }
 
 div.wgf-card-content p {
