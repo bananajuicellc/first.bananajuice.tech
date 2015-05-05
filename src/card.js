@@ -6,10 +6,36 @@ var wgf = wgf || {};
 wgf.card = wgf.card || {};
 
 
+// http://stackoverflow.com/a/6274398
+wgf.card._shuffle = function(array) {
+  var counter = array.length, temp, index;
+
+  // While there are elements in the array
+  while (counter > 0) {
+    // Pick a random index
+    index = Math.floor(Math.random() * counter);
+
+    // Decrease counter by 1
+    counter--;
+
+    // And swap the last element with it
+    temp = array[counter];
+    array[counter] = array[index];
+    array[index] = temp;
+  }
+
+  return array;
+};
+
+
 wgf.card.randomCard = function() {
-  var cardId = wgf.card._cardKeys[
-      wgf.card._randRange(wgf.card._cardKeys.length)];
+  if (wgf.card._cardKeyIndex >= wgf.card._cardKeys.length) {
+    wgf.card._shuffle(wgf.card._cardKeys);
+    wgf.card._cardKeyIndex = 0;
+  }
+  var cardId = wgf.card._cardKeys[wgf.card._cardKeyIndex];
   location.hash = '#/cards/' + cardId;
+  wgf.card._cardKeyIndex = wgf.card._cardKeyIndex + 1;
 };
 
 
@@ -65,6 +91,9 @@ wgf.card._cards = {
 
 
 wgf.card._cardKeys = Object.keys(wgf.card._cards);
+
+// TODO: since this is mutable it should be a private variable of an object
+wgf.card._cardKeyIndex = 0;
 
 
 wgf.card._randRange = function (endIndex) {
