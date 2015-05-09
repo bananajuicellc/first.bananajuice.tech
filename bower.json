@@ -17,7 +17,6 @@
     "tests"
   ],
   "dependencies": {
-    "director": "~1.2.8",
-    "bootstrap": "~3.3.2"
+    "director": "~1.2.8"
   }
 }

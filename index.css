@@ -14,6 +14,8 @@ img.pixel-art {
   image-rendering:pixelated;                 /* Chrome */
 }
 
+/* card content */
+
 div.wgf-card {
   height: 100%;
   left: 0px;
@@ -58,14 +60,15 @@ div.wgf-card-content p {
   text-align: left;
 }
 
-div#wgf-menu-button {
-  left: 2px;
-  position: absolute;
-  top: 2px;
+/* menu items */
+
+#wgf-next-button-img {
+  width: 100%;
 }
 
 div#wgf-next-button {
   bottom: 4px;
   position: absolute;
   right: 4px;
+  width: 4em;
 }

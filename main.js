@@ -21,8 +21,8 @@ router.init();
 location.hash = '#/cards/who_goes_first';
 
 var translateMenus = function() {
-  var nextButtonText = document.getElementById('wgf-next-button-text');
-  nextButtonText.textContent = chrome.i18n.getMessage('menu_next_card');
+  var nextButtonImg = document.getElementById('wgf-next-button-img');
+  nextButtonText.alt = chrome.i18n.getMessage('menu_next_card');
 };
 
 document.addEventListener("DOMContentLoaded", function(event) {
