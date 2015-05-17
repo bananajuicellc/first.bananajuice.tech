@@ -22,7 +22,7 @@
     "message": "The player who most recently built something goes first."
   },
   "card_prompt_buttons": {
-    "message": "The player with the most visible buttons on their garments goes first."
+    "message": "The player with the highest number of visible buttons on their garments goes first."
   },
   "card_prompt_dice20": {
     "message": "This is a twenty-sided dice. Tap the dice to roll it. The player who rolls the largest number goes first."
@@ -70,7 +70,7 @@
     "message": "The player who most recently took out the trash or recycling goes first."
   },
   "card_prompt_tv": {
-    "message": "The player who watched the most television today goes first."
+    "message": "The player who watched the most television today goes first. Streaming video on your laptop totally counts."
   },
   "card_prompt_walk_dog": {
     "message": "The player who most recently walked a dog goes first."
