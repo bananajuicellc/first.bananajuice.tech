@@ -4,7 +4,7 @@
   "description": "A Sample Chrome App",
   "manifest_version": 2,
   "minimum_chrome_version": "23",
-  "version": "2015.5.9.1",
+  "version": "2015.5.90",
   "offline_enabled": true,
   "icons": {
     "16": "assets/icons/icon16.png",

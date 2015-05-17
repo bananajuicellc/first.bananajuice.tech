@@ -45,13 +45,9 @@ wgf.card.viewCard = function (cardId) {
 };
 
 
-wgf.card.renderCardImage = function (cardId) {
+wgf.card.renderCard = function (renderContent, cardId) {
   return function (element) {
-    var cardImage = new Image();
-    cardImage.src = 'assets/cards/' + cardId + '.png';
-    cardImage.classList.add('pixel-art');
-    cardImage.classList.add('wgf-card-image');
-    element.appendChild(cardImage);
+    renderContent(element);
 
     var cardText = document.createElement('div');
     cardText.classList.add('wgf-card-text');
@@ -63,13 +59,80 @@ wgf.card.renderCardImage = function (cardId) {
 };
 
 
+wgf.card.renderCardImage = function (cardId, opt_cardFilename) {
+  var cardFilename = opt_cardFilename || (cardId + '.png');
+  return wgf.card.renderCard(
+    function (element) {
+      var cardImage = new Image();
+      cardImage.src = 'assets/cards/' + cardFilename;
+      cardImage.classList.add('pixel-art');
+      cardImage.classList.add('wgf-card-image');
+      element.appendChild(cardImage);
+    },
+    cardId);
+};
+
+
+wgf.card.renderCardDice20 = function (element) {
+  var cardImage = new Image();
+  cardImage.classList.add('wgf-card-image');
+  cardImage.classList.add('pixel-art');
+  
+  // Roll the dice to get a new number.
+  var rollDice = function() {
+    var diceRoll = Math.floor(Math.random() * 20) + 1;
+    var diceRollSubpath;
+    if (diceRoll < 10) {
+      diceRollSubpath = '0' + diceRoll;
+    } else {
+      diceRollSubpath = '' + diceRoll;
+    }
+    cardImage.alt = '' + diceRoll;
+    cardImage.src = 'assets/dice/d20_' + diceRollSubpath +'.png';
+  };
+  rollDice();
+  
+  // Set up event handlers
+  var isRolling = false;
+  var rollDiceStart = function(evt) {
+    if (evt) {
+      evt.preventDefault();
+    }
+    cardImage.src = 'assets/dice/d20_blank.png';
+    isRolling = true;
+  };
+  cardImage.addEventListener('mousedown', rollDiceStart, false /* useCapture */);
+  cardImage.addEventListener('touchstart', rollDiceStart, false /* useCapture */);
+  
+  var rollDiceEnd = function(evt) {
+    if (!isRolling) {
+      return;
+    }
+    if (evt) {
+      evt.preventDefault();
+    }
+    rollDice();
+    isRolling = false;
+  };
+  cardImage.addEventListener('mouseup', rollDiceEnd, false /* useCapture */);
+  cardImage.addEventListener('mouseleave', rollDiceEnd, false /* useCapture */);
+  cardImage.addEventListener('touchcancel', rollDiceEnd, false /* useCapture */);
+  cardImage.addEventListener('touchend', rollDiceEnd, false /* useCapture */);
+  cardImage.addEventListener('touchleave', rollDiceEnd, false /* useCapture */);
+  
+  element.appendChild(cardImage);
+};
+
+
 wgf.card._cards = {
   'award': wgf.card.renderCardImage('award'),
   'baking': wgf.card.renderCardImage('baking'),
   'batteries': wgf.card.renderCardImage('batteries'),
   'bee': wgf.card.renderCardImage('bee'),
+  'birthday': wgf.card.renderCardImage('birthday', 'birthday.gif'),
   'building': wgf.card.renderCardImage('building'),
-  'buttons': wgf.card.renderCardImage('buttons'),
+  'buttons': wgf.card.renderCardImage('buttons', 'buttons.gif'),
+  'dice': wgf.card.renderCard(wgf.card.renderCardDice20, 'dice20'),
   'drawing': wgf.card.renderCardImage('drawing'),
   'flat_tire': wgf.card.renderCardImage('flat_tire'),
   'foreign_language': wgf.card.renderCardImage('foreign_language'),

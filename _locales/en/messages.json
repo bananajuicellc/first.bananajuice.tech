@@ -15,11 +15,17 @@
   "card_prompt_bee": {
     "message": "The player who was most recently stung by an insect goes first."
   },
+  "card_prompt_birthday": {
+    "message": "The player whose birthday is nearest to today goes first."
+  },
   "card_prompt_building": {
     "message": "The player who most recently built something goes first."
   },
   "card_prompt_buttons": {
     "message": "The player with the most visible buttons on their garments goes first."
+  },
+  "card_prompt_dice20": {
+    "message": "This is a twenty-sided dice. Tap the dice to roll it. The player who rolls the largest number goes first."
   },
   "card_prompt_drawing": {
     "message": "The player who most recently drew or painted something goes first."
