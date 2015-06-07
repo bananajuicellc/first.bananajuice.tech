@@ -28,10 +28,19 @@ wgf.card._shuffle = function(array) {
 };
 
 
+wgf.card.resetCards_ = function() {
+  // The title card is special. We always want it to appear first in the deck.
+  var titleCard = wgf.card._cardKeys[0];
+  wgf.card._cardKeys.splice(0 /* index */, 1 /* count to remove */);
+  wgf.card._shuffle(wgf.card._cardKeys);
+  wgf.card._cardKeys.splice(0 /* index */, 0 /* count to remove */, titleCard);
+  wgf.card._cardKeyIndex = 0;
+};
+
+
 wgf.card.randomCard = function() {
   if (wgf.card._cardKeyIndex >= wgf.card._cardKeys.length) {
-    wgf.card._shuffle(wgf.card._cardKeys);
-    wgf.card._cardKeyIndex = 0;
+    wgf.card.resetCards_();
   }
   var cardId = wgf.card._cardKeys[wgf.card._cardKeyIndex];
   location.hash = '#/cards/' + cardId;
@@ -149,14 +158,22 @@ wgf.card._cards = {
   'trash': wgf.card.renderCardImage('trash'),
   'tv': wgf.card.renderCardImage('tv'),
   'walk_dog': wgf.card.renderCardImage('walk_dog'),
-  'who_goes_first': wgf.card.renderCardImage('who_goes_first')
 };
 
 
+// We want to treat the title card special, so we wait until after creating the
+// list of keys before adding it in.
 wgf.card._cardKeys = Object.keys(wgf.card._cards);
+wgf.card._cards['who_goes_first'] = wgf.card.renderCardImage('who_goes_first');
+wgf.card._cardKeys.splice(
+  0 /* index */,
+  0 /* count to remove */,
+  'who_goes_first');
 
-// TODO: since this is mutable it should be a private variable of an object
-wgf.card._cardKeyIndex = 0;
+
+// TODO(tswast): since this is changing  mutable state it should be a private
+//     method of an object
+wgf.card.resetCards_();
 
 
 wgf.card._randRange = function (endIndex) {
