@@ -174,6 +174,8 @@ wgf.card._cardKeys.splice(
 // TODO(tswast): since this is changing  mutable state it should be a private
 //     method of an object
 wgf.card.resetCards_();
+// Fix bug where the first title card displays twice when the app first opens.
+wgf.card._cardKeyIndex = 1;
 
 
 wgf.card._randRange = function (endIndex) {
