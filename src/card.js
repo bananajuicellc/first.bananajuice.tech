@@ -141,7 +141,7 @@ wgf.card._cards = {
   'light_bulb': wgf.card.renderCardImage('light_bulb'),
   'litter_box': wgf.card.renderCardImage('litter_box'),
   'onion': wgf.card.renderCardImage('onion'),
-  'pizza': wgf.card.renderCardImage('pizza'),
+  'pizza': wgf.card.renderCardImage('pizza', 'pizza.gif'),
   'post_office': wgf.card.renderCardImage('post_office'),
   'postcard': wgf.card.renderCardImage('postcard'),
   'survey': wgf.card.renderCardImage('survey'),
