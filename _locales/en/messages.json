@@ -48,6 +48,9 @@
   "card_prompt_litter_box": {
     "message": "The player who most recently cleaned a litter box goes first."
   },
+  "card_prompt_oldest_movie": {
+    "message": "Have everyone say the last movie they watched. The player who watched the oldest movie goes first."
+  },
   "card_prompt_onion": {
     "message": "The player who most recently sliced an onion goes first."
   },

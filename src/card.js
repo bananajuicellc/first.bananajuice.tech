@@ -149,6 +149,7 @@ wgf.card._cards = {
   'junkmail': wgf.card.renderCardImage('junkmail'),
   'light_bulb': wgf.card.renderCardImage('light_bulb'),
   'litter_box': wgf.card.renderCardImage('litter_box'),
+  'oldest_movie': wgf.card.renderCardImage('oldest_movie', 'blacksmith.gif'),
   'onion': wgf.card.renderCardImage('onion'),
   'pizza': wgf.card.renderCardImage('pizza', 'pizza.gif'),
   'post_office': wgf.card.renderCardImage('post_office'),
