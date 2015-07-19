@@ -5,6 +5,30 @@
 var wgf = wgf || {};
 wgf.card = wgf.card || {};
 
+/*
+Creates a new card deck.
+
+This returns a closure with the ability to render a new card or the current
+card.
+ */
+wgf.card.Deck = function(opt_cardKeys, opt_currentCard) {
+  var cardKeys = opt_cardKeys || wgf.card.cardKeys_();
+  var currentCard = opt_currentCard || 0;
+
+  // Follow "reusable charts" style http://bost.ocks.org/mike/chart/
+  my = function () {
+    currentCard = currentCard + 1;
+    if (currentCard >= cardKeys.length) {
+      wgf.card.resetCards_(cardKeys);
+      currentCard = 0;
+    }
+    var cardId = cardKeys[currentCard];
+    location.hash = '#/cards/' + cardId;
+  };
+  
+  return my;
+};
+
 
 // http://stackoverflow.com/a/6274398
 wgf.card._shuffle = function(array) {
@@ -28,29 +52,19 @@ wgf.card._shuffle = function(array) {
 };
 
 
-wgf.card.resetCards_ = function() {
+wgf.card.resetCards_ = function(cardKeys) {
   // The title card is special. We always want it to appear first in the deck.
-  var titleCard = wgf.card._cardKeys[0];
-  wgf.card._cardKeys.splice(0 /* index */, 1 /* count to remove */);
-  wgf.card._shuffle(wgf.card._cardKeys);
-  wgf.card._cardKeys.splice(0 /* index */, 0 /* count to remove */, titleCard);
-  wgf.card._cardKeyIndex = 0;
-};
-
-
-wgf.card.randomCard = function() {
-  if (wgf.card._cardKeyIndex >= wgf.card._cardKeys.length) {
-    wgf.card.resetCards_();
-  }
-  var cardId = wgf.card._cardKeys[wgf.card._cardKeyIndex];
-  location.hash = '#/cards/' + cardId;
-  wgf.card._cardKeyIndex = wgf.card._cardKeyIndex + 1;
+  var titleCard = cardKeys[0];
+  cardKeys.splice(0 /* index */, 1 /* count to remove */);
+  wgf.card._shuffle(cardKeys);
+  cardKeys.splice(0 /* index */, 0 /* count to remove */, titleCard);
+  return cardKeys;
 };
 
 
 wgf.card.viewCard = function (cardId) {
   var cardContent = emptyNode(document.getElementById('wgf-card-content'));
-  wgf.card._cards[cardId](cardContent);
+  wgf.card.CARDS_[cardId](cardContent);
 };
 
 
@@ -133,7 +147,7 @@ wgf.card.renderCardDice20 = function (element) {
 };
 
 
-wgf.card._cards = {
+wgf.card.CARDS_ = {
   'award': wgf.card.renderCardImage('award'),
   'baking': wgf.card.renderCardImage('baking'),
   'batteries': wgf.card.renderCardImage('batteries'),
@@ -159,24 +173,18 @@ wgf.card._cards = {
   'trash': wgf.card.renderCardImage('trash'),
   'tv': wgf.card.renderCardImage('tv'),
   'walk_dog': wgf.card.renderCardImage('walk_dog'),
+  'who_goes_first': wgf.card.renderCardImage('who_goes_first'),
 };
 
-
-// We want to treat the title card special, so we wait until after creating the
-// list of keys before adding it in.
-wgf.card._cardKeys = Object.keys(wgf.card._cards);
-wgf.card._cards['who_goes_first'] = wgf.card.renderCardImage('who_goes_first');
-wgf.card._cardKeys.splice(
-  0 /* index */,
-  0 /* count to remove */,
-  'who_goes_first');
-
-
-// TODO(tswast): since this is changing  mutable state it should be a private
-//     method of an object
-wgf.card.resetCards_();
-// Fix bug where the first title card displays twice when the app first opens.
-wgf.card._cardKeyIndex = 1;
+wgf.card.cardKeys_ = function() {
+  var keys = Object.keys(wgf.card.CARDS_);
+  _.remove(keys, _.partial(_.eq, 'who_goes_first'));
+  keys.splice(
+    0 /* index */,
+    0 /* count to remove */,
+    'who_goes_first');
+  return wgf.card.resetCards_(keys);
+};
 
 
 wgf.card._randRange = function (endIndex) {

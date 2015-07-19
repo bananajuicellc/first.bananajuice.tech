@@ -2,7 +2,6 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-
 var emptyNode = function (node) {
   while (node.lastChild) {
     node.removeChild(node.lastChild);
@@ -10,8 +9,10 @@ var emptyNode = function (node) {
   return node;
 };
 
+var deck = wgf.card.Deck();
+
 var routes = {
-  '/random-card': wgf.card.randomCard,
+  '/random-card': deck,
   '/cards/:cardId': wgf.card.viewCard
 };
 
@@ -22,7 +23,7 @@ location.hash = '#/cards/who_goes_first';
 
 var translateMenus = function() {
   var nextButtonImg = document.getElementById('wgf-next-button-img');
-  nextButtonText.alt = chrome.i18n.getMessage('menu_next_card');
+  nextButtonImg.alt = chrome.i18n.getMessage('menu_next_card');
 };
 
 document.addEventListener("DOMContentLoaded", function(event) {

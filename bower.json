@@ -17,6 +17,7 @@
     "tests"
   ],
   "dependencies": {
-    "director": "~1.2.8"
+    "director": "~1.2.8",
+    "lodash": "~3.10.0"
   }
 }
