@@ -9,17 +9,6 @@ var emptyNode = function (node) {
   return node;
 };
 
-var deck = wgf.card.Deck();
-
-var routes = {
-  '/random-card': deck,
-  '/cards/:cardId': wgf.card.viewCard
-};
-
-var router = Router(routes);
-
-router.init();
-location.hash = '#/cards/who_goes_first';
 
 var translateMenus = function() {
   var nextButtonImg = document.getElementById('wgf-next-button-img');
@@ -27,5 +16,18 @@ var translateMenus = function() {
 };
 
 document.addEventListener("DOMContentLoaded", function(event) {
+  wgf.card.loadDeck('deck', function(deck) {
+    console.log(deck);
+    var routes = {
+      '/random-card': deck,
+      '/cards/:cardId': wgf.card.viewCard
+    };
+    
+    var router = Router(routes);
+    
+    router.init();
+    location.hash = deck.currentHash();
+  });
+  
   translateMenus();
 });

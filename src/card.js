@@ -11,24 +11,52 @@ Creates a new card deck.
 This returns a closure with the ability to render a new card or the current
 card.
  */
-wgf.card.Deck = function(opt_cardKeys, opt_currentCard) {
+wgf.card.Deck = function(deckId, opt_cardKeys, opt_currentCard) {
   var cardKeys = opt_cardKeys || wgf.card.cardKeys_();
   var currentCard = opt_currentCard || 0;
-
-  // Follow "reusable charts" style http://bost.ocks.org/mike/chart/
-  my = function () {
+  
+  var currentHash = function() {
+    var cardId = cardKeys[currentCard];
+    return '#/cards/' + cardId;
+  };
+  
+  var nextCard = function() {
     currentCard = currentCard + 1;
     if (currentCard >= cardKeys.length) {
       wgf.card.resetCards_(cardKeys);
       currentCard = 0;
     }
-    var cardId = cardKeys[currentCard];
-    location.hash = '#/cards/' + cardId;
+    location.hash = currentHash();
   };
+  
+  var save = function() {
+    var storage = {};
+    storage[deckId] = {
+      'cardKeys': cardKeys,
+      'currentCard': currentCard,
+    };
+    chrome.storage.sync.set(storage);
+  };
+
+  // Follow "reusable charts" style http://bost.ocks.org/mike/chart/
+  var my = function() {
+    nextCard();
+    save();
+  };
+  my.nextCard = nextCard;
+  my.save = save;
+  my.currentHash = currentHash;
   
   return my;
 };
 
+wgf.card.loadDeck = function(deckId, callback) {
+  chrome.storage.sync.get(deckId, function(items) {
+    console.log(items);
+    var deck = items[deckId];
+    callback(wgf.card.Deck(deckId, deck.cardKeys, deck.currentCard));
+  });
+};
 
 // http://stackoverflow.com/a/6274398
 wgf.card._shuffle = function(array) {
