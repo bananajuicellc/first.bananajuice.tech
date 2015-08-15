@@ -52,7 +52,18 @@ wgf.card.Deck = function(deckId, opt_cardKeys, opt_currentCard) {
 
 wgf.card.loadDeck = function(deckId, callback) {
   chrome.storage.sync.get(deckId, function(items) {
-    console.log(items);
+    // TODO(tswast): What if there are new cards? What if we delete a card?
+    //     We should check if the card keys we have match up with the 
+    //     wgf.card.CARDS_'s keys. If there is a new one, shuffle it into the
+    //     remaining cards (past the currentCard). If we have removed a card,
+    //     pull it out of the deck and adjust the currentCard position.
+    // TODO(tswast): The adjustments for new and deleted cards would be really
+    //     important to test out in unit tests.
+    // No deck is saved yet, we can load the default one.
+    if (!items[deckId]) {
+      callback(wgf.card.Deck(deckId));
+      return;
+    }
     var deck = items[deckId];
     callback(wgf.card.Deck(deckId, deck.cardKeys, deck.currentCard));
   });
