@@ -11,8 +11,9 @@ var emptyNode = function (node) {
 
 
 var translateMenus = function() {
-  var nextButtonImg = document.getElementById('wgf-next-button-img');
-  nextButtonImg.alt = chrome.i18n.getMessage('menu_next_card');
+  var nextMsg = chrome.i18n.getMessage('menu_next_card');
+  document.getElementById('wgf-next-button-img').alt = nextMsg;
+  document.getElementById('wgf-next-button-text').textContent = nextMsg;
 };
 
 document.addEventListener("DOMContentLoaded", function(event) {
