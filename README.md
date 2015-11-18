@@ -2,7 +2,7 @@
 
 A selection game to help gamers pick who goes first.
 
-# Installation
+## Installation
 
 1. Install the Chrome Web Apps [development
    tools](https://github.com/MobileChromeApps/mobile-chrome-apps/blob/master/docs/Installation.md).
@@ -13,3 +13,17 @@ A selection game to help gamers pick who goes first.
    www.
 5. [Build and
    run](https://github.com/MobileChromeApps/mobile-chrome-apps/blob/master/docs/Develop.md).
+
+## Build
+
+For iOS
+
+    cca build ios
+
+For Android (debug)
+
+    cca build android --debug --webview=system --android-minSdkVersion=21
+
+For Android (release)
+
+   cca build android --release --webview=system --android-minSdkVersion=21 
