@@ -138,7 +138,6 @@ wgf.card.renderCardImage = function (cardId, opt_cardFilename) {
 wgf.card.renderCardDice20 = function (element) {
   var cardImage = new Image();
   cardImage.classList.add('wgf-card-image');
-  cardImage.classList.add('pixel-art');
   
   // Roll the dice to get a new number.
   var rollDice = function() {
@@ -150,7 +149,7 @@ wgf.card.renderCardDice20 = function (element) {
       diceRollSubpath = '' + diceRoll;
     }
     cardImage.alt = '' + diceRoll;
-    cardImage.src = 'assets/dice/d20_' + diceRollSubpath +'.png';
+    cardImage.src = 'assets/dice/d20_' + diceRollSubpath +'.svg';
   };
   rollDice();
   
@@ -160,7 +159,7 @@ wgf.card.renderCardDice20 = function (element) {
     if (evt) {
       evt.preventDefault();
     }
-    cardImage.src = 'assets/dice/d20_blank.png';
+    cardImage.src = 'assets/dice/d20_blank.svg';
     isRolling = true;
   };
   cardImage.addEventListener('mousedown', rollDiceStart, false /* useCapture */);
