@@ -17,9 +17,11 @@ var translateMenus = function() {
 
 document.addEventListener("DOMContentLoaded", function(event) {
   wgf.card.loadDeck('deck', function(deck) {
-    console.log(deck);
     var routes = {
-      '/random-card': deck,
+      '/random-card': function() {
+        location.hash = deck.nextCard();
+        deck.save();
+      },
       '/cards/:cardId': wgf.card.viewCard
     };
     
