@@ -7,12 +7,28 @@ A selection game to help gamers pick who goes first.
 1. Install the Chrome Web Apps [development
    tools](https://github.com/MobileChromeApps/mobile-chrome-apps/blob/master/docs/Installation.md).
 1. Clone this repository.
+       git clone https://github.com/bananajuicellc/who-goes-first.git
+       cd who-goes-first
+1. Change to src and install dependencies.
+       cd src
+       bower install
+       npm install
+       cd ..
 1. Create a [new CCA
-   project](https://github.com/MobileChromeApps/mobile-chrome-apps/blob/master/docs/CreateProject.md). cca create WhoGoesFirst com.bananajuicesoftware.WhoGoesFirst "Who Goes First"
-1. Rename the project directory that creates as `build`.
-   www.
-1. [Build and
-   run](https://github.com/MobileChromeApps/mobile-chrome-apps/blob/master/docs/Develop.md).
+   project](https://github.com/MobileChromeApps/mobile-chrome-apps/blob/master/docs/CreateProject.md).
+       cca create build com.bananajuicesoftware.WhoGoesFirst "Who Goes First"
+1. Build and run with
+   [CCA](https://github.com/MobileChromeApps/mobile-chrome-apps/blob/master/docs/Develop.md).
+       make
+       cd build
+       cca run ios --emulator
+
+## Test
+
+Tests are written with Mocha and Chai. They run in node.
+
+    cd src
+    npm test
 
 ## Build
 
