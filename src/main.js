@@ -16,7 +16,8 @@ var translateMenus = function() {
 };
 
 document.addEventListener("DOMContentLoaded", function(event) {
-  wgf.card.loadDeck('deck', function(deck) {
+  wgf.card.loadDeck('deck', function(deckConfig) {
+    var deck = wgf.card.Deck('deck', deckConfig);
     var routes = {
       '/random-card': function() {
         location.hash = deck.nextCard();

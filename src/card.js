@@ -12,9 +12,10 @@ wgf.card = wgf.card || {};
    * This returns a closure with the ability to render a new card or the
    * current card.
    */
-  wgf.card.Deck = function(deckId, opt_cardKeys, opt_currentCard) {
-    var cardKeys = opt_cardKeys || wgf.card.cardKeys_();
-    var currentCard = opt_currentCard || 0;
+  wgf.card.Deck = function(deckId, opt_deck) {
+    opt_deck = opt_deck || {};
+    var cardKeys = opt_deck.cardKeys || wgf.card.cardKeys_();
+    var currentCard = opt_deck.currentCard || 0;
     
     var currentHash = function() {
       var cardId = cardKeys[currentCard];
@@ -49,40 +50,66 @@ wgf.card = wgf.card || {};
   wgf.card.loadDeck = function(deckId, callback) {
     // Fallback to load whole deck to make testing in browser easier.
     if (!chrome || !chrome.storage || !chrome.storage.sync) {
-        callback(wgf.card.Deck(deckId));
+        callback({});
     }
     chrome.storage.sync.get(deckId, function(items) {
-      // TODO(tswast): What if there are new cards? What if we delete a card?
-      //     We should check if the card keys we have match up with the 
-      //     wgf.card.CARDS_'s keys. If there is a new one, shuffle it into the
-      //     remaining cards (past the currentCard). If we have removed a card,
-      //     pull it out of the deck and adjust the currentCard position.
-      // TODO(tswast): The adjustments for new and deleted cards would be really
-      //     important to test out in unit tests.
       // No deck is saved yet, we can load the default one.
       if (!items[deckId]) {
-        callback(wgf.card.Deck(deckId));
+        callback({});
         return;
       }
       var deck = items[deckId];
-      callback(wgf.card.Deck(deckId, deck.cardKeys, deck.currentCard));
+
+      // Make a set of the card keys we support.
+      var supportedCards = {};
+      var supportedCardsArray = wgf.card.cardKeys_();
+      for (var i = 0; i < supportedCardsArray.length; i++) {
+        supportedCards[supportedCardsArray[i]] = true;
+      }
+
+      for (var i = 0; i < deck.cardKeys.length; i++) {
+        var key = deck.cardKeys[i];
+        if (!supportedCards[key]) {
+          // Remove any cards that aren't cards anymore.
+          deck.cardKeys.splice(i, i);
+          if (i <= deck.currentCard) {
+            deck.currentCard -= 1;
+          }
+          i -= 1;
+        } else {
+          // Keep track of the cards we do have, so we can add the new ones to
+          // the end.
+          delete supportedCards[key];
+        }
+      }
+
+      // Any remaining cards need to be added back.
+      for (var key in supportedCards) {
+        deck.cardKeys.push(key);
+      }
+      wgf.card._shuffle(deck.cardKeys, deck.currentCard + 1);
+
+      callback(deck); // deck.cardKeys, deck.currentCard;
     });
   };
 
+  // Shuffle the array from opt_left to the end of the array.
   // http://stackoverflow.com/a/6274398
-  wgf.card._shuffle = function(array) {
-    var counter = array.length, temp, index;
+  wgf.card._shuffle = function(array, opt_left) {
+    opt_left = opt_left || 0;
+    var counter = array.length;
 
     // While there are elements in the array
-    while (counter > 0) {
+    while (counter > opt_left) {
       // Pick a random index
-      index = Math.floor(Math.random() * counter);
+      var index = Math.floor(Math.random() * (counter - opt_left))
+      index = index + opt_left;
 
       // Decrease counter by 1
       counter--;
 
       // And swap the last element with it
-      temp = array[counter];
+      var temp = array[counter];
       array[counter] = array[index];
       array[index] = temp;
     }
@@ -149,7 +176,7 @@ wgf.card = wgf.card || {};
         diceRollSubpath = '' + diceRoll;
       }
       cardImage.alt = '' + diceRoll;
-      cardImage.src = 'assets/dice/d20_' + diceRollSubpath +'.svg';
+      cardImage.src = 'assets/dice/d20_' + diceRollSubpath + '.svg';
     };
     rollDice();
     
@@ -229,6 +256,8 @@ wgf.card = wgf.card || {};
     return Math.floor(Math.random() * endIndex);
   };
 
-  if (typeof module !== 'undefined' && typeof module.exports !== 'undefined')
+  // We export as a node module for automated testing.
+  if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
     module.exports = wgf.card;
+  }
 })();
