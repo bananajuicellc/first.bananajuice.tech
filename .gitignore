@@ -1,6 +1,7 @@
 build
 src/bower_components
 src/node_modules
+web
 
 # https://github.com/github/gitignore/blob/master/Global/Vim.gitignore
 [._]*.s[a-w][a-z]

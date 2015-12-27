@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<!-- TODO(swast): share deck handling code with the app using local storage -->
+<script>
+var cards = [
+    'award',
+    'baking',
+    'batteries',
+    'bee',
+    'birthday',
+    'building',
+    'buttons',
+    'drawing',
+    'flat-tire',
+    'foreign-language',
+    'hammock',
+    'junkmail',
+    'light-bulb',
+    'litter-box',
+    'oldest-movie',
+    'onion',
+    'pizza',
+    'post-office',
+    'postcard',
+    'survey',
+    'train',
+    'trash',
+    'tv',
+    'walk-dog'
+];
+var cardi = Math.floor(Math.random() * cards.length);
+window.location.replace('/cards/' + cards[cardi] + '/');
+</script>
