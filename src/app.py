@@ -48,7 +48,8 @@ for card in cards:
     m = mo['message']
     s = template.render(
             card_image=cards[card],
-            card_description=m)
+            card_description=m,
+            google_analytics_id=os.environ['WGF_GOOGLE_ANALYTICS'])
     try:
         os.makedirs('../web/cards/{0}'.format(card))
     except OSError, e:
