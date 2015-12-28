@@ -69,9 +69,3 @@ for card in cards:
         if e.errno != 17: # File Exists
             raise
 
-    try:
-        shutil.copy('../web/cards/who-goes-first/index.html', '../web/index.html')
-    except OSError, e:
-        if e.errno != 17: # File Exists
-            raise
-
