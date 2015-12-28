@@ -78,6 +78,9 @@
   "card_prompt_walk_dog": {
     "message": "The player who most recently walked a dog goes first."
   },
+   "card_prompt_went_to_movies": {
+    "message": "The player who most recently went to the movies goes first. <br>About this card: <br><a href='http://www.loc.gov/pictures/resource/cph.3c26104/' target='_blank'>Library of Congress</a> Blue Island, Illinois. The Senise family going to the movies."
+  },
   "card_prompt_who_goes_first": {
     "message": "Click the arrow to find out who goes first."
   }
