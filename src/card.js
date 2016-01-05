@@ -141,7 +141,7 @@ wgf.card = wgf.card || {};
       var cardText = document.createElement('div');
       cardText.classList.add('wgf-card-text');
       var p = document.createElement('p');
-      p.textContent = chrome.i18n.getMessage('card_prompt_' + cardId);
+      p.innerHTML = chrome.i18n.getMessage('card_prompt_' + cardId);
       cardText.appendChild(p);
       element.appendChild(cardText);
     };
@@ -238,6 +238,7 @@ wgf.card = wgf.card || {};
     'trash': wgf.card.renderCardImage('trash'),
     'tv': wgf.card.renderCardImage('tv'),
     'walk_dog': wgf.card.renderCardImage('walk_dog'),
+    'went_to_movies': wgf.card.renderCardImage('went_to_movies', 'went_to_movies.jpg'),
     'who_goes_first': wgf.card.renderCardImage('who_goes_first'),
   };
 
