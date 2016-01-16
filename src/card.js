@@ -213,7 +213,7 @@ wgf.card = wgf.card || {};
 
 
   wgf.card.CARDS_ = {
-    'award': wgf.card.renderCardImage('award'),
+    'award': wgf.card.renderCardImage('award', 'award.gif'),
     'baking': wgf.card.renderCardImage('baking'),
     'batteries': wgf.card.renderCardImage('batteries'),
     'bee': wgf.card.renderCardImage('bee'),
