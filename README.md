@@ -79,3 +79,14 @@ For Android (release):
 cca build android --release --webview=system --android-minSdkVersion=21 
 ```
 
+
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md).
+
+
+## Licensing
+
+This Source Code Form is subject to the terms of the Mozilla Public License, v.
+2.0. See [LICENSE](LICENSE).
+
