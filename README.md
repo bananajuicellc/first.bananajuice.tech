@@ -80,6 +80,32 @@ cca build android --release --webview=system --android-minSdkVersion=21
 ```
 
 
+## Flask / Web Version
+
+There is an incomplete web version, which is run under the Flask framework.
+
+First set up a virtual environment.
+
+```
+sudo easy_install pip
+sudo pip install virtualenv
+virtualenv venv
+source venv/bin/activate
+```
+
+Next install the dependencies.
+
+```
+pip install -r requirements.txt
+```
+
+Now you can run locally.
+
+```
+python whogoesfirst.py
+```
+
+
 ## Contributing
 
 See [CONTRIBUTING.md](CONTRIBUTING.md).
