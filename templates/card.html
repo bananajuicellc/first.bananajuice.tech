@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Who Goes First?</title>
+<link rel="stylesheet" href="/static/index.css" type="text/css">
+
+<div class="wgf-card">
+  <div id="wgf-card-content" class="wgf-card-content">
+    <img src="/static/cards/{{ card_image }}" class="pixel-art wgf-card-image">
+    <div class="wgf-card-text">
+      {% block card_body %}
+      {% endblock %}
+    </div>
+  </div>
+  <div id="wgf-next-button">
+    <a href="/random-card/">
+    <img id="wgf-next-button-img" src="/static/buttons/arrow_right.svg" alt="Next Card"><br>
+    </a>
+  </div>
+</div>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', '{{ google_analytics_id }}', 'auto');
+  ga('send', 'pageview');
+</script>

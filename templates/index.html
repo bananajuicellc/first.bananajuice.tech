@@ -1,46 +1,21 @@
-<!DOCTYPE html>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Who Goes First?</title>
-<link rel="stylesheet" href="/static/index.css" type="text/css">
+{% extends "card.html" %}
+{% block card_body %}
+  <p>Click the arrow to find out who goes first.
 
-<div class="wgf-card">
-  <div id="wgf-card-content" class="wgf-card-content">
-    <img src="/static/cards/who_goes_first.png" class="pixel-art wgf-card-image">
-    <div class="wgf-card-text">
-      <p>Click the arrow to find out who goes first.
+  <p>Have you played a board game but didn't like the recommended way to
+  choose the first player? Is your gaming group bored with throwing dice
+  to choose? Who Goes First is a new way to choose the first player.
 
-      <p>Have you played a board game but didn't like the recommended way to
-      choose the first player? Is your gaming group bored with throwing dice
-      to choose? Who Goes First is a new way to choose the first player.
+  <p>Open it and get a random card. It could be interactive or have your
+  friends tell the best story. Use it to pick the next player, or if you
+  don't like it: tap the arrow to get a new card.
 
-      <p>Open it and get a random card. It could be interactive or have your
-      friends tell the best story. Use it to pick the next player, or if you
-      don't like it: tap the arrow to get a new card.
+  <p>We are working on an app version for iOS and Android! Please subscribe
+  to our <a href="http://tinyletter.com/whogoesfirst">mailing list</a> to
+  be the first to find out when it is ready.
 
-      <p>We are working on an app version for iOS and Android! Please subscribe
-      to our <a href="http://tinyletter.com/whogoesfirst">mailing list</a> to
-      be the first to find out when it is ready.
-
-      <p>Who Goes First is a project of
-      <a href="http://www.timswast.com">Timothy</a> and
-      <a href="http://swast.net/alexandra/">Alexandra Swast</a> and our
-      friends, born out of our love for board games.
-    </div>
-  </div>
-  <div id="wgf-next-button">
-    <a href="/random-card/">
-    <img id="wgf-next-button-img" src="/static/buttons/arrow_right.svg" alt="Next Card"><br>
-    </a>
-  </div>
-</div>
-
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-71804102-1', 'auto');
-  ga('send', 'pageview');
-</script>
+  <p>Who Goes First is a project of
+  <a href="http://www.timswast.com">Timothy</a> and
+  <a href="http://swast.net/alexandra/">Alexandra Swast</a> and our
+  friends, born out of our love for board games.
+{% endblock %}
