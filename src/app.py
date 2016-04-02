@@ -14,7 +14,7 @@ env = Environment(loader=FileSystemLoader('templates'))
 template = env.get_template('card.html')
 
 cards = {
-    'award': 'award.png',
+    'award': 'award.gif',
     'baking': 'baking.png',
     'batteries': 'batteries.png',
     'bee': 'bee.png',
@@ -39,6 +39,7 @@ cards = {
     'trash': 'trash.png',
     'tv': 'tv.png',
     'walk-dog': 'walk_dog.png',
+    'went-to-movies': 'went_to_movies.jpg',
     'who-goes-first': 'who_goes_first.png',
 }
 
