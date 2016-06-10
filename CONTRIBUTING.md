@@ -25,3 +25,34 @@ JavaScript rules.
 
 You should be able to run the tests with the `npm test` command.
 
+## Generating Translations
+
+Extract messages.
+
+```
+pybabel extract -F babel.cfg -o messages.pot .
+```
+
+### Adding a new language
+
+Update language catalog.
+
+```
+pybabel init -i messages.pot -d ./translations -l fr
+```
+
+### Updating existing translations
+
+Update language catalog.
+
+```
+pybabel update -i messages.pot -d ./translations
+```
+
+Run poedit and translate text.
+
+Compile translations.
+
+```
+pybabel compile -d ./translations
+```
