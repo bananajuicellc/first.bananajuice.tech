@@ -1,0 +1,72 @@
+# French translations for PROJECT.
+# Copyright (C) 2016 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2016.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2016-06-09 19:23-0700\n"
+"PO-Revision-Date: 2016-06-09 19:25-0700\n"
+"Last-Translator: \n"
+"Language: fr\n"
+"Language-Team: fr <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+"X-Generator: Poedit 1.8.8\n"
+
+#: templates/card.html:4
+msgid "Who Goes First?"
+msgstr "Qui va d’abord ?"
+
+#: templates/index.html:3
+msgid "Click the arrow to find out who goes first."
+msgstr "Cliquez sur la flèche pour savoir qui va d’abord."
+
+#: templates/index.html:5
+msgid ""
+"Have you played a board game but didn't like the recommended way to\n"
+"  choose the first player? Is your gaming group bored with throwing "
+"dice\n"
+"  to choose? Who Goes First is a new way to choose the first player."
+msgstr ""
+"Avez-vous joué à une planche de jeu, mais n’aimait pas la méthode "
+"recommandée pour choisir le premier joueur ? Votre groupe de jeu "
+"s’ennuie avec lancer de dés pour choisir ? Qui va d’abord est une "
+"nouvelle façon de choisir le premier joueur."
+
+#: templates/index.html:9
+msgid ""
+"Open it and get a random card. It could be interactive or have your\n"
+"  friends tell the best story. Use it to pick the next player, or if "
+"you\n"
+"  don't like it: tap the arrow to get a new card."
+msgstr ""
+"Ouvrez-le et obtenez une carte aléatoire. Il peut être interactif ou ou "
+"vos amis racontent l’histoire de meilleure. Il permet de choisir le "
+"prochain joueur, ou si vous ne l’aimez : Appuyez sur la flèche pour "
+"obtenir une nouvelle carte."
+
+#: templates/index.html:14
+msgid ""
+"Subscribe to our <a href=\"http://tinyletter.com/whogoesfirst\">mailing\n"
+"  list</a> to be the first to find out about updates like new cards."
+msgstr ""
+"Abonnez-vous à notre <a href=\"http://tinyletter.com/whogoesfirst"
+"\">liste d’envoi</a> pour être le premier à connaître les mises à jour "
+"comme nouvelles cartes."
+
+#: templates/index.html:18
+msgid ""
+"Who Goes First is a project of\n"
+"  <a href=\"http://www.timswast.com\">Timothy</a> and\n"
+"  <a href=\"http://swast.net/alexandra/\">Alexandra Swast</a> and our\n"
+"  friends, born out of our love for board games."
+msgstr ""
+"Qui va tout d’abord est un projet de <a href=\"http://www.timswast.com"
+"\">Timothy</a> et <a href=\"http://swast.net/alexandra/\">Alexandra "
+"Swast</a> et nos amis, nées de notre amour pour les jeux de société."
