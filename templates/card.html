@@ -3,6 +3,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{{_('Who Goes First?')}}</title>
 <link rel="stylesheet" href="/static/index.css" type="text/css">
+{% for lang in translations %}
+<link rel="alternate"
+    hreflang="{{ lang }}"
+    href="{{ translations[lang]['url'] }}">
+{% endfor %}
+
+<ul>
+{% for lang in translations|sort %}
+  <li>
+    <a href="{{ translations[lang]['url'] }}">{{ translations[lang]['name'] }}</a>
+  </li>
+{% endfor %}
+</ul>
 
 <div class="wgf-card">
   <div id="wgf-card-content" class="wgf-card-content">

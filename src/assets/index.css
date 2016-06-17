@@ -16,41 +16,10 @@ img.pixel-art {
 
 /* card content */
 
-div.wgf-card {
-  height: 100%;
-  left: 0px;
-  position: absolute;
-  top: 0px;
-  width: 100%;
-}
-
 div.wgf-card div.wgf-card-content {
   background-color: #fff;
   height: 100%;
   width: 100%;
-}
-
-img.wgf-card-image {
-  left: 0px;
-  position: absolute;
-  top: 0px;
-  width: 100%;
-}
-
-@media (min-aspect-ratio: 1/1) {
-  img.wgf-card-image {
-    height: 100%;
-    width: auto;
-  }
-}
-
-div.wgf-card-text {
-  background-color: rgba(255, 255, 255, 0.8);
-  max-width: 100%;
-  position: absolute;
-  right: 0px;
-  top: 60%;
-  width: 30em;
 }
 
 div.wgf-card-content p {
@@ -72,8 +41,5 @@ div#wgf-next-button a {
 }
 
 div#wgf-next-button {
-  bottom: 4px;
-  position: absolute;
-  right: 4px;
   text-align: right;
 }
