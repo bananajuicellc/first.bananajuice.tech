@@ -3,12 +3,9 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
+import flask
 from flask import Flask
-from flask import g
-from flask import redirect
 from flask import render_template
-from flask import request
-from flask import url_for
 from flask.ext.babel import Babel
 
 app = Flask(__name__)
@@ -16,8 +13,8 @@ babel = Babel(app)
 
 
 LANGUAGES = {
-    'en': 'English',
-    'fr': 'français'
+    'en': u'English',
+    'fr': u'français'
 
 }
 DEFAULT_LANGUAGE = 'en'
@@ -25,11 +22,10 @@ DEFAULT_LANGUAGE = 'en'
 
 @app.route('/')
 def home_page_redirect():
-    language = request.accept_languages.best_match(
+    language = flask.request.accept_languages.best_match(
             LANGUAGES.keys(),
             default=DEFAULT_LANGUAGE)
-    return redirect(url_for('index_' + language))
-
+    return flask.redirect(flask.url_for('index_' + language))
 
 @app.route('/en/', endpoint='index_en')
 @app.route('/fr/', endpoint='index_fr')
@@ -42,17 +38,38 @@ def index():
 
 @app.before_request
 def func():
-    g.babel = babel
-    g.language = get_locale()
+    flask.g.babel = babel
+    flask.g.language = get_locale()
 
 
 @babel.localeselector
 def get_locale():
-    lang = request.path[1:].split('/', 1)[0]
+    lang = flask.request.path[1:].split('/', 1)[0]
     if lang in LANGUAGES:
         return lang
     else:
         return DEFAULT_LANGUAGE
+
+
+def get_translations(page):
+    translations = {}
+    for lang in LANGUAGES:
+        translations[lang] = {
+            'url': flask.url_for(page + '_' + lang),
+            'name': LANGUAGES[lang]
+        }
+    return translations
+
+
+def get_page(endpoint):
+    return endpoint.rpartition('_')[0]
+
+
+@app.context_processor
+def inject_custom():
+    return {
+        'translations': get_translations(get_page(flask.request.endpoint))
+    }
 
 
 if __name__ == '__main__':
