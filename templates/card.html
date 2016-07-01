@@ -9,17 +9,24 @@
     href="{{ translations[lang]['url'] }}">
 {% endfor %}
 
-<ul>
-{% for lang in translations|sort %}
-  <li>
-    <a href="{{ translations[lang]['url'] }}">{{ translations[lang]['name'] }}</a>
-  </li>
-{% endfor %}
-</ul>
+<label for="wgf-menu-toggle" id="wgf-menu-toggle-label">
+  <img src="/static/icons/menu.svg" alt="Toggle menu" id="wgf-menu-toggle-icon">
+</label>
+<input type="checkbox" id="wgf-menu-toggle"></input>
+<div id="wgf-menu">
+  <ul>
+  {% for lang in translations|sort %}
+    <li>
+      <a href="{{ translations[lang]['url'] }}">{{ translations[lang]['name'] }}</a>
+    </li>
+  {% endfor %}
+  </ul>
+</div>
 
 <div class="wgf-card">
   <div id="wgf-card-content" class="wgf-card-content">
-    <img src="/static/cards/{{ card_image }}" class="pixel-art wgf-card-image">
+    <img src="/static/cards/{{ card_image }}"
+      class="pixel-art" id="wgf-card-image">
     <div class="wgf-card-text">
       {% block card_body %}
       {% endblock %}
