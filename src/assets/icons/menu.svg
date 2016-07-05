@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   version="1.1"
+   id="svg2"
+   viewBox="0 0 230.31496 230.31496"
+   height="65mm"
+   width="65mm">
+  <defs
+     id="defs4" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     transform="translate(-56.775291,44.475289)"
+     id="layer1">
+    <rect
+       y="-19.348957"
+       x="60.025578"
+       height="28.529718"
+       width="223.87904"
+       id="rect4138"
+       style="fill:#000000;stroke:none;stroke-opacity:1" />
+    <image
+       width="225"
+       height="30"
+       preserveAspectRatio="none"
+       style="fill:#000000;image-rendering:optimizeSpeed"
+       xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAAAeCAYAAADad3m2AAAABHNCSVQICAgIfAhkiAAAAKBJREFU
+eJzt00ENg1AABcFHQ4KHLwUXuMJZdXwFRUAT6qLvwIyCveyS5A5QMcb4rkly3z6Ef5tzZt/3vNoh
+8HQmhDITQpkJocyEUGZCKDMhlJkQykwIZSaEMhNCmQmhzIRQZkIoMyGUmRDKTAhlJoQyE0KZCaHM
+hFBmQigzIZSZEMpMCGUmhLI1Sc7zbHfA41zXlSRZjuN4l1vgsbZt+/wAnvQP/NuohAcAAAAASUVO
+RK5CYII=
+"
+       id="image4157"
+       x="59.465099"
+       y="116.83743" />
+    <image
+       width="225"
+       height="30"
+       preserveAspectRatio="none"
+       style="fill:#000000;image-rendering:optimizeSpeed"
+       xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAAAeCAIAAABVFe7hAAAAA3NCSVQICAjb4U/gAAAAlklEQVR4
+nO3SMRHDMBQFwe9MCIiAoZiWKIimGIiBQ8AZl3rFLoIrrgqCned5VNV937tL4MGc87quz+4MeOFR
+0nmUdB4lnUdJ51HSeZR0HiWdR0nnUdJ5lHQeJZ1HSedR0nmUdB4lnUdJ51HSeZR0HiWdR0nnUdJ5
+lHQeJZ1HSedR0n2raoyxOwMerLWq6ui97y6Bv1prPxxtDO9Fu4ndAAAAAElFTkSuQmCC
+"
+       id="image4177"
+       x="59.465099"
+       y="48.259132" />
+    <path
+       id="path4180"
+       d="m 60.306077,62.922008 0,-13.472369 111.147033,0 111.14702,0 0,13.472369 0,13.47237 -111.14702,0 -111.147033,0 0,-13.47237 z"
+       style="fill:#000000;stroke:none;stroke-width:0.39624608;stroke-opacity:1" />
+    <path
+       id="path4182"
+       d="m 60.306077,131.47258 0,-13.47237 111.147033,0 111.14702,0 0,13.47237 0,13.47237 -111.14702,0 -111.147033,0 0,-13.47237 z"
+       style="fill:#000000;stroke:none;stroke-width:0.39624608;stroke-opacity:1" />
+  </g>
+</svg>
