@@ -36,12 +36,12 @@ def index():
 
 @app.route('/en/about/', endpoint='about_index_en')
 @app.route(u'/fr/à-propos/', endpoint='about_index_fr')
-def index():
+def about():
     return render_template('about.html')
 
 
 @app.before_request
-def func():
+def populate_request():
     flask.g.babel = babel
     flask.g.language = get_locale()
 

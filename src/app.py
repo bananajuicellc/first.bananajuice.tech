@@ -47,6 +47,8 @@ messages = {}
 with open('_locales/en/messages.json') as f:
     messages = json.load(f)
 
+FILE_EXISTS_ERR = 17
+
 for card in cards:
     mo = messages['card_prompt_{0}'.format(card.replace('-', '_'))]
     m = mo['message']
@@ -56,20 +58,19 @@ for card in cards:
             google_analytics_id=os.environ['WGF_GOOGLE_ANALYTICS'])
     try:
         os.makedirs('../web/cards/{0}'.format(card))
-    except OSError, e:
-        if e.errno != 17: # File Exists
+    except OSError as e:
+        if e.errno != FILE_EXISTS_ERR:
             raise
     with open('../web/cards/{0}/index.html'.format(card), 'w') as f:
         f.write(s)
 
     try:
         shutil.copytree('assets', '../web/assets')
-    except OSError, e:
-        if e.errno != 17: # File Exists
+    except OSError as e:
+        if e.errno != FILE_EXISTS_ERR:
             raise
     try:
         shutil.copy('index.css', '../web/index.css')
-    except OSError, e:
-        if e.errno != 17: # File Exists
+    except OSError as e:
+        if e.errno != FILE_EXISTS_ERR:
             raise
-
