@@ -27,13 +27,17 @@ def home_page_redirect():
             default=DEFAULT_LANGUAGE)
     return flask.redirect(flask.url_for('index_' + language))
 
+
 @app.route('/en/', endpoint='index_en')
 @app.route('/fr/', endpoint='index_fr')
 def index():
-    return render_template(
-            'index.html',
-            google_analytics_id='UA-71804102-1',
-            card_image='who_goes_first.png')
+    return render_template('index.html', card_image='who_goes_first.png')
+
+
+@app.route('/en/about/', endpoint='about_index_en')
+@app.route(u'/fr/à-propos/', endpoint='about_index_fr')
+def index():
+    return render_template('about.html')
 
 
 @app.before_request
@@ -68,7 +72,8 @@ def get_page(endpoint):
 @app.context_processor
 def inject_custom():
     return {
-        'translations': get_translations(get_page(flask.request.endpoint))
+        'translations': get_translations(get_page(flask.request.endpoint)),
+        'google_analytics_id': 'UA-71804102-1'
     }
 
 
