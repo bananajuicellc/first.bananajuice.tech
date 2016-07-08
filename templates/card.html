@@ -27,10 +27,7 @@
 
 <div class="wgf-card">
   <div id="wgf-card-content" class="wgf-card-content">
-    {% if not is_about_card %}
-      <img src="/static/cards/{{ card_image }}"
-        class="pixel-art" id="wgf-card-image">
-    {% endif %}
+    {% block card_image %}{% endblock %}
     <div class="wgf-card-text">
       {% block card_body %}
       {% endblock %}

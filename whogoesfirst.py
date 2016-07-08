@@ -31,7 +31,7 @@ def home_page_redirect():
 @app.route('/en/', endpoint='index_en')
 @app.route('/fr/', endpoint='index_fr')
 def index():
-    return render_template('index.html', card_image='who_goes_first.png')
+    return render_template('index.html')
 
 
 @app.route('/en/about/', endpoint='about_index_en')
