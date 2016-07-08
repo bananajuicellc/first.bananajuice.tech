@@ -1,0 +1,15 @@
+sudo: false
+language: python
+branches:
+  only:
+  - master
+cache:
+  directories:
+  - $HOME/.cache
+install:
+- pip install --upgrade pip wheel virtualenv
+- pip install nox-automation codecov
+script:
+- nox --stop-on-first-error -s lint;
+after_script:
+- codecov
