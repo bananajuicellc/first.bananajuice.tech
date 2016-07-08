@@ -36,8 +36,8 @@ def index():
 
 @app.route('/en/about/', endpoint='about_index_en')
 @app.route(u'/fr/à-propos/', endpoint='about_index_fr')
-def about():
-    return render_template('about.html')
+def about_index():
+    return render_template('about_index.html')
 
 
 @app.before_request

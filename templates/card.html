@@ -23,10 +23,14 @@
   </ul>
 </div>
 
+{% set is_about_card = request.endpoint.startswith('about_') %}
+
 <div class="wgf-card">
   <div id="wgf-card-content" class="wgf-card-content">
-    <img src="/static/cards/{{ card_image }}"
-      class="pixel-art" id="wgf-card-image">
+    {% if not is_about_card %}
+      <img src="/static/cards/{{ card_image }}"
+        class="pixel-art" id="wgf-card-image">
+    {% endif %}
     <div class="wgf-card-text">
       {% block card_body %}
       {% endblock %}
@@ -37,16 +41,23 @@
     <img id="wgf-next-button-img" src="/static/buttons/arrow_right.svg" alt="Next Card"><br>
     </a>
   </div>
-  <p><a href="{{ url_for('about_' + request.endpoint) }}">
-    {{_('About this card.')}}
-  </a>
+  <p>{% if is_about_card %}
+    {# len('about_') == 6, so we remove that to get to the card #}
+    <a href="{{ url_for(request.endpoint[6:]) }}">
+      {{_('Back to the card.')}}
+    </a>
+  {% else %}
+    <a href="{{ url_for('about_' + request.endpoint) }}">
+      {{_('About this card.')}}
+    </a>
+  {% endif %}
 </div>
 
 <div class="footer">
   <!--
     TODO: Add links to help translate and contribute to this open-source
-    project.
-    https://github.com/bananajuicellc/who-goes-first
+        project.
+        See: https://github.com/bananajuicellc/who-goes-first/issues/22
   -->
 </div>
 
