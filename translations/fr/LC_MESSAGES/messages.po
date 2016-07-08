@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2016-07-05 16:18-0700\n"
-"PO-Revision-Date: 2016-07-05 16:25-0700\n"
+"POT-Creation-Date: 2016-07-07 19:57-0700\n"
+"PO-Revision-Date: 2016-07-07 19:58-0700\n"
 "Last-Translator: \n"
 "Language: fr\n"
 "Language-Team: fr <LL@li.org>\n"
@@ -19,7 +19,34 @@ msgstr ""
 "Generated-By: Babel 2.3.4\n"
 "X-Generator: Poedit 1.8.8\n"
 
-#: templates/about.html:3
+#: templates/about_award.html:3
+msgid "About the award card."
+msgstr "À propos de la carte prix."
+
+#: templates/about_award.html:13
+msgid ""
+"This card was drawn by <a href=\"http://www.timswast.com\"\n"
+"  rel=\"author\">Tim Swast</a>."
+msgstr ""
+"Cette carte a été dessinée par <a href=\"http://www.timswast.com\" rel="
+"\"author\">Tim Swast</a>."
+
+#: templates/about_award.html:21
+msgid ""
+"This work is licensed under a\n"
+"<a rel=\"license\" about=\"/static/cards/award.gif\"\n"
+"  href=\"https://creativecommons.org/licenses/by/4.0/\">Creative\n"
+"Commons Attribution 4.0 International License</a>."
+msgstr ""
+"Ce travail est sous <a rel=\"license\" about=\"/static/cards/award.gif\" "
+"href=\"https://creativecommons.org/licenses/by/4.0/\">Licence Creative "
+"Commons Attribution 4.0 International</a>."
+
+#: templates/about_index.html:2
+msgid "About Who Goes First?"
+msgstr "Sur qui va d’abord ?"
+
+#: templates/about_index.html:4
 msgid ""
 "Have you played a board game but didn't like the recommended way to\n"
 "  choose the first player? Is your gaming group bored with throwing "
@@ -31,7 +58,7 @@ msgstr ""
 "s’ennuie avec lancer de dés pour choisir ? Qui va d’abord est une "
 "nouvelle façon de choisir le premier joueur."
 
-#: templates/about.html:7
+#: templates/about_index.html:8
 msgid ""
 "Open it and get a random card. It could be interactive or have your\n"
 "  friends tell the best story. Use it to pick the next player, or if "
@@ -43,7 +70,7 @@ msgstr ""
 "prochain joueur, ou si vous ne l’aimez : Appuyez sur la flèche pour "
 "obtenir une nouvelle carte."
 
-#: templates/about.html:12
+#: templates/about_index.html:13
 msgid ""
 "Subscribe to our <a href=\"http://tinyletter.com/whogoesfirst\">mailing\n"
 "  list</a> to be the first to find out about updates like new cards."
@@ -52,7 +79,7 @@ msgstr ""
 "\">liste d’envoi</a> pour être le premier à connaître les mises à jour "
 "comme nouvelles cartes."
 
-#: templates/about.html:16
+#: templates/about_index.html:17
 msgid ""
 "Who Goes First is a project of\n"
 "  <a href=\"http://www.timswast.com\">Timothy</a> and\n"
@@ -63,14 +90,33 @@ msgstr ""
 "\">Timothy</a> et <a href=\"http://swast.net/alexandra/\">Alexandra "
 "Swast</a> et nos amis, nées de notre amour pour les jeux de société."
 
-#: templates/card.html:41
+#: templates/award.html:3
+msgid "Award card."
+msgstr "Carte prix."
+
+#: templates/award.html:8
+msgid "The player who most recently won an award goes first."
+msgstr "Le joueur qui a récemment remporté un prix va d'abord."
+
+#: templates/card.html:36
+msgid "Back to the card."
+msgstr "Retour à la carte."
+
+#: templates/card.html:42
+msgid "Get the next card."
+msgstr "Obtenez la carte suivante."
+
+#: templates/card.html:46
 msgid "About this card."
 msgstr "À propos de cette carte."
 
-#: templates/index.html:2
+#: templates/index.html:3
 msgid "Who Goes First?"
 msgstr "Qui va d’abord ?"
 
-#: templates/index.html:4
+#: templates/index.html:9
 msgid "Click the arrow to find out who goes first."
 msgstr "Cliquez sur la flèche pour savoir qui va d’abord."
+
+#~ msgid "The player who last won and award goes first."
+#~ msgstr "Le joueur qui a récemment remporté un prix va d'abord."

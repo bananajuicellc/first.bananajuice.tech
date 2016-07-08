@@ -30,14 +30,26 @@ def home_page_redirect():
 
 @app.route('/en/', endpoint='index_en')
 @app.route('/fr/', endpoint='index_fr')
-def index():
+def index_card():
     return render_template('index.html')
 
 
 @app.route('/en/about/', endpoint='about_index_en')
 @app.route(u'/fr/à-propos/', endpoint='about_index_fr')
-def about_index():
+def about_index_card():
     return render_template('about_index.html')
+
+
+@app.route('/en/cards/award/', endpoint='award_en')
+@app.route('/fr/cartes/prix', endpoint='award_fr')
+def award_card():
+    return render_template('award.html')
+
+
+@app.route('/en/cards/award/about/', endpoint='about_award_en')
+@app.route(u'/fr/cartes/prix/à-propos/', endpoint='about_award_fr')
+def about_award_card():
+    return render_template('about_award.html')
 
 
 @app.before_request
