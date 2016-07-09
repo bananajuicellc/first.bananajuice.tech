@@ -1,5 +1,12 @@
 {% extends "card.html" %}
+
 {% block card_title %}{{_('Who Goes First?')}}{% endblock %}
+
+{% block card_image %}
+<img src="/static/cards/who_goes_first.png"
+  class="pixel-art wgf-card-image">
+{% endblock %}
+
 {% block card_body %}
   <p>{{_('Click the arrow to find out who goes first.')}}
 {% endblock %}
