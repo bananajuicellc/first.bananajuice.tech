@@ -27,24 +27,22 @@
 
 <div class="wgf-card">
   <div id="wgf-card-content" class="wgf-card-content">
-    {% block card_image %}{% endblock %}
-    <div class="wgf-card-text">
-      {% block card_body %}
-      {% endblock %}
-    </div>
+    {% block card_body %}
+    {% endblock %}
   </div>
-  <div id="wgf-next-button">
-    <a href="/random-card/">
-    <img id="wgf-next-button-img" src="/static/buttons/arrow_right.svg" alt="Next Card"><br>
-    </a>
-  </div>
-  <p>{% if is_about_card %}
+  {% if is_about_card %}
     {# len('about_') == 6, so we remove that to get to the card #}
-    <a href="{{ url_for(request.endpoint[6:]) }}">
+    <p><a href="{{ url_for(request.endpoint[6:]) }}">
       {{_('Back to the card.')}}
     </a>
   {% else %}
-    <a href="{{ url_for('about_' + request.endpoint) }}">
+    <div id="wgf-next-button">
+      <a href="/random-card/">
+      <img id="wgf-next-button-img"
+        src="/static/buttons/arrow_right.svg" alt="{{_('Get the next card.')}}">
+      </a>
+    </div>
+    <p><a href="{{ url_for('about_' + request.endpoint) }}">
       {{_('About this card.')}}
     </a>
   {% endif %}
