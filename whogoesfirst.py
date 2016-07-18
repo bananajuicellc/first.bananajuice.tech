@@ -35,6 +35,11 @@ CARDS = {
             'en': 'award',
             'fr': 'prix'
         }
+    },
+    'train': {
+        'translations': {
+            'en': 'train'
+        }
     }
 }
 
@@ -89,6 +94,7 @@ def get_locale():
 
 
 def get_translations(page):
+    translations = {}
     languages = LANGUAGES
     if page not in ('index', 'about_index'):
         cid = page
@@ -115,7 +121,7 @@ def inject_custom():
     }
 
 
-if __name__ == '__main__':
+def main():
     for cid in CARDS:
         card = CARDS[cid]
         translations = card['translations']
@@ -133,3 +139,7 @@ if __name__ == '__main__':
                 'about_' + cid + '_' + language,
                 get_about_card_handler(cid))
     app.run(port=8080, debug=True)
+
+
+if __name__ == '__main__':
+    main()
