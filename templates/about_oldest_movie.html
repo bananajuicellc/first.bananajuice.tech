@@ -1,0 +1,23 @@
+{% extends "card.html" %}
+
+{% block card_title %}{{_('About the oldest movie card.')}}{% endblock %}
+
+{% block card_body %}
+<div itemscope itemtype="http://schema.org/ImageObject">
+  <meta itemprop="license"
+    content="http://creativecommons.org/publicdomain/mark/1.0/">
+  <img itemprop="contentURL" src="/static/cards/blacksmith.gif"
+    class="wgf-card-image">
+</div>
+
+<p xmlns:dct="http://purl.org/dc/terms/">
+<a rel="license" href="http://creativecommons.org/publicdomain/mark/1.0/">
+<img src="http://i.creativecommons.org/p/mark/1.0/88x31.png"
+     style="border-style: none;" alt="Public Domain Mark">
+</a>
+
+<p>{{_('This work (<span property="dct:title">Blacksmith Scene</span>, by
+<a href="https://en.wikipedia.org/wiki/Blacksmith_Scene" rel="dct:creator"><span
+  property="dct:title">William K.L. Dickson under the employ of Thomas
+Edison</span></a>) is free of known copyright restrictions.') | safe}}
+{% endblock %}

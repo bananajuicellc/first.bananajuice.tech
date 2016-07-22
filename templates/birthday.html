@@ -1,0 +1,9 @@
+{% extends "card.html" %}
+
+{% block card_title %}{{_('Birthday card.')}}{% endblock %}
+
+{% block card_body %}
+<img src="/static/cards/birthday.gif" class="pixel-art wgf-card-image">
+
+<p>{{_('The player whose birthday is nearest to today goes first.')}}
+{% endblock %}

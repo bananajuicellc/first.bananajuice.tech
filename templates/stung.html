@@ -1,0 +1,9 @@
+{% extends "card.html" %}
+
+{% block card_title %}{{_('Stung card.')}}{% endblock %}
+
+{% block card_body %}
+<img src="/static/cards/bee.png" class="pixel-art wgf-card-image">
+
+<p>{{_('The player who was most recently stung by an insect goes first.')}}
+{% endblock %}
