@@ -13,10 +13,36 @@ babel = Babel(app)
 
 
 LANGUAGES = {
-    'en': u'English',
-    'fr': u'français'
-
+    'en': {
+        'name': u'English',
+        'translations': {
+            'about': 'about',
+            'cards': 'cards'
+        }
+    },
+    'fr': {
+        'name': u'français',
+        'translations': {
+            'about': u'à-propos',
+            'cards': u'cartes'
+        }
+    }
 }
+
+CARDS = {
+    'award': {
+        'translations': {
+            'en': 'award',
+            'fr': 'prix'
+        }
+    },
+    'train': {
+        'translations': {
+            'en': 'train'
+        }
+    }
+}
+
 DEFAULT_LANGUAGE = 'en'
 
 
@@ -40,16 +66,16 @@ def about_index_card():
     return render_template('about_index.html')
 
 
-@app.route('/en/cards/award/', endpoint='award_en')
-@app.route('/fr/cartes/prix', endpoint='award_fr')
-def award_card():
-    return render_template('award.html')
+def get_card_handler(cid):
+    def handler():
+        return render_template(cid + '.html')
+    return handler
 
 
-@app.route('/en/cards/award/about/', endpoint='about_award_en')
-@app.route(u'/fr/cartes/prix/à-propos/', endpoint='about_award_fr')
-def about_award_card():
-    return render_template('about_award.html')
+def get_about_card_handler(cid):
+    def handler():
+        return render_template('about_' + cid + '.html')
+    return handler
 
 
 @app.before_request
@@ -69,10 +95,16 @@ def get_locale():
 
 def get_translations(page):
     translations = {}
-    for lang in LANGUAGES:
+    languages = LANGUAGES
+    if page not in ('index', 'about_index'):
+        cid = page
+        if cid.startswith('about_'):
+            cid = cid[6:]
+        languages = CARDS[cid]['translations']
+    for lang in languages:
         translations[lang] = {
             'url': flask.url_for(page + '_' + lang),
-            'name': LANGUAGES[lang]
+            'name': LANGUAGES[lang]['name']
         }
     return translations
 
@@ -89,5 +121,25 @@ def inject_custom():
     }
 
 
-if __name__ == '__main__':
+def main():
+    for cid in CARDS:
+        card = CARDS[cid]
+        translations = card['translations']
+        for language in translations:
+            translation = translations[language]
+            gtranslations = LANGUAGES[language]['translations']
+            card_url = u'/{}/{}/{}/'.format(
+                language,
+                gtranslations['cards'],
+                translation)
+            app.add_url_rule(
+                card_url, cid + '_' + language, get_card_handler(cid))
+            app.add_url_rule(
+                card_url + gtranslations['about'],
+                'about_' + cid + '_' + language,
+                get_about_card_handler(cid))
     app.run(port=8080, debug=True)
+
+
+if __name__ == '__main__':
+    main()
