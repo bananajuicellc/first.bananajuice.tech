@@ -36,11 +36,13 @@ CARDS = {
             'fr': 'prix'
         }
     },
-    'train': {
-        'translations': {
-            'en': 'train'
-        }
-    }
+    'baking': {'translations': {'en': 'baking'}},
+    'batteries': {'translations': {'en': 'batteries'}},
+    'birthday': {'translations': {'en': 'birthday'}},
+    'building': {'translations': {'en': 'building'}},
+    'oldest-movie': {'translations': {'en': 'oldest-movie'}},
+    'stung': {'translations': {'en': 'stung'}},
+    'train': {'translations': {'en': 'train'}}
 }
 
 DEFAULT_LANGUAGE = 'en'
@@ -68,13 +70,13 @@ def about_index_card():
 
 def get_card_handler(cid):
     def handler():
-        return render_template(cid + '.html')
+        return render_template(cid.replace('-', '_') + '.html')
     return handler
 
 
 def get_about_card_handler(cid):
     def handler():
-        return render_template('about_' + cid + '.html')
+        return render_template('about_' + cid.replace('-', '_') + '.html')
     return handler
 
 

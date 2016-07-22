@@ -1,0 +1,10 @@
+{% extends "card.html" %}
+
+{% block card_title %}{{_('Oldest movie card.')}}{% endblock %}
+
+{% block card_body %}
+<img src="/static/cards/blacksmith.gif" class="wgf-card-image">
+
+<p>{{_('Have every player say the movie they most recently watched. Whoever
+watched the oldest one goes first.')}}
+{% endblock %}
