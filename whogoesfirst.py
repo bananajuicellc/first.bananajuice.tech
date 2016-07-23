@@ -3,6 +3,10 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
+"""Run Who Goes First webapp."""
+
+import argparse
+
 import flask
 from flask import Flask
 from flask import render_template
@@ -123,7 +127,7 @@ def inject_custom():
     }
 
 
-def main():
+def main(args):
     for cid in CARDS:
         card = CARDS[cid]
         translations = card['translations']
@@ -140,8 +144,18 @@ def main():
                 card_url + gtranslations['about'],
                 'about_' + cid + '_' + language,
                 get_about_card_handler(cid))
-    app.run(port=8080, debug=True)
+    app.run(host=args.host, port=args.port, debug=args.debug)
 
 
 if __name__ == '__main__':
-    main()
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument(
+            '--host', help='Hostname of the Flask app.', default='127.0.0.1')
+    parser.add_argument(
+            '--port', help='Port for the Flask app.', type=int, default=8080)
+    parser.add_argument(
+            '--debug',
+            help='Use debug mode for the Flask app.',
+            type=bool,
+            default=False)
+    main(parser.parse_args())
