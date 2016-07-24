@@ -18,7 +18,8 @@
   </a>
 {% else %}
   <div id="wgf-next-button">
-    <a href="/{{g.language}}/{{global_translations[g.language]['translations']['random-card']}}/">
+    <a id="wgf-next-button-link"
+        href="/{{g.language}}/{{global_translations[g.language]['translations']['random-card']}}/">
     <img id="wgf-next-button-img"
         src="/static/buttons/arrow_right.svg" alt="{{_('Get the next card.')}}">
     </a>
@@ -26,5 +27,11 @@
   <p><a href="{{ url_for('about_' + request.endpoint) }}">
   {{_('About this card.')}}
   </a>
+
+  <script>
+    var CURRENT_LANGUAGE = '{{g.language}}'
+  </script>
+  <script src="/static/js/wgf.js"></script>
+  <script src="/static/js/index.js"></script>
 {% endif %}
 {% endblock %}
