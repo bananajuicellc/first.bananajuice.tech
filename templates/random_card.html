@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{# This Source Code Form is subject to the terms of the Mozilla Public
+   License, v. 2.0. If a copy of the MPL was not distributed with this
+   file, You can obtain one at http://mozilla.org/MPL/2.0/. #}
+
+{% block card_title %}{{_('Choose a random card.')}}{% endblock %}
+
+{% block base_body %}
+<div id="wgf-card-content" class="wgf-card-content">
+
+<h1>{{_('Choose a random card.')}}</h1>
+
+<ul>
+{% for card in cards | sort %}
+  {% if g.language in cards[card] %}
+    {% set translated_card = cards[card][g.language] %}
+  {% else %}
+    {% set translated_card = cards[card]['en'] %}
+  {% endif %}
+
+  <li><a href="{{translated_card['url']}}">{{translated_card['name']}}</a></li>
+{% endfor %}
+</ul>
+
+<p>{{_('You probably reached this page because JavaScript was disabled. Enable
+JavaScript to make the "next card" arrow automatically go to a random card.')}}
+
+</div>
+{% endblock %}

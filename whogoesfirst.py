@@ -21,14 +21,16 @@ LANGUAGES = {
         'name': u'English',
         'translations': {
             'about': 'about',
-            'cards': 'cards'
+            'cards': 'cards',
+            'random-card': 'random-card'
         }
     },
     'fr': {
         'name': u'français',
         'translations': {
             'about': u'à-propos',
-            'cards': u'cartes'
+            'cards': u'cartes',
+            'random-card': 'carte-au-hasard'
         }
     }
 }
@@ -72,6 +74,14 @@ def about_index_card():
     return render_template('about_index.html')
 
 
+@app.route('/en/random-card/', endpoint='random_card_en')
+@app.route(
+    '/fr/{}/'.format(LANGUAGES['fr']['translations']['random-card']),
+    endpoint='random_card_fr')
+def random_card():
+    return render_template('random_card.html', cards=get_all_cards())
+
+
 def get_card_handler(cid):
     def handler():
         return render_template(cid.replace('-', '_') + '.html')
@@ -102,7 +112,7 @@ def get_locale():
 def get_translations(page):
     translations = {}
     languages = LANGUAGES
-    if page not in ('index', 'about_index'):
+    if page not in ('index', 'about_index', 'random_card'):
         cid = page
         if cid.startswith('about_'):
             cid = cid[6:]
@@ -123,21 +133,35 @@ def get_page(endpoint):
 def inject_custom():
     return {
         'translations': get_translations(get_page(flask.request.endpoint)),
+        'global_translations': LANGUAGES,
         'google_analytics_id': 'UA-71804102-1'
     }
 
 
-def main(args):
+def get_all_cards():
+    all_cards = {}
     for cid in CARDS:
         card = CARDS[cid]
         translations = card['translations']
+        all_cards[cid] = {}
         for language in translations:
-            translation = translations[language]
+            all_cards[cid][language] = {}
+            translated_name = translations[language]
+            all_cards[cid][language]['name'] = translated_name
             gtranslations = LANGUAGES[language]['translations']
-            card_url = u'/{}/{}/{}/'.format(
+            all_cards[cid][language]['url'] = u'/{}/{}/{}/'.format(
                 language,
                 gtranslations['cards'],
-                translation)
+                translated_name)
+    return all_cards
+
+
+def main(args):
+    all_cards = get_all_cards()
+    for cid, card in all_cards.items():
+        for language, translated_card in card.items():
+            gtranslations = LANGUAGES[language]['translations']
+            card_url = translated_card['url']
             app.add_url_rule(
                 card_url, cid + '_' + language, get_card_handler(cid))
             app.add_url_rule(
