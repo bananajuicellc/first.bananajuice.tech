@@ -1,6 +1,13 @@
 {% extends "card.html" %}
+{# This Source Code Form is subject to the terms of the Mozilla Public
+   License, v. 2.0. If a copy of the MPL was not distributed with this
+   file, You can obtain one at http://mozilla.org/MPL/2.0/. #}
+
 {% block card_title %}{{_('About Who Goes First?')}}{% endblock %}
 {% block card_body %}
+<img src="/static/cards/who_goes_first.png"
+  class="pixel-art wgf-card-image">
+
   <p>{{_('Have you played a board game but didn\'t like the recommended way to
   choose the first player? Is your gaming group bored with throwing dice
   to choose? Who Goes First is a new way to choose the first player.')}}

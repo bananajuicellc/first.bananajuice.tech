@@ -21,7 +21,9 @@ div.wgf-card {
   align-items: center;
   width: 100%;
 }
+
 div.wgf-card-content {
+  width: 100%;
   max-width: 35em;
 }
 
