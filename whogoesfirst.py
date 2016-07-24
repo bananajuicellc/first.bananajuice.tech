@@ -62,6 +62,11 @@ def home_page_redirect():
     return flask.redirect(flask.url_for('index_' + language))
 
 
+@app.route('/api/v1/cards/', endpoint='api_v1_cards')
+def handle_api_v1_cards():
+    return flask.jsonify(get_all_cards())
+
+
 @app.route('/en/', endpoint='index_en')
 @app.route('/fr/', endpoint='index_fr')
 def index_card():
@@ -131,6 +136,8 @@ def get_page(endpoint):
 
 @app.context_processor
 def inject_custom():
+    if flask.request.endpoint.startswith('api_'):
+        return {}
     return {
         'translations': get_translations(get_page(flask.request.endpoint)),
         'global_translations': LANGUAGES,
