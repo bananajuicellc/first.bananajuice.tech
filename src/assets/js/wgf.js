@@ -35,52 +35,103 @@ wgf.card = wgf.card || {};
     })
   }
 
-  wgf.listCards = function (rootPath) {
-    return get(rootPath + '/api/v1/cards/').then(
-      JSON.parse, function (error) {return error})
+  wgf.listCards = function (options) {
+    if (options['rootPath'] === undefined) {
+      throw new Error('rootPath to API must be defined')
+    }
+    if (options['preferredLanguage'] === undefined) {
+      throw new Error('preferredLanguage must be defined')
+    }
+    return get(options['rootPath'] + '/api/v1/cards/')
+      .then(JSON.parse)
+      .then(function (cards) {
+        // Choose the most appropriate card URLs for the deck.
+        var preferredLanguage = options['preferredLanguage']
+        deck = {
+          'preferredLanguage': preferredLanguage,
+          'cards': {}
+        }
+        for (var cid in cards) {
+          var card = cards[cid]
+          deck['cards'][cid] = {}
+          // All cards must have at least an English translation.
+          // TODO: Choose a better fallback language based on the browser
+          //       language preferences.
+          var cardLanguage = 'en'
+          if (preferredLanguage in card) {
+            cardLanguage = preferredLanguage
+          }
+          deck['cards'][cid] = card[cardLanguage]['url']
+        }
+        return deck
+      })
   }
 
-  wgf.getDeck = function (cards) {
-    var deck = {}
-    deck['topCard'] = 0
-    deck['cards'] = cards
+  wgf.getDeck = function (deck) {
+    // Deck starts at -1 because we display the title card first, which actually
+    // doesn't appear in the cards list.
+    deck['topCard'] = -1
     deck['deck'] = []
-    var cids = Object.keys(cards)
-    for (var i = 0; i < cids.length; i++) {
-      var cid = cids[i]
-      deck['deck'].push({'id': cid})
+    for (var cid in deck['cards']) {
+      deck['deck'].push(cid)
     }
-    shuffle(deck['deck'], deck['topCard'])
+
+    var deckJSON = localStorage.getItem('deck')
+    if (!!deckJSON) {
+      var loadedDeck = JSON.parse(deckJSON)
+      deck['topCard'] = loadedDeck['topCard']
+      deck['deck'] = []
+
+      var allCards = {}
+      for (var cid in deck['cards']) {
+        allCards[cid] = true
+      }
+
+      var i = 0
+      while (loadedDeck['deck'].length > 0) {
+        var cid = loadedDeck['deck'].splice(0, 1)[0]
+        if (cid in allCards) {
+          deck['deck'].push(cid)
+          delete allCards[cid]
+        } else {
+          // Card was deleted. Shift it out of the deck.
+          // If we are deleting a card that has already been shown (including)
+          // the current one being displayed, shift where we think the top card
+          // is so that we don't skip any that haven't been shown, yet.
+          if (i <= deck['topCard']) {
+            deck['topCard'] = deck['topCard'] - 1
+            i = i - 1
+          }
+        }
+        i = i + 1;
+      }
+      // These are the new cards that we missed.
+      for (var cid in allCards) {
+        deck['deck'].push(cid)
+      }
+    }
+    shuffle(deck['deck'], deck['topCard'] + 1)
     return deck
   }
 
-  wgf.appendDeckUrlsFn = function (language) {
-    return function (deck) {
-      deck['preferredLanguage'] = language
-      for (var i = 0; i < deck['deck'].length; i++) {
-        var card = deck['deck'][i]
-        var gCard = deck['cards'][card['id']]
-        if (language in gCard) {
-          card['url'] = gCard[language]['url']
-        } else {
-          card['url'] = gCard['en']['url']
-        }
-      }
-      return deck
-    }
-  }
-
   wgf.navigateNextCard = function (deck) {
-    // TODO: look at current language and pick appropriate URL.
-    var url = (
-      deck['deck'][deck['topCard']]['url'] +
-      '#!/?lang=' +
-      deck['preferredLanguage'])
     deck['topCard'] = deck['topCard'] + 1
+    var url = ''
     if (deck['topCard'] >= deck['deck'].length) {
-      deck['topCard'] = 0
+      deck['topCard'] = -1
       shuffle(deck['deck'])
+
+      // The title card page should be translated into all languages.
+      // TODO: Use relative URLs so that the app can be hosted from a directory.
+      url = '/' + deck['preferredLanguage'] + '/'
+    } else {
+      url = (
+        // TODO: Use relative URLs so this works in other directories.
+        deck['cards'][deck['deck'][deck['topCard']]] +
+        '#!/?lang=' +
+        deck['preferredLanguage'])
     }
+    localStorage.setItem('deck', JSON.stringify(deck))
     window.location = url
   }
 
@@ -91,92 +142,6 @@ wgf.card = wgf.card || {};
       wgf.navigateNextCard(deck)
     })
   }
-
-  /* Creates a new card deck.
-   *
-   * This returns a closure with the ability to render a new card or the
-   * current card.
-   */
-  wgf.card.Deck = function (deckId, opt_deck) {
-    opt_deck = opt_deck || {};
-    var cardKeys = opt_deck.cardKeys || wgf.card.cardKeys_();
-    var currentCard = opt_deck.currentCard || 0;
-
-    var currentHash = function() {
-      var cardId = cardKeys[currentCard];
-      return '#/cards/' + cardId;
-    };
-
-    var nextCard = function() {
-      currentCard = currentCard + 1;
-      if (currentCard >= cardKeys.length) {
-        wgf.card.resetCards_(cardKeys);
-        currentCard = 0;
-      }
-      return currentHash();
-    };
-
-    var save = function() {
-      var storage = {};
-      storage[deckId] = {
-        'cardKeys': cardKeys,
-        'currentCard': currentCard,
-      };
-      chrome.storage.sync.set(storage);
-    };
-
-    var my = {};
-    my.nextCard = nextCard;
-    my.save = save;
-    my.currentHash = currentHash;
-    return my;
-  };
-
-  wgf.card.loadDeck = function(deckId, callback) {
-    // Fallback to load whole deck to make testing in browser easier.
-    if (!chrome || !chrome.storage || !chrome.storage.sync) {
-        callback({});
-    }
-    chrome.storage.sync.get(deckId, function(items) {
-      // No deck is saved yet, we can load the default one.
-      if (!items[deckId]) {
-        callback({});
-        return;
-      }
-      var deck = items[deckId];
-
-      // Make a set of the card keys we support.
-      var supportedCards = {};
-      var supportedCardsArray = wgf.card.cardKeys_();
-      for (var i = 0; i < supportedCardsArray.length; i++) {
-        supportedCards[supportedCardsArray[i]] = true;
-      }
-
-      for (var i = 0; i < deck.cardKeys.length; i++) {
-        var key = deck.cardKeys[i];
-        if (!supportedCards[key]) {
-          // Remove any cards that aren't cards anymore.
-          deck.cardKeys.splice(i, i);
-          if (i <= deck.currentCard) {
-            deck.currentCard -= 1;
-          }
-          i -= 1;
-        } else {
-          // Keep track of the cards we do have, so we can add the new ones to
-          // the end.
-          delete supportedCards[key];
-        }
-      }
-
-      // Any remaining cards need to be added back.
-      for (var key in supportedCards) {
-        deck.cardKeys.push(key);
-      }
-      wgf.card._shuffle(deck.cardKeys, deck.currentCard + 1);
-
-      callback(deck); // deck.cardKeys, deck.currentCard;
-    });
-  };
 
   // Shuffle the array from opt_left to the end of the array.
   // http://stackoverflow.com/a/6274398
@@ -201,50 +166,6 @@ wgf.card = wgf.card || {};
 
     return array;
   }
-
-
-  wgf.card.resetCards_ = function(cardKeys) {
-    // The title card is special. We always want it to appear first in the deck.
-    var titleCard = cardKeys[0];
-    cardKeys.splice(0 /* index */, 1 /* count to remove */);
-    wgf.card._shuffle(cardKeys);
-    cardKeys.splice(0 /* index */, 0 /* count to remove */, titleCard);
-    return cardKeys;
-  };
-
-
-  wgf.card.viewCard = function (cardId) {
-    var cardContent = emptyNode(document.getElementById('wgf-card-content'));
-    wgf.card.CARDS_[cardId](cardContent);
-  };
-
-
-  wgf.card.renderCard = function (renderContent, cardId) {
-    return function (element) {
-      renderContent(element);
-
-      var cardText = document.createElement('div');
-      cardText.classList.add('wgf-card-text');
-      var p = document.createElement('p');
-      p.innerHTML = chrome.i18n.getMessage('card_prompt_' + cardId);
-      cardText.appendChild(p);
-      element.appendChild(cardText);
-    };
-  };
-
-
-  wgf.card.renderCardImage = function (cardId, opt_cardFilename) {
-    var cardFilename = opt_cardFilename || (cardId + '.png');
-    return wgf.card.renderCard(
-      function (element) {
-        var cardImage = new Image();
-        cardImage.src = 'assets/cards/' + cardFilename;
-        cardImage.classList.add('pixel-art');
-        cardImage.classList.add('wgf-card-image');
-        element.appendChild(cardImage);
-      },
-      cardId);
-  };
 
 
   wgf.card.renderCardDice20 = function (element) {
@@ -294,52 +215,6 @@ wgf.card = wgf.card || {};
     cardImage.addEventListener('touchleave', rollDiceEnd, false /* useCapture */);
 
     element.appendChild(cardImage);
-  };
-
-
-  wgf.card.CARDS_ = {
-    'award': wgf.card.renderCardImage('award', 'award.gif'),
-    'baking': wgf.card.renderCardImage('baking'),
-    'batteries': wgf.card.renderCardImage('batteries'),
-    'bee': wgf.card.renderCardImage('bee'),
-    'birthday': wgf.card.renderCardImage('birthday', 'birthday.gif'),
-    'building': wgf.card.renderCardImage('building'),
-    'buttons': wgf.card.renderCardImage('buttons', 'buttons.gif'),
-    'dice': wgf.card.renderCard(wgf.card.renderCardDice20, 'dice20'),
-    'drawing': wgf.card.renderCardImage('drawing'),
-    'flat_tire': wgf.card.renderCardImage('flat_tire'),
-    'foreign_language': wgf.card.renderCardImage('foreign_language'),
-    'hammock': wgf.card.renderCardImage('hammock'),
-    'junkmail': wgf.card.renderCardImage('junkmail'),
-    'light_bulb': wgf.card.renderCardImage('light_bulb'),
-    'litter_box': wgf.card.renderCardImage('litter_box'),
-    'oldest_movie': wgf.card.renderCardImage('oldest_movie', 'blacksmith.gif'),
-    'onion': wgf.card.renderCardImage('onion'),
-    'pizza': wgf.card.renderCardImage('pizza', 'pizza.gif'),
-    'post_office': wgf.card.renderCardImage('post_office'),
-    'postcard': wgf.card.renderCardImage('postcard'),
-    'survey': wgf.card.renderCardImage('survey'),
-    'train': wgf.card.renderCardImage('train'),
-    'trash': wgf.card.renderCardImage('trash'),
-    'tv': wgf.card.renderCardImage('tv'),
-    'walk_dog': wgf.card.renderCardImage('walk_dog'),
-    'went_to_movies': wgf.card.renderCardImage('went_to_movies', 'went_to_movies.jpg'),
-    'who_goes_first': wgf.card.renderCardImage('who_goes_first'),
-  };
-
-  wgf.card.cardKeys_ = function() {
-    var keys = Object.keys(wgf.card.CARDS_);
-    _.remove(keys, _.partial(_.eq, 'who_goes_first'));
-    keys.splice(
-      0 /* index */,
-      0 /* count to remove */,
-      'who_goes_first');
-    return wgf.card.resetCards_(keys);
-  };
-
-
-  wgf.card._randRange = function (endIndex) {
-    return Math.floor(Math.random() * endIndex);
   };
 
   // We export as a node module for automated testing.
