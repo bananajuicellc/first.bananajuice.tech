@@ -46,6 +46,7 @@ CARDS = {
     'batteries': {'translations': {'en': 'batteries'}},
     'birthday': {'translations': {'en': 'birthday'}},
     'building': {'translations': {'en': 'building'}},
+    'buttons': {'translations': {'en': 'buttons'}},
     'oldest-movie': {'translations': {'en': 'oldest-movie'}},
     'stung': {'translations': {'en': 'stung'}},
     'train': {'translations': {'en': 'train'}}
