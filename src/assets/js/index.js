@@ -15,9 +15,9 @@ document.addEventListener(
     // TODO: make path to root relative
     wgf.listCards({rootPath: '', preferredLanguage: CURRENT_LANGUAGE})
       .then(wgf.getDeck)
-      .then(
-        wgf.attachNextCard,
+      .then(wgf.attachNextCard)
+      .catch(
         function (error) {
-          console.error('Failed to load the deck.', error)
+          console.error('Failed to load the deck.\n', error, '\n', error.stack)
         })
   })
