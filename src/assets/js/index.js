@@ -12,11 +12,9 @@ if (location.hash) {
 document.addEventListener(
   'DOMContentLoaded',
   function () {
-    console.log('content loaded')
     // TODO: make path to root relative
-    wgf.listCards('' /* path to root */)
+    wgf.listCards({rootPath: '', preferredLanguage: CURRENT_LANGUAGE})
       .then(wgf.getDeck)
-      .then(wgf.appendDeckUrlsFn(CURRENT_LANGUAGE))
       .then(
         wgf.attachNextCard,
         function (error) {
