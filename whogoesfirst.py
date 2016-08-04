@@ -173,7 +173,7 @@ def main(args):
             app.add_url_rule(
                 card_url, cid + '_' + language, get_card_handler(cid))
             app.add_url_rule(
-                card_url + gtranslations['about'],
+                card_url + gtranslations['about'] + '/',
                 'about_' + cid + '_' + language,
                 get_about_card_handler(cid))
     app.run(host=args.host, port=args.port, debug=args.debug)
