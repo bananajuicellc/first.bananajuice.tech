@@ -1,0 +1,27 @@
+{% extends "base/card.html" %}
+{# This Source Code Form is subject to the terms of the Mozilla Public
+   License, v. 2.0. If a copy of the MPL was not distributed with this
+   file, You can obtain one at http://mozilla.org/MPL/2.0/. #}
+
+{% block card_title %}{{_('About the walk a dog card.')}}{% endblock %}
+
+{% block card_body %}
+<div itemscope itemtype="http://schema.org/ImageObject">
+  <meta itemprop="license"
+    content="https://creativecommons.org/licenses/by/4.0/">
+  <img itemprop="contentURL" src="/static/cards/walk_dog.png"
+    class="pixel-art wgf-card-image">
+</div>
+
+<p>{{_('This card was drawn by <a href="http://www.timswast.com"
+  rel="author">Tim Swast</a>.') | safe}}
+
+<p><a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+  <img alt="Creative Commons License" style="border-width:0"
+    src="https://i.creativecommons.org/l/by/4.0/80x15.png"></a><br>
+
+{{ _('This work is licensed under a
+<a rel="license" about="/static/cards/walk_dog.png"
+  href="https://creativecommons.org/licenses/by/4.0/">Creative
+Commons Attribution 4.0 International License</a>.') | safe }}
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends "base/card.html" %}
+{# This Source Code Form is subject to the terms of the Mozilla Public
+   License, v. 2.0. If a copy of the MPL was not distributed with this
+   file, You can obtain one at http://mozilla.org/MPL/2.0/. #}
+
+{% block card_title %}{{_('Pizza card.')}}{% endblock %}
+
+{% block card_body %}
+<img src="/static/cards/pizza.gif" class="pixel-art wgf-card-image">
+
+<p>{{_('The player who most recently ate pizza goes first.')}}
+{% endblock %}
