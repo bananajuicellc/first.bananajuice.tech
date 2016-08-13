@@ -48,6 +48,7 @@ CARDS = {
     'building': {'translations': {'en': 'building'}},
     'buttons': {'translations': {'en': 'buttons'}},
     'drawing': {'translations': {'en': 'drawing'}},
+    'd20': {'translations': {'en': 'd20', 'fr': 'd20'}},
     'flat-tire': {'translations': {'en': 'flat-tire'}},
     'foreign-language': {'translations': {'en': 'foreign-language'}},
     'hammock': {'translations': {'en': 'hammock'}},

@@ -1,0 +1,17 @@
+{% extends "base/card.html" %}
+{# This Source Code Form is subject to the terms of the Mozilla Public
+   License, v. 2.0. If a copy of the MPL was not distributed with this
+   file, You can obtain one at http://mozilla.org/MPL/2.0/. #}
+
+{% block card_title %}{{_('D20 card.')}}{% endblock %}
+
+{% block card_body %}
+<img src="/static/dice/d20_20.svg" id="wgf-d20" class="wgf-card-image">
+
+<p>{{_('This is a twenty-sided dice. Tap the dice to roll it. The player who
+rolls the largest number goes first.')}}
+{% endblock %}
+
+{% block card_scripts %}
+<script src="/static/js/d20.js"></script>
+{% endblock %}
