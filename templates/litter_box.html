@@ -1,0 +1,12 @@
+{% extends "base/card.html" %}
+{# This Source Code Form is subject to the terms of the Mozilla Public
+   License, v. 2.0. If a copy of the MPL was not distributed with this
+   file, You can obtain one at http://mozilla.org/MPL/2.0/. #}
+
+{% block card_title %}{{_('Litter box card.')}}{% endblock %}
+
+{% block card_body %}
+<img src="/static/cards/litter_box.png" class="pixel-art wgf-card-image">
+
+<p>{{_('The player who most recently cleaned a litter box goes first.')}}
+{% endblock %}

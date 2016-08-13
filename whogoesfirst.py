@@ -47,9 +47,25 @@ CARDS = {
     'birthday': {'translations': {'en': 'birthday'}},
     'building': {'translations': {'en': 'building'}},
     'buttons': {'translations': {'en': 'buttons'}},
+    'drawing': {'translations': {'en': 'drawing'}},
+    'flat-tire': {'translations': {'en': 'flat-tire'}},
+    'foreign-language': {'translations': {'en': 'foreign-language'}},
+    'hammock': {'translations': {'en': 'hammock'}},
+    'junk-mail': {'translations': {'en': 'junk-mail'}},
+    'light-bulb': {'translations': {'en': 'light-bulb'}},
+    'litter-box': {'translations': {'en': 'litter-box'}},
     'oldest-movie': {'translations': {'en': 'oldest-movie'}},
+    'onion': {'translations': {'en': 'onion'}},
+    'pizza': {'translations': {'en': 'pizza'}},
+    'post-office': {'translations': {'en': 'post-office'}},
+    'postcard': {'translations': {'en': 'postcard'}},
     'stung': {'translations': {'en': 'stung'}},
-    'train': {'translations': {'en': 'train'}}
+    'survey': {'translations': {'en': 'survey'}},
+    'train': {'translations': {'en': 'train'}},
+    'trash': {'translations': {'en': 'trash'}},
+    'tv': {'translations': {'en': 'television'}},
+    'walk-dog': {'translations': {'en': 'walk-a-dog'}},
+    'went-to-movies': {'translations': {'en': 'went-to-the-movies'}},
 }
 
 DEFAULT_LANGUAGE = 'en'

@@ -1,0 +1,14 @@
+{% extends "base/card.html" %}
+{# This Source Code Form is subject to the terms of the Mozilla Public
+   License, v. 2.0. If a copy of the MPL was not distributed with this
+   file, You can obtain one at http://mozilla.org/MPL/2.0/. #}
+
+{% block card_title %}{{_('About the went to the movies card.')}}{% endblock %}
+
+{% block card_body %}
+<img src="/static/cards/went_to_movies.jpg" class="wgf-card-image">
+
+<p>{{ _('<a href="http://www.loc.gov/pictures/resource/cph.3c26104/">Library of
+Congress</a> Blue Island, Illinois. The Senise family going to the movies.')
+| safe }}
+{% endblock %}
