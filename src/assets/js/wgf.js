@@ -167,56 +167,6 @@ wgf.card = wgf.card || {};
     return array;
   }
 
-
-  wgf.card.renderCardDice20 = function (element) {
-    var cardImage = new Image();
-    cardImage.classList.add('wgf-card-image');
-
-    // Roll the dice to get a new number.
-    var rollDice = function() {
-      var diceRoll = Math.floor(Math.random() * 20) + 1;
-      var diceRollSubpath;
-      if (diceRoll < 10) {
-        diceRollSubpath = '0' + diceRoll;
-      } else {
-        diceRollSubpath = '' + diceRoll;
-      }
-      cardImage.alt = '' + diceRoll;
-      cardImage.src = 'assets/dice/d20_' + diceRollSubpath + '.svg';
-    };
-    rollDice();
-
-    // Set up event handlers
-    var isRolling = false;
-    var rollDiceStart = function(evt) {
-      if (evt) {
-        evt.preventDefault();
-      }
-      cardImage.src = 'assets/dice/d20_blank.svg';
-      isRolling = true;
-    };
-    cardImage.addEventListener('mousedown', rollDiceStart, false /* useCapture */);
-    cardImage.addEventListener('touchstart', rollDiceStart, false /* useCapture */);
-
-    var rollDiceEnd = function(evt) {
-      if (!isRolling) {
-        return;
-      }
-      if (evt) {
-        evt.preventDefault();
-      }
-      rollDice();
-      isRolling = false;
-    };
-    cardImage.addEventListener('mouseup', rollDiceEnd, false /* useCapture */);
-    cardImage.addEventListener('mouseleave', rollDiceEnd, false /* useCapture */);
-    cardImage.addEventListener('touchcancel', rollDiceEnd, false /* useCapture */);
-    cardImage.addEventListener('touchend', rollDiceEnd, false /* useCapture */);
-    cardImage.addEventListener('touchleave', rollDiceEnd, false /* useCapture */);
-
-    element.appendChild(cardImage);
-  };
-
   // We export as a node module for automated testing.
   if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
     module.exports = wgf.card;
