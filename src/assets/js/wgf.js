@@ -42,7 +42,7 @@ wgf.card = wgf.card || {};
     if (options['preferredLanguage'] === undefined) {
       throw new Error('preferredLanguage must be defined')
     }
-    return get(options['rootPath'] + '/api/v1/cards/')
+    return get(options['rootPath'] + '/api/v1/cards.json')
       .then(JSON.parse)
       .then(function (cards) {
         // Choose the most appropriate card URLs for the deck.

@@ -3,7 +3,7 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-"""Run Who Goes First webapp."""
+"""Run Who Goes First web app."""
 
 import argparse
 
@@ -73,14 +73,11 @@ DEFAULT_LANGUAGE = 'en'
 
 
 @app.route('/')
-def home_page_redirect():
-    language = flask.request.accept_languages.best_match(
-            LANGUAGES.keys(),
-            default=DEFAULT_LANGUAGE)
-    return flask.redirect(flask.url_for('index_' + language))
+def redirect_home_page():
+    return render_template('redirect.html')
 
 
-@app.route('/api/v1/cards/', endpoint='api_v1_cards')
+@app.route('/api/v1/cards.json', endpoint='api_v1_cards')
 def handle_api_v1_cards():
     return flask.jsonify(get_all_cards())
 
@@ -154,7 +151,8 @@ def get_page(endpoint):
 
 @app.context_processor
 def inject_custom():
-    if flask.request.endpoint.startswith('api_'):
+    endpoint = flask.request.endpoint
+    if endpoint.startswith('api_') or endpoint.startswith('redirect_'):
         return {}
     return {
         'translations': get_translations(get_page(flask.request.endpoint)),
@@ -181,7 +179,7 @@ def get_all_cards():
     return all_cards
 
 
-def main(args):
+def populate_card_url_rules():
     all_cards = get_all_cards()
     for cid, card in all_cards.items():
         for language, translated_card in card.items():
@@ -193,7 +191,9 @@ def main(args):
                 card_url + gtranslations['about'] + '/',
                 'about_' + cid + '_' + language,
                 get_about_card_handler(cid))
-    app.run(host=args.host, port=args.port, debug=args.debug)
+
+
+populate_card_url_rules()
 
 
 if __name__ == '__main__':
@@ -207,4 +207,7 @@ if __name__ == '__main__':
             help='Use debug mode for the Flask app.',
             type=bool,
             default=False)
-    main(parser.parse_args())
+
+    args = parser.parse_args()
+
+    app.run(host=args.host, port=args.port, debug=args.debug)
