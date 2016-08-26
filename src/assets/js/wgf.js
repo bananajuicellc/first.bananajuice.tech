@@ -49,7 +49,8 @@ wgf.card = wgf.card || {};
         var preferredLanguage = options['preferredLanguage']
         deck = {
           'preferredLanguage': preferredLanguage,
-          'cards': {}
+          'cards': {},
+          'cardLanguages': {}
         }
         for (var cid in cards) {
           var card = cards[cid]
@@ -62,6 +63,7 @@ wgf.card = wgf.card || {};
             cardLanguage = preferredLanguage
           }
           deck['cards'][cid] = card[cardLanguage]['url']
+          deck['cardLanguages'][cid] = cardLanguage
         }
         return deck
       })
@@ -125,11 +127,13 @@ wgf.card = wgf.card || {};
       // TODO: Use relative URLs so that the app can be hosted from a directory.
       url = '/' + deck['preferredLanguage'] + '/'
     } else {
-      url = (
-        // TODO: Use relative URLs so this works in other directories.
-        deck['cards'][deck['deck'][deck['topCard']]] +
-        '#!/?lang=' +
-        deck['preferredLanguage'])
+      var currentCard = deck['deck'][deck['topCard']]
+      // TODO: Use relative URLs so this works in other directories.
+      url = deck['cards'][currentCard]
+
+      if (deck['cardLanguages'][currentCard] !== deck['preferredLanguage']) {
+        url = url + '#!/?lang=' + deck['preferredLanguage']
+      }
     }
     localStorage.setItem('deck', JSON.stringify(deck))
     window.location = url
