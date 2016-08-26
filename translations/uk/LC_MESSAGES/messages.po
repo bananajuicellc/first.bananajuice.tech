@@ -1,0 +1,456 @@
+# Ukrainian translations for PROJECT.
+# Copyright (C) 2016 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2016.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2016-08-25 20:05-0700\n"
+"PO-Revision-Date: 2016-08-25 20:56-0700\n"
+"Language: uk\n"
+"Language-Team: uk <LL@li.org>\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+"Last-Translator: \n"
+"X-Generator: Poedit 1.8.8\n"
+
+#: templates/about_award.html:6
+msgid "About the award card."
+msgstr "Про премію карти."
+
+#: templates/about_award.html:16 templates/about_baking.html:16 templates/about_batteries.html:16 templates/about_birthday.html:16 templates/about_building.html:16 templates/about_buttons.html:16 templates/about_drawing.html:16 templates/about_flat_tire.html:16 templates/about_foreign_language.html:16 templates/about_hammock.html:16
+#: templates/about_junk_mail.html:16 templates/about_light_bulb.html:16 templates/about_litter_box.html:16 templates/about_onion.html:16 templates/about_pizza.html:16 templates/about_post_office.html:16 templates/about_postcard.html:16 templates/about_stung.html:16 templates/about_survey.html:16 templates/about_train.html:16
+#: templates/about_trash.html:16 templates/about_tv.html:16 templates/about_walk_dog.html:16
+msgid ""
+"This card was drawn by <a href=\"http://www.timswast.com\"\n"
+"  rel=\"author\">Tim Swast</a>."
+msgstr "Ця карта була намальована <a href=\"http://www.timswast.com\" rel=\"author\">Tim Swast </a>."
+
+#: templates/about_award.html:23 templates/about_baking.html:23 templates/about_batteries.html:23 templates/about_birthday.html:23 templates/about_building.html:23 templates/about_buttons.html:23 templates/about_d20.html:20 templates/about_drawing.html:23 templates/about_flat_tire.html:23 templates/about_foreign_language.html:23
+#: templates/about_hammock.html:23 templates/about_junk_mail.html:23 templates/about_light_bulb.html:23 templates/about_litter_box.html:23 templates/about_onion.html:23 templates/about_pizza.html:23 templates/about_post_office.html:23 templates/about_postcard.html:23 templates/about_stung.html:23 templates/about_survey.html:23
+#: templates/about_train.html:23 templates/about_trash.html:23 templates/about_tv.html:23 templates/about_walk_dog.html:23
+msgid ""
+"This work is licensed under a <a rel=\"license\"\n"
+"href=\"https://creativecommons.org/licenses/by/4.0/\">Creative Commons Attribution\n"
+"4.0 International License</a>."
+msgstr "Ця робота ліцензується відповідно до <a rel=\"license\" href=\"https://creativecommons.org/licenses/by/4.0/\">Creative Commons Attribution 4.0 міжнародну ліцензію</a>."
+
+#: templates/about_baking.html:6
+msgid "About the baking card."
+msgstr "Про хлібопекарської карти."
+
+#: templates/about_batteries.html:6
+msgid "About the batteries card."
+msgstr "Про плату батарей."
+
+#: templates/about_birthday.html:6
+msgid "About the birthday card."
+msgstr "Про карту народження."
+
+#: templates/about_building.html:6
+msgid "About the building card."
+msgstr "Про будівельну карти."
+
+#: templates/about_buttons.html:6
+msgid "About the buttons card."
+msgstr "Про кнопках карти."
+
+#: templates/about_d20.html:6
+msgid "About the d20 card."
+msgstr "Про d20 карти."
+
+#: templates/about_d20.html:11
+msgid ""
+"The images were drawn in Inkscape by <a href=\"http://www.timswast.com\">Tim\n"
+"Swast</a>. They are loosely based on the <a\n"
+"href=\"http://www.dicecollector.com/MY_PAPER.HTM\">Dice Collector&#8217;s d20\n"
+"paper dice template</a>."
+msgstr "Зображення були залучені в Inkscape <a href=\"http://www.timswast.com\">Тім Swast</a>. Вони мотивами <a href=\"http://www.dicecollector.com/MY_PAPER.HTM\">кістки колектор d20 паперу кістки шаблон</a>."
+
+#: templates/about_drawing.html:6
+msgid "About the drawing card."
+msgstr "Про розіграш карти."
+
+#: templates/about_flat_tire.html:6
+msgid "About the flat tire card."
+msgstr "Про плоскою карти шини."
+
+#: templates/about_foreign_language.html:6
+msgid "About the foreign language card."
+msgstr "Про зовнішню карти мови."
+
+#: templates/about_hammock.html:6
+msgid "About the hammock card."
+msgstr "Про гамака карти."
+
+#: templates/about_index.html:6
+msgid "About Who Goes First?"
+msgstr "Про те, хто йде в першу чергу?"
+
+#: templates/about_index.html:11
+msgid ""
+"Have you played a board game but didn't like the recommended way to\n"
+"  choose the first player? Is your gaming group bored with throwing dice\n"
+"  to choose? Who Goes First is a new way to choose the first player."
+msgstr "Ви грали в настільну гру, але не подобається рекомендований спосіб вибрати перший гравець? Чи є ваш ігровий групи набридли кидати кістки вибрати? Хто йде в першу чергу це новий спосіб, щоб вибрати перший гравець."
+
+#: templates/about_index.html:15
+msgid ""
+"Open it and get a random card. It could be interactive or have your\n"
+"  friends tell the best story. Use it to pick the next player, or if you\n"
+"  don't like it: tap the arrow to get a new card."
+msgstr "Відкрийте його і отримати випадкову карту. Це може бути інтерактивним або мати свій друзі кажуть кращу історію. Використовуйте його, щоб вибрати наступного гравця, або якщо ви не подобається: натисніть на стрілку, щоб отримати нову карту."
+
+#: templates/about_index.html:20
+msgid ""
+"Subscribe to our <a href=\"http://tinyletter.com/whogoesfirst\">mailing\n"
+"  list</a> to be the first to find out about updates like new cards."
+msgstr "Підпишіться на нашу <a href=\"http://tinyletter.com/whogoesfirst\"> розсилки список </a>, щоб бути першим, щоб дізнатися про оновлення, як нові карти."
+
+#: templates/about_index.html:24
+msgid ""
+"Who Goes First is a project of\n"
+"  <a href=\"http://www.timswast.com\">Timothy</a> and\n"
+"  <a href=\"http://swast.net/alexandra/\">Alexandra Swast</a> and our\n"
+"  friends, born out of our love for board games."
+msgstr "Хто йде в першу чергу це проект <a href=\"http://www.timswast.com\"> Тімоті </a> і <a href=\"http://swast.net/alexandra/\"> Олександра Swast</a> і наш друзів, народилася з нашої любові до настільні ігри."
+
+#: templates/about_junk_mail.html:6
+msgid "About the junk mail card."
+msgstr "Про небажаної пошти карти."
+
+#: templates/about_light_bulb.html:6
+msgid "About the light bulb card."
+msgstr "Про легкої карти лампи."
+
+#: templates/about_litter_box.html:6
+msgid "About the litter box card."
+msgstr "Про ящик для сміття карти."
+
+#: templates/about_oldest_movie.html:6
+msgid "About the oldest movie card."
+msgstr "Про найстарішою картці фільму."
+
+#: templates/about_oldest_movie.html:22
+msgid ""
+"This work (<span property=\"dct:title\">Blacksmith Scene</span>, by\n"
+"<a href=\"https://en.wikipedia.org/wiki/Blacksmith_Scene\" rel=\"dct:creator\"><span\n"
+"  property=\"dct:title\">William K.L. Dickson under the employ of Thomas\n"
+"Edison</span></a>) is free of known copyright restrictions."
+msgstr ""
+"Ця робота (<span property=\"dct:title\"> Ковальський Сцена</span>, за допомогою <a href=\"https://uk.wikipedia.org/wiki/%%D0%%9A%%D0%%BE%%D0%%B2%%D0%%B0%%D0%%BB%%D1%%8C%%D1%%81%%D1%%8C%%D0%%BA%%D0%%B0_%%D1%%81%%D1%%86%%D0%%B5%%D0%%BD%%D0%%B0\" rel=\"dct:creator\"><span property=\"dct:title\">Вільям К. Л. Діксона під службі Томаса Edison</ "
+"span></a>) вільна від відомих обмежень авторського права."
+
+#: templates/about_onion.html:6
+msgid "About the onion card."
+msgstr "Про лушпиння карти."
+
+#: templates/about_pizza.html:6
+msgid "About the pizza card."
+msgstr "Про піци карти."
+
+#: templates/about_post_office.html:6
+msgid "About the post office card."
+msgstr "Про поштовому відділенні карти."
+
+#: templates/about_postcard.html:6
+msgid "About the postcard card."
+msgstr "Про листівки карти."
+
+#: templates/about_stung.html:6
+msgid "About the stung card."
+msgstr "Про ужалений карти."
+
+#: templates/about_survey.html:6
+msgid "About the survey card."
+msgstr "Про оглядової карти."
+
+#: templates/about_train.html:6
+msgid "About the train card."
+msgstr "Про поїзді карти."
+
+#: templates/about_trash.html:6
+msgid "About the trash card."
+msgstr "Про карту мотлоху."
+
+#: templates/about_tv.html:6
+msgid "About the television card."
+msgstr "Про телевізійну карти."
+
+#: templates/about_walk_dog.html:6
+msgid "About the walk a dog card."
+msgstr "Про прогулянці собака карти."
+
+#: templates/about_went_to_movies.html:6
+msgid "About the went to the movies card."
+msgstr "Про пішов на карту фільмів."
+
+#: templates/about_went_to_movies.html:11
+msgid ""
+"<a href=\"http://www.loc.gov/pictures/resource/cph.3c26104/\">Library of\n"
+"Congress</a> Blue Island, Illinois. The Senise family going to the movies."
+msgstr "<a href=\"http://www.loc.gov/pictures/resource/cph.3c26104/\">Бібліотека Конгресу</a> Острова синій, штат Іллінойс. Senise сім'ї, ходити в кіно."
+
+#: templates/award.html:6
+msgid "Award card."
+msgstr "Нагорода карти."
+
+#: templates/award.html:11
+msgid "The player who most recently won an award goes first."
+msgstr "Гравець, який зовсім недавно отримав премію йде в першу чергу."
+
+#: templates/baking.html:6
+msgid "Baking card."
+msgstr "Випічці карти."
+
+#: templates/baking.html:11
+msgid "The player who most recently baked something goes first."
+msgstr "Гравець, який зовсім недавно пекли щось йде в першу чергу."
+
+#: templates/batteries.html:6
+msgid "Batteries card."
+msgstr "Батареї карти."
+
+#: templates/batteries.html:11
+msgid ""
+"The player who most recently changed the batteries in something goes\n"
+"first."
+msgstr "Першим ходить гравець, який останнім змінив батареї в чем-то."
+
+#: templates/birthday.html:6
+msgid "Birthday card."
+msgstr "Вітальна листівка на день народження."
+
+#: templates/birthday.html:11
+msgid "The player whose birthday is nearest to today goes first."
+msgstr "Гравець, чий день народження найближче до сьогоднішнього дня йде в першу чергу."
+
+#: templates/building.html:6
+msgid "Building card."
+msgstr "Будівництво карти."
+
+#: templates/building.html:11
+msgid "The player who most recently built something goes first."
+msgstr "Гравець, який зовсім недавно побудували щось йде в першу чергу."
+
+#: templates/buttons.html:6
+msgid "Buttons card."
+msgstr "Кнопки карти."
+
+#: templates/buttons.html:11
+msgid ""
+"The player with the highest number of visible buttons on their garments\n"
+"goes first."
+msgstr "Гравець з найбільшою кількістю видимих кнопок на їх одязі йде в першу чергу."
+
+#: templates/d20.html:6
+msgid "D20 card."
+msgstr "D20 карти."
+
+#: templates/d20.html:11
+msgid ""
+"This is a twenty-sided dice. Tap the dice to roll it. The player who\n"
+"rolls the largest number goes first."
+msgstr "Це двадцять стороння кістки. Натисніть кістки, щоб згорнути його. Гравець, який котить найбільше число йде в першу чергу."
+
+#: templates/drawing.html:6
+msgid "Drawing card."
+msgstr "Складання карти."
+
+#: templates/drawing.html:11
+msgid "The player who most recently drew or painted something goes first."
+msgstr "Гравець, який зовсім недавно намалював або пофарбовані щось йде в першу чергу."
+
+#: templates/flat_tire.html:6
+msgid "Flat tire card."
+msgstr "Flat карта шини."
+
+#: templates/flat_tire.html:11
+msgid "The player who most recently had a flat tire goes first."
+msgstr "Гравець, який зовсім недавно був плоский шина йде в першу чергу."
+
+#: templates/foreign_language.html:6
+msgid "Foreign language card."
+msgstr "Іноземна мова карти."
+
+#: templates/foreign_language.html:11
+msgid ""
+"The player who most recently had a conversation in a foreign language\n"
+"goes first."
+msgstr ""
+"Гравець, який зовсім недавно була розмова іноземною мовою\n"
+"йде в першу чергу."
+
+#: templates/hammock.html:6
+msgid "Hammock card."
+msgstr "Гамак карти."
+
+#: templates/hammock.html:11
+msgid ""
+"The player who most recently slept or rested in a hammock goes\n"
+"first."
+msgstr "Гравець, який зовсім недавно спав або відпочивав в гамаку йде в першу чергу."
+
+#: templates/index.html:6
+msgid "Who Goes First?"
+msgstr "Хто йде в першу чергу?"
+
+#: templates/index.html:12
+msgid "Click the arrow to find out who goes first."
+msgstr "Натисніть на стрілку, щоб з'ясувати, хто йде першим."
+
+#: templates/junk_mail.html:6
+msgid "Junk mail card."
+msgstr "Небажана пошта карта."
+
+#: templates/junk_mail.html:11
+msgid "The player who received the most junk mail today goes first."
+msgstr "Гравець, який отримав найбільшу небажаної пошти сьогодні йде в першу чергу."
+
+#: templates/light_bulb.html:6
+msgid "Light bulb card."
+msgstr "Світло лампи карти."
+
+#: templates/light_bulb.html:11
+msgid "The player who most recently changed a light bulb goes first."
+msgstr "Гравець, який зовсім недавно змінив лампочку йде в першу чергу."
+
+#: templates/litter_box.html:6
+msgid "Litter box card."
+msgstr "Ящик для сміття карти."
+
+#: templates/litter_box.html:11
+msgid "The player who most recently cleaned a litter box goes first."
+msgstr "Гравець, який зовсім недавно чистив ящик для сміття йде в першу чергу."
+
+#: templates/oldest_movie.html:6
+msgid "Oldest movie card."
+msgstr "Старі картки фільму."
+
+#: templates/oldest_movie.html:11
+msgid ""
+"Have every player say the movie they most recently watched. Whoever\n"
+"watched the oldest one goes first."
+msgstr "У кожного гравця говорять фільм вони зовсім недавно спостерігав. Той, хто дивився найстаріший йде в першу чергу."
+
+#: templates/onion.html:6
+msgid "Onion card."
+msgstr "Лук карти."
+
+#: templates/onion.html:11
+msgid "The player who most recently sliced an onion goes first."
+msgstr "Гравець, який зовсім недавно нарізану цибулю йде в першу чергу."
+
+#: templates/pizza.html:6
+msgid "Pizza card."
+msgstr "Піца карти."
+
+#: templates/pizza.html:11
+msgid "The player who most recently ate pizza goes first."
+msgstr "Гравець, який зовсім недавно з'їв піцу йде в першу чергу."
+
+#: templates/post_office.html:6
+msgid "Post office card."
+msgstr "Пошта карти."
+
+#: templates/post_office.html:11
+msgid "The player who most recently went inside a post office goes first."
+msgstr "Гравець, який зовсім недавно вийшов в поштове відділення йде першим."
+
+#: templates/postcard.html:6
+msgid "Postcard card."
+msgstr "Листівка карти."
+
+#: templates/postcard.html:11
+msgid "The player who most recently sent or received a postcard goes first."
+msgstr "Гравець, який зовсім недавно послав або отримав листівку йде в першу чергу."
+
+#: templates/random_card.html:6 templates/random_card.html:11
+msgid "Choose a random card."
+msgstr "Виберіть випадкову карту."
+
+#: templates/random_card.html:25
+msgid ""
+"You probably reached this page because JavaScript was disabled. Enable\n"
+"JavaScript to make the \"next card\" arrow automatically go to a random card."
+msgstr "Ви, напевно, потрапили на цю сторінку, тому що JavaScript був відключений. Увімкніть JavaScript, щоб зробити \"наступна карта\" стрілка автоматично переходить на випадкову карту."
+
+#: templates/stung.html:6
+msgid "Stung card."
+msgstr "Уражена карти."
+
+#: templates/stung.html:11
+msgid "The player who was most recently stung by an insect goes first."
+msgstr "Гравець, який зовсім недавно був вжалила комаха йде в першу чергу."
+
+#: templates/survey.html:6
+msgid "Survey card."
+msgstr "Огляд карти."
+
+#: templates/survey.html:11
+msgid "The player who most recently answered a survey goes first."
+msgstr "Гравець, який зовсім недавно відповів на опитування йде в першу чергу."
+
+#: templates/train.html:6
+msgid "Train card."
+msgstr "Тренування карти."
+
+#: templates/train.html:11
+msgid ""
+"The player who most recently rode a train goes first. Alternatively,\n"
+"each player shares an experience they had relating to trains. The player with\n"
+"the most interesting story goes first."
+msgstr "Гравець, який зовсім недавно їхав поїзд йде в першу чергу. В якості альтернативи, кожен гравець розділяє досвід вони стосується поїздів. Гравець з найцікавішою історією йде в першу чергу."
+
+#: templates/trash.html:6
+msgid "Trash card."
+msgstr "Відро для карти."
+
+#: templates/trash.html:11
+msgid ""
+"The player who most recently took out the trash or recycling goes\n"
+"first."
+msgstr "Гравець, який зовсім недавно вийняв сміття або переробку йде в першу чергу."
+
+#: templates/tv.html:6
+msgid "Television card."
+msgstr "Телебачення карти."
+
+#: templates/tv.html:11
+msgid ""
+"The player who watched the most television today goes first. Streaming\n"
+"video on your laptop totally counts."
+msgstr "Гравець, який дивився телевізор сьогодні більшість йде в першу чергу. Потокове відео на вашому ноутбуці повністю розраховує."
+
+#: templates/walk_dog.html:6
+msgid "Walk a dog card."
+msgstr "Прогулянка з собакою карти."
+
+#: templates/walk_dog.html:11
+msgid "The player who most recently walked a dog goes first."
+msgstr "Гравець, який зовсім недавно ходив собака йде в першу чергу."
+
+#: templates/went_to_movies.html:6
+msgid "Went to the movies card."
+msgstr "Пішов на карту фільми."
+
+#: templates/went_to_movies.html:11
+msgid "The player who most recently went to the movies goes first."
+msgstr "Гравець, який зовсім недавно вийшов в кіно йде в першу чергу."
+
+#: templates/base/card.html:17
+msgid "Back to the card."
+msgstr "Назад до карти."
+
+#: templates/base/card.html:24
+msgid "Get the next card."
+msgstr "Отримати таку картку."
+
+#: templates/base/card.html:28
+msgid "About this card."
+msgstr "Про цю карту."
