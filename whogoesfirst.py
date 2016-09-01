@@ -227,6 +227,7 @@ def index_card():
 
 @app.route('/en/privacy/', endpoint='privacy_en')
 @app.route('/fr/privacy/', endpoint='privacy_fr')
+@app.route('/uk/privacy/', endpoint='privacy_uk')
 def handle_privacy():
     return render_template('privacy.html')
 
