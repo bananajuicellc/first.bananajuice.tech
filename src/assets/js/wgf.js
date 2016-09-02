@@ -35,6 +35,15 @@ wgf.card = wgf.card || {};
     })
   }
 
+  wgf.loadPreferredLanguage = function () {
+    var deckJSON = localStorage.getItem('deck')
+    if (!!deckJSON) {
+      var loadedDeck = JSON.parse(deckJSON)
+      return loadedDeck['preferredLanguage']
+    }
+    return 'en'
+  }
+
   wgf.listCards = function (options) {
     if (options['rootPath'] === undefined) {
       throw new Error('rootPath to API must be defined')
@@ -74,24 +83,29 @@ wgf.card = wgf.card || {};
     // doesn't appear in the cards list.
     deck['topCard'] = -1
     deck['deck'] = []
+
     for (var cid in deck['cards']) {
       deck['deck'].push(cid)
     }
 
     var deckJSON = localStorage.getItem('deck')
+
     if (!!deckJSON) {
       var loadedDeck = JSON.parse(deckJSON)
       deck['topCard'] = loadedDeck['topCard']
       deck['deck'] = []
 
       var allCards = {}
+
       for (var cid in deck['cards']) {
         allCards[cid] = true
       }
 
       var i = 0
+
       while (loadedDeck['deck'].length > 0) {
         var cid = loadedDeck['deck'].splice(0, 1)[0]
+
         if (cid in allCards) {
           deck['deck'].push(cid)
           delete allCards[cid]
@@ -107,27 +121,29 @@ wgf.card = wgf.card || {};
         }
         i = i + 1;
       }
+
       // These are the new cards that we missed.
       for (var cid in allCards) {
         deck['deck'].push(cid)
       }
     }
+
     shuffle(deck['deck'], deck['topCard'] + 1)
+
+    // Save the deck now that it has the preferredLanguage
+    // and all the new cards.
+    localStorage.setItem('deck', JSON.stringify(deck))
     return deck
   }
 
-  wgf.navigateNextCard = function (deck) {
-    deck['topCard'] = deck['topCard'] + 1
+  wgf.getTopCardURL = function (deck) {
+    var cardID = deck['topCard']
     var url = ''
-    if (deck['topCard'] >= deck['deck'].length) {
-      deck['topCard'] = -1
-      shuffle(deck['deck'])
 
-      // The title card page should be translated into all languages.
-      // TODO: Use relative URLs so that the app can be hosted from a directory.
+    if (cardID < 0) {
       url = '/' + deck['preferredLanguage'] + '/'
     } else {
-      var currentCard = deck['deck'][deck['topCard']]
+      var currentCard = deck['deck'][cardID]
       // TODO: Use relative URLs so this works in other directories.
       url = deck['cards'][currentCard]
 
@@ -135,8 +151,20 @@ wgf.card = wgf.card || {};
         url = url + '#!/?lang=' + deck['preferredLanguage']
       }
     }
+
+    return url
+  }
+
+  wgf.navigateNextCard = function (deck) {
+    deck['topCard'] = deck['topCard'] + 1
+
+    if (deck['topCard'] >= deck['deck'].length) {
+      deck['topCard'] = -1
+      shuffle(deck['deck'])
+    }
+
     localStorage.setItem('deck', JSON.stringify(deck))
-    window.location = url
+    window.location = wgf.getTopCardURL(deck)
   }
 
   wgf.attachNextCard = function (deck) {
