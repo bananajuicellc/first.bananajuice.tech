@@ -1,90 +1,23 @@
-# Who Goes First
+# Who Goes First [![Build Status](https://img.shields.io/travis/whogoesfirst/who-goes-first.svg)](https://travis-ci.org/whogoesfirst/who-goes-first) [![license: MPL v2.0](https://img.shields.io/badge/license-MPL%20v2.0-blue.svg)](https://www.mozilla.org/en-US/MPL/2.0/)
 
-A selection game to help gamers pick who goes first.
+![Who Goes First logo - pixel art style people standing in a
+line](static/cards/who_goes_first.png)
 
-## Installation
-
-1. Install the Chrome Web Apps [development
-   tools](https://github.com/MobileChromeApps/mobile-chrome-apps/blob/master/docs/Installation.md).
-1. Clone this repository.
-
-    ```
-    git clone https://github.com/bananajuicellc/who-goes-first.git
-    cd who-goes-first
-    ```
-
-1. Change to src and install dependencies.
-
-    ```
-    cd src
-    bower install
-    npm install
-    cd ..
-    ```
-
-1. Create a [new CCA
-   project](https://github.com/MobileChromeApps/mobile-chrome-apps/blob/master/docs/CreateProject.md).
-
-    ```
-    cca create build com.bananajuicesoftware.WhoGoesFirst "Who Goes First"
-    ```
-
-1. Build and run with
-   [CCA](https://github.com/MobileChromeApps/mobile-chrome-apps/blob/master/docs/Develop.md).
-
-    ```
-    make
-    cd build
-    cca run ios --emulator
-    ```
-
-## Test
-
-Tests are written with Mocha and Chai. They run in node.
-
-```
-cd src
-npm test
-```
-
-## Build
-
-For Chrome, run:
-
-```
-make
-```
-
-This copies the files needed for the Chrome app to `build/www`. You can add
-this directory as an "unpacked extension" in the
-[Chrome extensions settings page](chrome://extensions/).
-
-In the terminal, change to the `build` directory to build the mobile applications.
-
-For iOS:
-
-```
-cca build ios
-```
-
-For Android (debug):
-
-```
-cca build android --debug --webview=system --android-minSdkVersion=21
-```
-
-For Android (release):
-
-```
-cca build android --release --webview=system --android-minSdkVersion=21 
-```
+A selection game to help gamers pick who goes first. Play it at
+[whogoes1st.com](https://whogoes1st.com).
 
 
-## Flask / Web Version
+## Running a Development Version
 
-There is an incomplete web version, which is run under the Flask framework.
+Who Goes First is built using the [Flask framework](http://flask.pocoo.org/).
+Translation and localization is done using
+[Flask-Babel](https://pythonhosted.org/Flask-Babel/)
+Static site generation is done using
+[Frozen-Flask](http://pythonhosted.org/Frozen-Flask/).
 
-First set up a virtual environment.
+First set up a virtual environment. If there are spaces in the path to
+the directory where you checked out this code [choose a path without spaces for
+the venv directory](https://github.com/pypa/virtualenv/issues/53).
 
 ```
 sudo easy_install pip
@@ -105,6 +38,12 @@ Now you can run locally.
 python whogoesfirst.py
 ```
 
+To freeze as static files, run the freeze Python script.
+
+```
+python freeze.py
+```
+
 
 ## Contributing
 
@@ -115,4 +54,3 @@ See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 This Source Code Form is subject to the terms of the Mozilla Public License, v.
 2.0. See [LICENSE](LICENSE).
-
