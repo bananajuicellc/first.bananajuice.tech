@@ -7,47 +7,13 @@ A selection game to help gamers pick who goes first. Play it at
 [whogoes1st.com](https://whogoes1st.com).
 
 
-## Running a Development Version
-
-Who Goes First is built using the [Flask framework](http://flask.pocoo.org/).
-Translation and localization is done using
-[Flask-Babel](https://pythonhosted.org/Flask-Babel/)
-Static site generation is done using
-[Frozen-Flask](http://pythonhosted.org/Frozen-Flask/).
-
-First set up a virtual environment. If there are spaces in the path to
-the directory where you checked out this code [choose a path without spaces for
-the venv directory](https://github.com/pypa/virtualenv/issues/53).
-
-```
-sudo easy_install pip
-sudo pip install virtualenv
-virtualenv venv
-source venv/bin/activate
-```
-
-Next install the dependencies.
-
-```
-pip install -r requirements.txt
-```
-
-Now you can run locally.
-
-```
-python whogoesfirst.py
-```
-
-To freeze as static files, run the freeze Python script.
-
-```
-python freeze.py
-```
-
-
 ## Contributing
 
-See [CONTRIBUTING.md](CONTRIBUTING.md).
+Have an idea for a new card? Found a problem with Who Goes First? Please [file
+an issue](https://github.com/whogoesfirst/who-goes-first/issues/new).
+
+Want to help code or translate Who Goes First? See
+[CONTRIBUTING.md](CONTRIBUTING.md) for detailed instructions.
 
 
 ## Licensing
