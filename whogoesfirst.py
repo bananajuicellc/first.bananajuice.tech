@@ -6,6 +6,7 @@
 """Run Who Goes First web app."""
 
 import argparse
+import os.path
 
 import flask
 from flask import Flask
@@ -104,13 +105,15 @@ def random_card():
 
 def get_card_handler(cid):
     def handler():
-        return render_template(cid.replace('-', '_') + '.html')
+        return render_template(
+            os.path.join('cards', cid.replace('-', '_') + '.html'))
     return handler
 
 
 def get_about_card_handler(cid):
     def handler():
-        return render_template('about_' + cid.replace('-', '_') + '.html')
+        return render_template(
+            os.path.join('cards', 'about_' + cid.replace('-', '_') + '.html'))
     return handler
 
 
