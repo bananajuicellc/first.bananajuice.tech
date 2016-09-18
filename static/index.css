@@ -38,6 +38,10 @@ div.wgf-card-content p {
   width: 100%;
 }
 
+.wgf-footer {
+  padding-left: 1em;
+}
+
 /* Menu toggle
  * See: http://www.outofscope.com/css-only-menu-toggle-no-javascript-required/
  */

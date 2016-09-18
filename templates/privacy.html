@@ -1,0 +1,64 @@
+{% extends "base/base.html" %}
+{# This Source Code Form is subject to the terms of the Mozilla Public
+   License, v. 2.0. If a copy of the MPL was not distributed with this
+   file, You can obtain one at http://mozilla.org/MPL/2.0/. #}
+
+{% block card_title %}{{_('Privacy Policy')}}{% endblock %}
+
+{% block base_body %}
+<div id="wgf-card-content" class="wgf-card-content">
+
+<h1>{{_('Privacy Policy')}}</h1>
+
+<p>{{_('This Privacy Policy describes what information is made available to Who
+Goes First and how that information is used and retained, and provides
+information on:')}}
+
+<ul>
+  <li>{{ _('<a href="#information">Information we receive</a> (when
+you provide it, visit <a href="https://whogoes1st.com">whogoes1st.com</a>,
+receive email updates, or interact with Who Goes First on third-party
+sites)') | safe }}</li>
+  <li><a href="#how-used">
+    {{_('How this information is used')}}</a></li>
+  <li><a href="#sharing">{{_('Sharing of this information')}}</a></li>
+</ul>
+
+<p>{{_('Translated versions of this page are available, but the official policy
+is provided in English.')}}
+
+<h2 id="information">{{_('Information Received')}}</h2>
+
+<h3>{{_('Visits to whogoes1st.com')}}</h3>
+
+<p>{{ _('When you visit Who Goes First, some basic information is automatically
+received and stored. Who Goes First also uses web measurement and customization
+technologies (such as “cookies"). You can choose not to accept cookies from any
+website, including Who Goes First, by changing your browser settings.') }}
+
+<h3>Third-Party Sites</h3>
+
+<p>Who Goes First maintains official pages or accounts on third-party sites (For
+example,
+<a href="https://github.com/whogoesfirst/who-goes-first/blob/master/README.md">GitHub</a>).
+Your activity on those sites is governed by the third-party site’s security
+and privacy policies.
+
+<h2 id="how-used">{{_('How Information is Used')}}</h2>
+
+<p>{{ _('We may use data you provide and automatically generated data for
+analysis to assess, for example, what cards are most popular, technical design
+specifications, and system performance. This allows us to make improvements to
+Who Goes First.') }}
+
+<h2 id="sharing">{{_('Sharing of this Information')}}</h2>
+
+<p>{{_('Who Goes First uses Google Analytics to analyze anonymous data from
+cookies. You can prevent Google Analytics data collection using the <a
+href="https://tools.google.com/dlpage/gaoptout">Google Analytics Opt-out Browser
+Add-on</a> Please review <a
+href="https://www.google.com/policies/privacy/partners/">Google Analytics’
+privacy policy</a> for additional information.') | safe}}
+
+</div>
+{% endblock %}

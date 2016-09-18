@@ -89,16 +89,22 @@ def index_card():
     return render_template('index.html')
 
 
+@app.route('/en/privacy/', endpoint='privacy_en')
+@app.route('/fr/privacy/', endpoint='privacy_fr')
+def handle_privacy():
+    return render_template('privacy.html')
+
+
 @app.route('/en/about/', endpoint='about_index_en')
 @app.route(u'/fr/à-propos/', endpoint='about_index_fr')
 def about_index_card():
     return render_template('about_index.html')
 
 
-@app.route('/en/random-card/', endpoint='random_card_en')
+@app.route('/en/random-card/', endpoint='random_card_page_en')
 @app.route(
     '/fr/{}/'.format(LANGUAGES['fr']['translations']['random-card']),
-    endpoint='random_card_fr')
+    endpoint='random_card_page_fr')
 def random_card():
     return render_template('random_card.html', cards=get_all_cards())
 
@@ -135,8 +141,8 @@ def get_locale():
 def get_translations(page):
     translations = {}
     languages = LANGUAGES
-    if page not in ('index', 'about_index', 'random_card'):
-        cid = page
+    if page.endswith('_card'):
+        cid = page[:-5]  # Remove _card suffix
         if cid.startswith('about_'):
             cid = cid[6:]
         languages = CARDS[cid]['translations']
@@ -189,10 +195,10 @@ def populate_card_url_rules():
             gtranslations = LANGUAGES[language]['translations']
             card_url = translated_card['url']
             app.add_url_rule(
-                card_url, cid + '_' + language, get_card_handler(cid))
+                card_url, cid + '_card_' + language, get_card_handler(cid))
             app.add_url_rule(
                 card_url + gtranslations['about'] + '/',
-                'about_' + cid + '_' + language,
+                'about_' + cid + '_card_' + language,
                 get_about_card_handler(cid))
 
 
