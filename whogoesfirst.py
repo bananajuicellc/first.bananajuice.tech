@@ -29,45 +29,180 @@ LANGUAGES = {
     'fr': {
         'name': u'français',
         'translations': {
-            'about': u'à-propos',
+            'about': u'a-propos',
             'cards': u'cartes',
             'random-card': 'carte-au-hasard'
         }
-    }
+    },
+    'uk': {
+        'name': u'українська мова',
+        'translations': {
+            'about': 'about',
+            'cards': 'cards',
+            'random-card': 'random-card'
+        }
+    },
 }
 
 CARDS = {
     'award': {
         'translations': {
             'en': 'award',
-            'fr': 'prix'
+            'fr': 'prix',
+            'uk': 'award',
         }
     },
-    'baking': {'translations': {'en': 'baking'}},
-    'batteries': {'translations': {'en': 'batteries'}},
-    'birthday': {'translations': {'en': 'birthday'}},
-    'building': {'translations': {'en': 'building'}},
-    'buttons': {'translations': {'en': 'buttons'}},
-    'drawing': {'translations': {'en': 'drawing'}},
-    'd20': {'translations': {'en': 'd20', 'fr': 'd20'}},
-    'flat-tire': {'translations': {'en': 'flat-tire'}},
-    'foreign-language': {'translations': {'en': 'foreign-language'}},
-    'hammock': {'translations': {'en': 'hammock'}},
-    'junk-mail': {'translations': {'en': 'junk-mail'}},
-    'light-bulb': {'translations': {'en': 'light-bulb'}},
-    'litter-box': {'translations': {'en': 'litter-box'}},
-    'oldest-movie': {'translations': {'en': 'oldest-movie'}},
-    'onion': {'translations': {'en': 'onion'}},
-    'pizza': {'translations': {'en': 'pizza'}},
-    'post-office': {'translations': {'en': 'post-office'}},
-    'postcard': {'translations': {'en': 'postcard'}},
-    'stung': {'translations': {'en': 'stung'}},
-    'survey': {'translations': {'en': 'survey'}},
-    'train': {'translations': {'en': 'train'}},
-    'trash': {'translations': {'en': 'trash'}},
-    'tv': {'translations': {'en': 'television'}},
-    'walk-dog': {'translations': {'en': 'walk-a-dog'}},
-    'went-to-movies': {'translations': {'en': 'went-to-the-movies'}},
+    'baking': {
+        'translations': {
+            'en': 'baking',
+            'uk': 'baking'
+        }
+    },
+    'batteries': {
+        'translations': {
+            'en': 'batteries',
+            'uk': 'batteries'
+        }
+    },
+    'birthday': {
+        'translations': {
+            'en': 'birthday',
+            'uk': 'birthday'
+        }
+    },
+    'building': {
+        'translations': {
+            'en': 'building',
+            'uk': 'building'
+        }
+    },
+    'buttons': {
+        'translations': {
+            'en': 'buttons',
+            'uk': 'buttons'
+        }
+    },
+    'drawing': {
+        'translations': {
+            'en': 'drawing',
+            'uk': 'drawing'
+        }
+    },
+    'd20': {
+        'translations': {
+            'en': 'd20',
+            'fr': 'd20',
+            'uk': 'd20'
+        }
+    },
+    'flat-tire': {
+        'translations': {
+            'en': 'flat-tire',
+            'uk': 'flat-tire'
+        }
+    },
+    'foreign-language': {
+        'translations': {
+            'en': 'foreign-language',
+            'uk': 'foreign-language'
+        }
+    },
+    'hammock': {
+        'translations': {
+            'en': 'hammock',
+            'uk': 'hammock',
+        }
+    },
+    'junk-mail': {
+        'translations': {
+            'en': 'junk-mail',
+            'uk': 'junk-mail',
+        }
+    },
+    'light-bulb': {
+        'translations': {
+            'en': 'light-bulb',
+            'uk': 'light-bulb',
+        }
+    },
+    'litter-box': {
+        'translations': {
+            'en': 'litter-box',
+            'uk': 'litter-box',
+        }
+    },
+    'oldest-movie': {
+        'translations': {
+            'en': 'oldest-movie',
+            'uk': 'oldest-movie',
+        }
+    },
+    'onion': {
+        'translations': {
+            'en': 'onion',
+            'uk': 'onion',
+        }
+    },
+    'pizza': {
+        'translations': {
+            'en': 'pizza',
+            'uk': 'pizza'
+        }
+    },
+    'post-office': {
+        'translations': {
+            'en': 'post-office',
+            'uk': 'post-office'
+        }
+    },
+    'postcard': {
+        'translations': {
+            'en': 'postcard',
+            'uk': 'postcard',
+        }
+    },
+    'stung': {
+        'translations': {
+            'en': 'stung',
+            'uk': 'stung',
+        }
+    },
+    'survey': {
+        'translations': {
+            'en': 'survey',
+            'uk': 'survey',
+        }
+    },
+    'train': {
+        'translations': {
+            'en': 'train',
+            'uk': 'train',
+        }
+    },
+    'trash': {
+        'translations': {
+            'en': 'trash',
+            'uk': 'trash',
+        }
+    },
+    'tv': {
+        'translations': {
+            'en': 'television',
+            'uk': 'television',
+        }
+    },
+    'walk-dog': {
+        'translations': {
+            'en': 'walk-a-dog',
+            'uk': 'walk-a-dog',
+        }
+    },
+    'went-to-movies': {
+        'translations': {
+            'en': 'went-to-the-movies',
+            'uk': 'went-to-the-movies',
+        }
+    },
 }
 
 DEFAULT_LANGUAGE = 'en'
@@ -85,18 +220,21 @@ def handle_api_v1_cards():
 
 @app.route('/en/', endpoint='index_en')
 @app.route('/fr/', endpoint='index_fr')
+@app.route('/uk/', endpoint='index_uk')
 def index_card():
     return render_template('index.html')
 
 
 @app.route('/en/privacy/', endpoint='privacy_en')
 @app.route('/fr/privacy/', endpoint='privacy_fr')
+@app.route('/uk/privacy/', endpoint='privacy_uk')
 def handle_privacy():
     return render_template('privacy.html')
 
 
 @app.route('/en/about/', endpoint='about_index_en')
-@app.route(u'/fr/à-propos/', endpoint='about_index_fr')
+@app.route(u'/fr/a-propos/', endpoint='about_index_fr')
+@app.route('/uk/about/', endpoint='about_index_uk')
 def about_index_card():
     return render_template('about_index.html')
 
@@ -105,6 +243,9 @@ def about_index_card():
 @app.route(
     '/fr/{}/'.format(LANGUAGES['fr']['translations']['random-card']),
     endpoint='random_card_page_fr')
+@app.route(
+    '/uk/{}/'.format(LANGUAGES['uk']['translations']['random-card']),
+    endpoint='random_card_page_uk')
 def random_card():
     return render_template('random_card.html', cards=get_all_cards())
 
