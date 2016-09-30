@@ -3,7 +3,7 @@ colorlog==2.7.0
 flake8==3.0.4
 Flask==0.10.1
 Flask-Babel==0.10.0
-Frozen-Flask==0.12
+Frozen-Flask==0.13
 itsdangerous==0.24
 Jinja2==2.8
 MarkupSafe==0.23
