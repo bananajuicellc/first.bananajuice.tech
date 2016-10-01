@@ -10,6 +10,6 @@ install:
 - pip install --upgrade pip wheel virtualenv
 - pip install nox-automation codecov
 script:
-- nox --stop-on-first-error -s lint;
+- nox -s lint freeze;
 after_script:
 - codecov
