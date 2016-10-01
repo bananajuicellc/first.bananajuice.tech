@@ -10,7 +10,7 @@ Extract messages to pull messages out of Python files and templates for
 translation.
 
 ```
-pybabel extract -F babel.cfg -o messages.pot .
+pybabel extract -F babel.cfg --no-wrap -o messages.pot .
 ```
 
 Then update the language catalog so that all language files get the new

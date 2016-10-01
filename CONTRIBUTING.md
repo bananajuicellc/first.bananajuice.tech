@@ -66,7 +66,7 @@ python whogoesfirst.py
 To freeze as static files, run the freeze Python script.
 
 ```
-python freeze.py
+nox -s freeze
 ```
 
 

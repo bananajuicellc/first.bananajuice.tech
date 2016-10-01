@@ -12,6 +12,7 @@ from whogoesfirst import app
 freezer = flask_frozen.Freezer(app)
 
 app.config['FREEZER_DESTINATION'] = './public'
+app.config['FREEZER_REDIRECT_POLICY'] = 'error'
 
 if __name__ == '__main__':
     freezer.freeze()

@@ -7,18 +7,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2016-09-18 15:04-0700\n"
+"POT-Creation-Date: 2016-10-01 12:59-0700\n"
 "PO-Revision-Date: 2016-09-18 15:05-0700\n"
 "Last-Translator: \n"
 "Language: uk\n"
 "Language-Team: uk <LL@li.org>\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 "
-"&& (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.3.4\n"
-"X-Generator: Poedit 1.8.9\n"
 
 #: templates/about_index.html:6
 msgid "About Who Goes First?"
@@ -30,9 +29,10 @@ msgid ""
 "  choose the first player? Is your gaming group bored with throwing dice\n"
 "  to choose? Who Goes First is a new way to choose the first player."
 msgstr ""
-"Ви грали в настільну гру, але не подобається рекомендований спосіб вибрати "
-"перший гравець? Чи є ваш ігровий групи набридли кидати кістки вибрати? Хто йде "
-"в першу чергу це новий спосіб, щоб вибрати перший гравець."
+"Ви грали в настільну гру, але не подобається рекомендований спосіб "
+"вибрати перший гравець? Чи є ваш ігровий групи набридли кидати кістки "
+"вибрати? Хто йде в першу чергу це новий спосіб, щоб вибрати перший "
+"гравець."
 
 #: templates/about_index.html:15
 msgid ""
@@ -40,18 +40,19 @@ msgid ""
 "  friends tell the best story. Use it to pick the next player, or if you\n"
 "  don't like it: tap the arrow to get a new card."
 msgstr ""
-"Відкрийте його і отримати випадкову картку. Це може бути інтерактивним або мати "
-"свій друзі кажуть кращу історію. Використовуйте його, щоб вибрати наступного "
-"гравця, або якщо ви не подобається: натисніть на стрілку, щоб отримати нову "
-"картк."
+"Відкрийте його і отримати випадкову картку. Це може бути інтерактивним "
+"або мати свій друзі кажуть кращу історію. Використовуйте його, щоб "
+"вибрати наступного гравця, або якщо ви не подобається: натисніть на "
+"стрілку, щоб отримати нову картк."
 
 #: templates/about_index.html:20
 msgid ""
 "Subscribe to our <a href=\"http://tinyletter.com/whogoesfirst\">mailing\n"
 "  list</a> to be the first to find out about updates like new cards."
 msgstr ""
-"Підпишіться на нашу <a href=\"http://tinyletter.com/whogoesfirst\"> розсилки "
-"список </a>, щоб бути першим, щоб дізнатися про оновлення, як нові карти."
+"Підпишіться на нашу <a href=\"http://tinyletter.com/whogoesfirst\"> "
+"розсилки список </a>, щоб бути першим, щоб дізнатися про оновлення, як "
+"нові карти."
 
 #: templates/about_index.html:24
 msgid ""
@@ -60,9 +61,9 @@ msgid ""
 "  <a href=\"http://swast.net/alexandra/\">Alexandra Swast</a> and our\n"
 "  friends, born out of our love for board games."
 msgstr ""
-"Хто йде в першу чергу це проект <a href=\"http://www.timswast.com\"> Тімоті </"
-"a> і <a href=\"http://swast.net/alexandra/\"> Олександра Swast</a> і наш "
-"друзів, народилася з нашої любові до настільні ігри."
+"Хто йде в першу чергу це проект <a href=\"http://www.timswast.com\"> "
+"Тімоті </a> і <a href=\"http://swast.net/alexandra/\"> Олександра "
+"Swast</a> і наш друзів, народилася з нашої любові до настільні ігри."
 
 #: templates/index.html:6
 msgid "Who Goes First?"
@@ -82,20 +83,22 @@ msgid ""
 "Goes First and how that information is used and retained, and provides\n"
 "information on:"
 msgstr ""
-"Ця політика конфіденційності описує яка інформація стає доступним для хто йде "
-"першого, і як ця інформація використовується і зберіг і надає інформацію про:"
+"Ця політика конфіденційності описує яка інформація стає доступним для хто"
+" йде першого, і як ця інформація використовується і зберіг і надає "
+"інформацію про:"
 
 #: templates/privacy.html:18
 msgid ""
 "<a href=\"#information\">Information we receive</a> (when\n"
-"you provide it, visit <a href=\"https://whogoes1st.com\">whogoes1st.com</a>,\n"
+"you provide it, visit <a "
+"href=\"https://whogoes1st.com\">whogoes1st.com</a>,\n"
 "receive email updates, or interact with Who Goes First on third-party\n"
 "sites)"
 msgstr ""
-"<a href=\"#information\">Ми отримуємо інформацію</a> (коли ви забезпечити його, "
-"відвідайте <a href=\"https://whogoes1st.com\">whogoes1st.com</a>, отримання "
-"оновлень по електронній пошті або взаємодіяти з хто йде перший на сторонніх "
-"сайтах)"
+"<a href=\"#information\">Ми отримуємо інформацію</a> (коли ви забезпечити"
+" його, відвідайте <a href=\"https://whogoes1st.com\">whogoes1st.com</a>, "
+"отримання оновлень по електронній пошті або взаємодіяти з хто йде перший "
+"на сторонніх сайтах)"
 
 #: templates/privacy.html:23
 msgid "How this information is used"
@@ -110,8 +113,8 @@ msgid ""
 "Translated versions of this page are available, but the official policy\n"
 "is provided in English."
 msgstr ""
-"Перекладені версії цієї сторінки, доступні, але офіційну політику надаються "
-"англійською мовою."
+"Перекладені версії цієї сторінки, доступні, але офіційну політику "
+"надаються англійською мовою."
 
 #: templates/privacy.html:30
 msgid "Information Received"
@@ -126,14 +129,15 @@ msgid ""
 "When you visit Who Goes First, some basic information is automatically\n"
 "received and stored. Who Goes First also uses web measurement and "
 "customization\n"
-"technologies (such as “cookies\"). You can choose not to accept cookies from "
-"any\n"
+"technologies (such as “cookies\"). You can choose not to accept cookies "
+"from any\n"
 "website, including Who Goes First, by changing your browser settings."
 msgstr ""
-"При відвідуванні хто йде перше, деякі основні відомості автоматично отримав і "
-"зберігається. Хто першими ходять також використовує веб-вимірювання та "
-"настроювання технологій (наприклад, \"cookies\"). Ви можете не приймати куки "
-"від будь-якого сайту, у тому числі хто йде перший, змінивши настройки браузера."
+"При відвідуванні хто йде перше, деякі основні відомості автоматично "
+"отримав і зберігається. Хто першими ходять також використовує "
+"веб-вимірювання та настроювання технологій (наприклад, \"cookies\"). Ви "
+"можете не приймати куки від будь-якого сайту, у тому числі хто йде "
+"перший, змінивши настройки браузера."
 
 #: templates/privacy.html:47
 msgid "How Information is Used"
@@ -142,14 +146,16 @@ msgstr "Спосіб використання інформації"
 #: templates/privacy.html:49
 msgid ""
 "We may use data you provide and automatically generated data for\n"
-"analysis to assess, for example, what cards are most popular, technical design\n"
-"specifications, and system performance. This allows us to make improvements to\n"
+"analysis to assess, for example, what cards are most popular, technical "
+"design\n"
+"specifications, and system performance. This allows us to make "
+"improvements to\n"
 "Who Goes First."
 msgstr ""
-"Ми можемо використовувати надати та автоматично генеруються даних для аналізу "
-"для оцінки даних, наприклад, що картки є технічні характеристики найбільш "
-"популярних, технічні дизайн і продуктивність системи. Це дозволяє нам "
-"добиватися поліпшень на які йде перший."
+"Ми можемо використовувати надати та автоматично генеруються даних для "
+"аналізу для оцінки даних, наприклад, що картки є технічні характеристики "
+"найбільш популярних, технічні дизайн і продуктивність системи. Це "
+"дозволяє нам добиватися поліпшень на які йде перший."
 
 #: templates/privacy.html:54
 msgid "Sharing of this Information"
@@ -159,18 +165,20 @@ msgstr "Спільний доступ до цієї інформації"
 msgid ""
 "Who Goes First uses Google Analytics to analyze anonymous data from\n"
 "cookies. You can prevent Google Analytics data collection using the <a\n"
-"href=\"https://tools.google.com/dlpage/gaoptout\">Google Analytics Opt-out "
-"Browser\n"
+"href=\"https://tools.google.com/dlpage/gaoptout\">Google Analytics Opt-"
+"out Browser\n"
 "Add-on</a> Please review <a\n"
-"href=\"https://www.google.com/policies/privacy/partners/\">Google Analytics’\n"
+"href=\"https://www.google.com/policies/privacy/partners/\">Google "
+"Analytics’\n"
 "privacy policy</a> for additional information."
 msgstr ""
-"Хто йде вперше використовує Google Analytics аналізувати анонімні дані з куки. "
-"Ви можете запобігти збирання даних Google Analytics, за допомогою <a href="
-"\"https://tools.google.com/dlpage/gaoptout\">Google Analytics Opt-out браузер "
-"додаток</a> будь ласка огляд <a href=\"https://www.google.com/policies/privacy/"
-"partners/\">політику конфіденційності Google Analytics</a> для отримання "
-"додаткової інформації."
+"Хто йде вперше використовує Google Analytics аналізувати анонімні дані з "
+"куки. Ви можете запобігти збирання даних Google Analytics, за допомогою "
+"<a href=\"https://tools.google.com/dlpage/gaoptout\">Google Analytics "
+"Opt-out браузер додаток</a> будь ласка огляд <a "
+"href=\"https://www.google.com/policies/privacy/partners/\">політику "
+"конфіденційності Google Analytics</a> для отримання додаткової "
+"інформації."
 
 #: templates/random_card.html:6 templates/random_card.html:11
 msgid "Choose a random card."
@@ -179,11 +187,12 @@ msgstr "Виберіть випадкову картки."
 #: templates/random_card.html:25
 msgid ""
 "You probably reached this page because JavaScript was disabled. Enable\n"
-"JavaScript to make the \"next card\" arrow automatically go to a random card."
+"JavaScript to make the \"next card\" arrow automatically go to a random "
+"card."
 msgstr ""
-"Ви, напевно, потрапили на цю сторінку, тому що JavaScript був відключений. "
-"Увімкніть JavaScript, щоб зробити \"наступна картка\" стрілка автоматично "
-"переходить на випадкову картку."
+"Ви, напевно, потрапили на цю сторінку, тому що JavaScript був "
+"відключений. Увімкніть JavaScript, щоб зробити \"наступна картка\" "
+"стрілка автоматично переходить на випадкову картку."
 
 #: templates/base/base.html:37
 msgid "Privacy"
@@ -206,14 +215,18 @@ msgid "About the award card."
 msgstr "Про премію картки."
 
 #: templates/cards/about_award.html:16 templates/cards/about_baking.html:16
-#: templates/cards/about_batteries.html:16 templates/cards/about_birthday.html:16
+#: templates/cards/about_batteries.html:16
+#: templates/cards/about_birthday.html:16
 #: templates/cards/about_building.html:16 templates/cards/about_buttons.html:16
-#: templates/cards/about_drawing.html:16 templates/cards/about_flat_tire.html:16
+#: templates/cards/about_drawing.html:16
+#: templates/cards/about_flat_tire.html:16
 #: templates/cards/about_foreign_language.html:16
-#: templates/cards/about_hammock.html:16 templates/cards/about_junk_mail.html:16
+#: templates/cards/about_hammock.html:16
+#: templates/cards/about_junk_mail.html:16
 #: templates/cards/about_light_bulb.html:16
 #: templates/cards/about_litter_box.html:16 templates/cards/about_onion.html:16
-#: templates/cards/about_pizza.html:16 templates/cards/about_post_office.html:16
+#: templates/cards/about_pizza.html:16
+#: templates/cards/about_post_office.html:16
 #: templates/cards/about_postcard.html:16 templates/cards/about_stung.html:16
 #: templates/cards/about_survey.html:16 templates/cards/about_train.html:16
 #: templates/cards/about_trash.html:16 templates/cards/about_tv.html:16
@@ -222,19 +235,22 @@ msgid ""
 "This card was drawn by <a href=\"http://www.timswast.com\"\n"
 "  rel=\"author\">Tim Swast</a>."
 msgstr ""
-"Ця карта була намальована <a href=\"http://www.timswast.com\" rel=\"author"
-"\">Tim Swast </a>."
+"Ця карта була намальована <a href=\"http://www.timswast.com\" "
+"rel=\"author\">Tim Swast </a>."
 
 #: templates/cards/about_award.html:23 templates/cards/about_baking.html:23
-#: templates/cards/about_batteries.html:23 templates/cards/about_birthday.html:23
+#: templates/cards/about_batteries.html:23
+#: templates/cards/about_birthday.html:23
 #: templates/cards/about_building.html:23 templates/cards/about_buttons.html:23
 #: templates/cards/about_d20.html:20 templates/cards/about_drawing.html:23
 #: templates/cards/about_flat_tire.html:23
 #: templates/cards/about_foreign_language.html:23
-#: templates/cards/about_hammock.html:23 templates/cards/about_junk_mail.html:23
+#: templates/cards/about_hammock.html:23
+#: templates/cards/about_junk_mail.html:23
 #: templates/cards/about_light_bulb.html:23
 #: templates/cards/about_litter_box.html:23 templates/cards/about_onion.html:23
-#: templates/cards/about_pizza.html:23 templates/cards/about_post_office.html:23
+#: templates/cards/about_pizza.html:23
+#: templates/cards/about_post_office.html:23
 #: templates/cards/about_postcard.html:23 templates/cards/about_stung.html:23
 #: templates/cards/about_survey.html:23 templates/cards/about_train.html:23
 #: templates/cards/about_trash.html:23 templates/cards/about_tv.html:23
@@ -245,9 +261,9 @@ msgid ""
 "Attribution\n"
 "4.0 International License</a>."
 msgstr ""
-"Ця робота ліцензується відповідно до <a rel=\"license\" href=\"https://"
-"creativecommons.org/licenses/by/4.0/\">Creative Commons Attribution 4.0 "
-"міжнародну ліцензію</a>."
+"Ця робота ліцензується відповідно до <a rel=\"license\" "
+"href=\"https://creativecommons.org/licenses/by/4.0/\">Creative Commons "
+"Attribution 4.0 міжнародну ліцензію</a>."
 
 #: templates/cards/about_baking.html:6
 msgid "About the baking card."
@@ -275,14 +291,17 @@ msgstr "Про d20 картки."
 
 #: templates/cards/about_d20.html:11
 msgid ""
-"The images were drawn in Inkscape by <a href=\"http://www.timswast.com\">Tim\n"
+"The images were drawn in Inkscape by <a "
+"href=\"http://www.timswast.com\">Tim\n"
 "Swast</a>. They are loosely based on the <a\n"
-"href=\"http://www.dicecollector.com/MY_PAPER.HTM\">Dice Collector&#8217;s d20\n"
+"href=\"http://www.dicecollector.com/MY_PAPER.HTM\">Dice Collector&#8217;s"
+" d20\n"
 "paper dice template</a>."
 msgstr ""
-"Зображення були залучені в Inkscape <a href=\"http://www.timswast.com\">Тім "
-"Swast</a>. Вони мотивами <a href=\"http://www.dicecollector.com/MY_PAPER.HTM"
-"\">кістки колектор d20 паперу кістки шаблон</a>."
+"Зображення були залучені в Inkscape <a "
+"href=\"http://www.timswast.com\">Тім Swast</a>. Вони мотивами <a "
+"href=\"http://www.dicecollector.com/MY_PAPER.HTM\">кістки колектор d20 "
+"паперу кістки шаблон</a>."
 
 #: templates/cards/about_drawing.html:6
 msgid "About the drawing card."
@@ -319,16 +338,17 @@ msgstr "Про найстарішою фільму картки."
 #: templates/cards/about_oldest_movie.html:22
 msgid ""
 "This work (<span property=\"dct:title\">Blacksmith Scene</span>, by\n"
-"<a href=\"https://en.wikipedia.org/wiki/Blacksmith_Scene\" rel=\"dct:creator"
-"\"><span\n"
+"<a href=\"https://en.wikipedia.org/wiki/Blacksmith_Scene\" "
+"rel=\"dct:creator\"><span\n"
 "  property=\"dct:title\">William K.L. Dickson under the employ of Thomas\n"
 "Edison</span></a>) is free of known copyright restrictions."
 msgstr ""
-"Ця робота (<span property=\"dct:title\"> Ковальський Сцена</span>, за допомогою "
-"<a href=\"https://uk.wikipedia.org/wiki/%%D0%%9A%%D0%%BE%%D0%%B2%%D0%%B0%%D0%%BB"
-"%%D1%%8C%%D1%%81%%D1%%8C%%D0%%BA%%D0%%B0_%%D1%%81%%D1%%86%%D0%%B5%%D0%%BD%%D0%"
-"%B0\" rel=\"dct:creator\"><span property=\"dct:title\">Вільям К. Л. Діксона під "
-"службі Томаса Edison</ span></a>) вільна від відомих обмежень авторського права."
+"Ця робота (<span property=\"dct:title\"> Ковальський Сцена</span>, за "
+"допомогою <a "
+"href=\"https://uk.wikipedia.org/wiki/%%D0%%9A%%D0%%BE%%D0%%B2%%D0%%B0%%D0%%BB%%D1%%8C%%D1%%81%%D1%%8C%%D0%%BA%%D0%%B0_%%D1%%81%%D1%%86%%D0%%B5%%D0%%BD%%D0%%B0\""
+" rel=\"dct:creator\"><span property=\"dct:title\">Вільям К. Л. Діксона "
+"під службі Томаса Edison</ span></a>) вільна від відомих обмежень "
+"авторського права."
 
 #: templates/cards/about_onion.html:6
 msgid "About the onion card."
@@ -443,8 +463,8 @@ msgid ""
 "This is a twenty-sided dice. Tap the dice to roll it. The player who\n"
 "rolls the largest number goes first."
 msgstr ""
-"Це — двадцятистороння гральна кістка. Натисніть, щоб її кинути. Гравець, якому "
-"випаде найбільше число, йде першим."
+"Це — двадцятистороння гральна кістка. Натисніть, щоб її кинути. Гравець, "
+"якому випаде найбільше число, йде першим."
 
 #: templates/cards/drawing.html:6
 msgid "Drawing card."
@@ -573,11 +593,13 @@ msgstr "Тренування картки."
 #: templates/cards/train.html:11
 msgid ""
 "The player who most recently rode a train goes first. Alternatively,\n"
-"each player shares an experience they had relating to trains. The player with\n"
+"each player shares an experience they had relating to trains. The player "
+"with\n"
 "the most interesting story goes first."
 msgstr ""
-"Гравець, який останнім їхав у поїзді, йде першим. В якості альтернативи, кожен "
-"гравець описує свій досвід у поїзді. Гравець з найцікавішою історією йде першим."
+"Гравець, який останнім їхав у поїзді, йде першим. В якості альтернативи, "
+"кожен гравець описує свій досвід у поїзді. Гравець з найцікавішою "
+"історією йде першим."
 
 #: templates/cards/trash.html:6
 msgid "Trash card."
@@ -598,8 +620,8 @@ msgid ""
 "The player who watched the most television today goes first. Streaming\n"
 "video on your laptop totally counts."
 msgstr ""
-"Гравець, який сьогодні найдовше дивився телевізор, йде першим. Потокове відео "
-"на ноутбуці також рахується."
+"Гравець, який сьогодні найдовше дивився телевізор, йде першим. Потокове "
+"відео на ноутбуці також рахується."
 
 #: templates/cards/walk_dog.html:6
 msgid "Walk a dog card."
@@ -616,3 +638,4 @@ msgstr "Пішов на фільми картки."
 #: templates/cards/went_to_movies.html:11
 msgid "The player who most recently went to the movies goes first."
 msgstr "Гравець, який останнім був у кіно, йде першим."
+
