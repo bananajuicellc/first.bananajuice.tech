@@ -34,12 +34,15 @@
 </div>
 
 <div class="wgf-footer">
-  <a href="/{{g.language}}/privacy/">{{_('Privacy')}}</a>
-  <!--
-    TODO: Add links to help translate and contribute to this open-source
-        project.
-        See: https://github.com/bananajuicellc/who-goes-first/issues/22
-  -->
+  {{_('Who Goes First is free and open source. It\'s not free to run, though.
+  Consider <a href="/en/contribute/">contributing</a> to the project.' | safe)}}
+
+  <p>© Who Goes First
+  <a href="https://github.com/whogoesfirst/who-goes-first/commit/0579f2821e8c1e4496782170b91a1cfcb9e883d8">2015</a>-2016
+  | <a href="/{{g.language}}/">{{_('Home')}}</a>
+  | <a href="/{{g.language}}/privacy/">{{_('Privacy')}}</a>
+  | <a href="/{{g.language}}/contribute/">{{_('Contribute')}}</a>
+  | <a href="/{{g.language}}/help/">{{_('Help')}}</a>
 </div>
 
 <script>

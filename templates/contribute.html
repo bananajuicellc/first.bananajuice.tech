@@ -1,0 +1,28 @@
+{% extends "base/base.html" %}
+{# This Source Code Form is subject to the terms of the Mozilla Public
+   License, v. 2.0. If a copy of the MPL was not distributed with this
+   file, You can obtain one at http://mozilla.org/MPL/2.0/. #}
+
+{% block card_title %}{{_('Contribute')}}{% endblock %}
+
+{% block base_body %}
+<div id="wgf-card-content" class="wgf-card-content">
+
+<h1>{{_('Contributing to Who Goes First')}}</h1>
+
+<p>{{_('Here are some ways you can help:')}}
+
+<ul>
+  <li><a href="https://gratipay.com/Who-Goes-First/">{{_('Donate money to help
+    pay for development and hosting.')}}</a></li>
+  <li><a href="https://github.com/whogoesfirst/who-goes-first/blob/master/docs/ADDING_CARDS.md">
+    {{_('Submit an idea for a new card.')}}</a></li>
+  <li><a href="https://github.com/whogoesfirst/who-goes-first/issues/new">
+    {{_('Report a problem.')}}</a></li>
+  <li><a href="https://github.com/whogoesfirst/who-goes-first/blob/master/docs/TRANSLATING.md">
+    {{_('Translate Who Goes First to your language.')}}</a></li>
+  <li><a href="https://github.com/whogoesfirst/who-goes-first/blob/master/CONTRIBUTING.md">
+    {{_('Code a new feature or bug fix.')}}</a></li>
+</ul>
+</div>
+{% endblock %}
