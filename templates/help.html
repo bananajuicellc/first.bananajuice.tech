@@ -1,0 +1,22 @@
+{% extends "base/base.html" %}
+{# This Source Code Form is subject to the terms of the Mozilla Public
+   License, v. 2.0. If a copy of the MPL was not distributed with this
+   file, You can obtain one at http://mozilla.org/MPL/2.0/. #}
+
+{% block card_title %}{{_('Help')}}{% endblock %}
+
+{% block base_body %}
+<div id="wgf-card-content" class="wgf-card-content">
+
+<h1>{{_('Help')}}</h1>
+
+<p>{{_('Having trouble with Who Goes First?')}}
+
+<ul>
+  <li><a href="https://github.com/whogoesfirst/who-goes-first/issues/new">
+    {{_('Report a problem on the public issue tracker.')}}</a></li>
+  <li><a href="mailto:support@whogoes1st.com">
+    {{_('Contact us privately via email.')}}</a></li>
+</ul>
+</div>
+{% endblock %}

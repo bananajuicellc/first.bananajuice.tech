@@ -20,6 +20,7 @@ div.wgf-card {
   flex-flow: column;
   align-items: center;
   width: 100%;
+  min-height: 80%;
 }
 
 div.wgf-card-content {

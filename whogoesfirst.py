@@ -225,11 +225,25 @@ def index_card():
     return render_template('index.html')
 
 
+@app.route('/en/contribute/', endpoint='contribute_en')
+@app.route('/fr/contribute/', endpoint='contribute_fr')
+@app.route('/uk/contribute/', endpoint='contribute_uk')
+def handle_contribute():
+    return render_template('contribute.html')
+
+
 @app.route('/en/privacy/', endpoint='privacy_en')
 @app.route('/fr/privacy/', endpoint='privacy_fr')
 @app.route('/uk/privacy/', endpoint='privacy_uk')
 def handle_privacy():
     return render_template('privacy.html')
+
+
+@app.route('/en/help/', endpoint='help_en')
+@app.route('/fr/help/', endpoint='help_fr')
+@app.route('/uk/help/', endpoint='help_uk')
+def handle_help():
+    return render_template('help.html')
 
 
 @app.route('/en/about/', endpoint='about_index_en')

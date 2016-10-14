@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2016-10-01 12:59-0700\n"
+"POT-Creation-Date: 2016-10-13 19:42-0700\n"
 "PO-Revision-Date: 2016-08-13 16:55-0700\n"
 "Last-Translator: \n"
 "Language: fr\n"
@@ -64,6 +64,56 @@ msgstr ""
 "href=\"http://www.timswast.com\">Timothy</a> et <a "
 "href=\"http://swast.net/alexandra/\">Alexandra Swast</a> et nos amis, "
 "nées de notre amour pour les jeux de société."
+
+#: templates/base/base.html:44 templates/contribute.html:6
+msgid "Contribute"
+msgstr ""
+
+#: templates/contribute.html:11
+msgid "Contributing to Who Goes First"
+msgstr ""
+
+#: templates/contribute.html:13
+msgid "Here are some ways you can help:"
+msgstr ""
+
+#: templates/contribute.html:16
+msgid ""
+"Donate money to help\n"
+"    pay for development and hosting."
+msgstr ""
+
+#: templates/contribute.html:19
+msgid "Submit an idea for a new card."
+msgstr ""
+
+#: templates/contribute.html:21
+msgid "Report a problem."
+msgstr ""
+
+#: templates/contribute.html:23
+msgid "Translate Who Goes First to your language."
+msgstr ""
+
+#: templates/contribute.html:25
+msgid "Code a new feature or bug fix."
+msgstr ""
+
+#: templates/base/base.html:45 templates/help.html:6 templates/help.html:11
+msgid "Help"
+msgstr ""
+
+#: templates/help.html:13
+msgid "Having trouble with Who Goes First?"
+msgstr ""
+
+#: templates/help.html:17
+msgid "Report a problem on the public issue tracker."
+msgstr ""
+
+#: templates/help.html:19
+msgid "Contact us privately via email."
+msgstr ""
 
 #: templates/index.html:6
 msgid "Who Goes First?"
@@ -170,7 +220,11 @@ msgstr ""
 "JavaScript pour rendre le \"carte suivante\" flèche aller automatiquement"
 " à un aléatoirecarte."
 
-#: templates/base/base.html:37
+#: templates/base/base.html:42
+msgid "Home"
+msgstr ""
+
+#: templates/base/base.html:43
 msgid "Privacy"
 msgstr ""
 
