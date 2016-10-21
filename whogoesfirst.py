@@ -10,8 +10,7 @@ import os.path
 
 import flask
 from flask import Flask
-from flask import render_template
-from flask.ext.babel import Babel
+from flask_babel import Babel
 
 app = Flask(__name__)
 babel = Babel(app)
@@ -210,7 +209,7 @@ DEFAULT_LANGUAGE = 'en'
 
 @app.route('/')
 def redirect_home_page():
-    return render_template('redirect.html')
+    return flask.render_template('redirect_top_card.html')
 
 
 @app.route('/api/v1/cards.json', endpoint='api_v1_cards')
@@ -222,35 +221,47 @@ def handle_api_v1_cards():
 @app.route('/fr/', endpoint='index_fr')
 @app.route('/uk/', endpoint='index_uk')
 def index_card():
-    return render_template('index.html')
+    return flask.render_template('index.html')
 
 
 @app.route('/en/contribute/', endpoint='contribute_en')
 @app.route('/fr/contribute/', endpoint='contribute_fr')
 @app.route('/uk/contribute/', endpoint='contribute_uk')
 def handle_contribute():
-    return render_template('contribute.html')
+    return flask.render_template('contribute.html')
 
 
 @app.route('/en/privacy/', endpoint='privacy_en')
 @app.route('/fr/privacy/', endpoint='privacy_fr')
 @app.route('/uk/privacy/', endpoint='privacy_uk')
 def handle_privacy():
-    return render_template('privacy.html')
+    return flask.render_template('privacy.html')
 
 
 @app.route('/en/help/', endpoint='help_en')
 @app.route('/fr/help/', endpoint='help_fr')
 @app.route('/uk/help/', endpoint='help_uk')
 def handle_help():
-    return render_template('help.html')
+    return flask.render_template('help.html')
+
+
+@app.route(u'/fr/about/', endpoint='redirect_about_index_fr')
+def redirect_about_index_card_fr():
+    return flask.render_template(
+        'redirect.html', redirect_target='/fr/a-propos/')
 
 
 @app.route('/en/about/', endpoint='about_index_en')
 @app.route(u'/fr/a-propos/', endpoint='about_index_fr')
 @app.route('/uk/about/', endpoint='about_index_uk')
 def about_index_card():
-    return render_template('about_index.html')
+    return flask.render_template('about_index.html')
+
+
+@app.route(u'/fr/random-card/')
+def redirect_random_card_fr():
+    target = '/fr/{}/'.format(LANGUAGES['fr']['translations']['random-card'])
+    return flask.render_template('redirect.html', redirect_target=target)
 
 
 @app.route('/en/random-card/', endpoint='random_card_page_en')
@@ -261,19 +272,19 @@ def about_index_card():
     '/uk/{}/'.format(LANGUAGES['uk']['translations']['random-card']),
     endpoint='random_card_page_uk')
 def random_card():
-    return render_template('random_card.html', cards=get_all_cards())
+    return flask.render_template('random_card.html', cards=get_all_cards())
 
 
 def get_card_handler(cid):
     def handler():
-        return render_template(
+        return flask.render_template(
             os.path.join('cards', cid.replace('-', '_') + '.html'))
     return handler
 
 
 def get_about_card_handler(cid):
     def handler():
-        return render_template(
+        return flask.render_template(
             os.path.join('cards', 'about_' + cid.replace('-', '_') + '.html'))
     return handler
 
