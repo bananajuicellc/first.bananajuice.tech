@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2016-10-13 19:42-0700\n"
-"PO-Revision-Date: 2016-09-18 15:05-0700\n"
+"POT-Creation-Date: 2016-11-17 18:41-0800\n"
+"PO-Revision-Date: 2016-10-27 19:01-0700\n"
 "Last-Translator: \n"
 "Language: uk\n"
 "Language-Team: uk <LL@li.org>\n"
@@ -18,6 +18,118 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.3.4\n"
+
+#: whogoesfirst.py:186 whogoesfirst.py:199
+msgid "cards/"
+msgstr ""
+
+#: whogoesfirst.py:217
+msgid "award/"
+msgstr ""
+
+#: whogoesfirst.py:218
+msgid "baking/"
+msgstr ""
+
+#: whogoesfirst.py:219
+msgid "batteries/"
+msgstr ""
+
+#: whogoesfirst.py:220
+msgid "birthday/"
+msgstr ""
+
+#: whogoesfirst.py:221
+msgid "building/"
+msgstr ""
+
+#: whogoesfirst.py:222
+msgid "buttons/"
+msgstr ""
+
+#: whogoesfirst.py:223
+msgid "drawing/"
+msgstr ""
+
+#: whogoesfirst.py:224
+msgid "d20/"
+msgstr ""
+
+#: whogoesfirst.py:225
+msgid "flat-tire/"
+msgstr ""
+
+#: whogoesfirst.py:227
+msgid "foreign-language/"
+msgstr ""
+
+#: whogoesfirst.py:228
+msgid "hammock/"
+msgstr ""
+
+#: whogoesfirst.py:229
+msgid "junk-mail/"
+msgstr ""
+
+#: whogoesfirst.py:230
+msgid "light-bulb/"
+msgstr ""
+
+#: whogoesfirst.py:231
+msgid "litter-box/"
+msgstr ""
+
+#: whogoesfirst.py:232
+msgid "oldest-movie/"
+msgstr ""
+
+#: whogoesfirst.py:233
+msgid "onion/"
+msgstr ""
+
+#: whogoesfirst.py:234
+msgid "pizza/"
+msgstr ""
+
+#: whogoesfirst.py:235
+msgid "post-office/"
+msgstr ""
+
+#: whogoesfirst.py:236
+msgid "postcard/"
+msgstr ""
+
+#: whogoesfirst.py:237
+msgid "stung/"
+msgstr ""
+
+#: whogoesfirst.py:238
+msgid "survey/"
+msgstr ""
+
+#: whogoesfirst.py:239
+msgid "train/"
+msgstr ""
+
+#: whogoesfirst.py:240
+msgid "trash/"
+msgstr ""
+
+#: whogoesfirst.py:241
+msgid "television/"
+msgstr ""
+
+#: whogoesfirst.py:242
+msgid "walk-a-dog/"
+msgstr ""
+
+#: whogoesfirst.py:244
+msgid "went-to-the-movies/"
+msgstr ""
+
+#: whogoesfirst.py:257 whogoesfirst.py:274
+msgid "about/"
+msgstr ""
 
 #: templates/about_index.html:6
 msgid "About Who Goes First?"
@@ -65,7 +177,7 @@ msgstr ""
 "Тімоті </a> і <a href=\"http://swast.net/alexandra/\"> Олександра "
 "Swast</a> і наш друзів, народилася з нашої любові до настільні ігри."
 
-#: templates/base/base.html:44 templates/contribute.html:6
+#: templates/base/base.html:47 templates/contribute.html:6
 msgid "Contribute"
 msgstr ""
 
@@ -99,7 +211,7 @@ msgstr ""
 msgid "Code a new feature or bug fix."
 msgstr ""
 
-#: templates/base/base.html:45 templates/help.html:6 templates/help.html:11
+#: templates/base/base.html:48 templates/help.html:6 templates/help.html:11
 msgid "Help"
 msgstr ""
 
@@ -244,11 +356,11 @@ msgstr ""
 "відключений. Увімкніть JavaScript, щоб зробити \"наступна картка\" "
 "стрілка автоматично переходить на випадкову картку."
 
-#: templates/base/base.html:42
+#: templates/base/base.html:45
 msgid "Home"
 msgstr ""
 
-#: templates/base/base.html:43
+#: templates/base/base.html:46
 msgid "Privacy"
 msgstr "Приватність"
 
@@ -692,4 +804,70 @@ msgstr "Пішов на фільми картки."
 #: templates/cards/went_to_movies.html:11
 msgid "The player who most recently went to the movies goes first."
 msgstr "Гравець, який останнім був у кіно, йде першим."
+
+#~ msgid "building"
+#~ msgstr ""
+
+#~ msgid "buttons"
+#~ msgstr ""
+
+#~ msgid "drawing"
+#~ msgstr ""
+
+#~ msgid "d20"
+#~ msgstr ""
+
+#~ msgid "flat-tire"
+#~ msgstr ""
+
+#~ msgid "foreign-language"
+#~ msgstr ""
+
+#~ msgid "hammock"
+#~ msgstr ""
+
+#~ msgid "junk-mail"
+#~ msgstr ""
+
+#~ msgid "light-bulb"
+#~ msgstr ""
+
+#~ msgid "litter-box"
+#~ msgstr ""
+
+#~ msgid "oldest-movie"
+#~ msgstr ""
+
+#~ msgid "onion"
+#~ msgstr ""
+
+#~ msgid "pizza"
+#~ msgstr ""
+
+#~ msgid "post-office"
+#~ msgstr ""
+
+#~ msgid "postcard"
+#~ msgstr ""
+
+#~ msgid "stung"
+#~ msgstr ""
+
+#~ msgid "survey"
+#~ msgstr ""
+
+#~ msgid "train"
+#~ msgstr ""
+
+#~ msgid "trash"
+#~ msgstr ""
+
+#~ msgid "television"
+#~ msgstr ""
+
+#~ msgid "walk-a-dog"
+#~ msgstr ""
+
+#~ msgid "went-to-the-movies"
+#~ msgstr ""
 
