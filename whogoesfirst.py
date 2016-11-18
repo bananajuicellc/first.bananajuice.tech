@@ -6,11 +6,14 @@
 """Run Who Goes First web app."""
 
 import argparse
+import collections
+import gettext
 import os.path
 
 import flask
 from flask import Flask
 from flask_babel import Babel
+
 
 app = Flask(__name__)
 babel = Babel(app)
@@ -20,186 +23,19 @@ LANGUAGES = {
     'en': {
         'name': u'English',
         'translations': {
-            'about': 'about',
-            'cards': 'cards',
             'random-card': 'random-card'
         }
     },
     'fr': {
         'name': u'français',
         'translations': {
-            'about': u'a-propos',
-            'cards': u'cartes',
             'random-card': 'carte-au-hasard'
         }
     },
     'uk': {
         'name': u'українська мова',
         'translations': {
-            'about': 'about',
-            'cards': 'cards',
             'random-card': 'random-card'
-        }
-    },
-}
-
-CARDS = {
-    'award': {
-        'translations': {
-            'en': 'award',
-            'fr': 'prix',
-            'uk': 'award',
-        }
-    },
-    'baking': {
-        'translations': {
-            'en': 'baking',
-            'uk': 'baking'
-        }
-    },
-    'batteries': {
-        'translations': {
-            'en': 'batteries',
-            'uk': 'batteries'
-        }
-    },
-    'birthday': {
-        'translations': {
-            'en': 'birthday',
-            'uk': 'birthday'
-        }
-    },
-    'building': {
-        'translations': {
-            'en': 'building',
-            'uk': 'building'
-        }
-    },
-    'buttons': {
-        'translations': {
-            'en': 'buttons',
-            'uk': 'buttons'
-        }
-    },
-    'drawing': {
-        'translations': {
-            'en': 'drawing',
-            'uk': 'drawing'
-        }
-    },
-    'd20': {
-        'translations': {
-            'en': 'd20',
-            'fr': 'd20',
-            'uk': 'd20'
-        }
-    },
-    'flat-tire': {
-        'translations': {
-            'en': 'flat-tire',
-            'uk': 'flat-tire'
-        }
-    },
-    'foreign-language': {
-        'translations': {
-            'en': 'foreign-language',
-            'uk': 'foreign-language'
-        }
-    },
-    'hammock': {
-        'translations': {
-            'en': 'hammock',
-            'uk': 'hammock',
-        }
-    },
-    'junk-mail': {
-        'translations': {
-            'en': 'junk-mail',
-            'uk': 'junk-mail',
-        }
-    },
-    'light-bulb': {
-        'translations': {
-            'en': 'light-bulb',
-            'uk': 'light-bulb',
-        }
-    },
-    'litter-box': {
-        'translations': {
-            'en': 'litter-box',
-            'uk': 'litter-box',
-        }
-    },
-    'oldest-movie': {
-        'translations': {
-            'en': 'oldest-movie',
-            'uk': 'oldest-movie',
-        }
-    },
-    'onion': {
-        'translations': {
-            'en': 'onion',
-            'uk': 'onion',
-        }
-    },
-    'pizza': {
-        'translations': {
-            'en': 'pizza',
-            'uk': 'pizza'
-        }
-    },
-    'post-office': {
-        'translations': {
-            'en': 'post-office',
-            'uk': 'post-office'
-        }
-    },
-    'postcard': {
-        'translations': {
-            'en': 'postcard',
-            'uk': 'postcard',
-        }
-    },
-    'stung': {
-        'translations': {
-            'en': 'stung',
-            'uk': 'stung',
-        }
-    },
-    'survey': {
-        'translations': {
-            'en': 'survey',
-            'uk': 'survey',
-        }
-    },
-    'train': {
-        'translations': {
-            'en': 'train',
-            'uk': 'train',
-        }
-    },
-    'trash': {
-        'translations': {
-            'en': 'trash',
-            'uk': 'trash',
-        }
-    },
-    'tv': {
-        'translations': {
-            'en': 'television',
-            'uk': 'television',
-        }
-    },
-    'walk-dog': {
-        'translations': {
-            'en': 'walk-a-dog',
-            'uk': 'walk-a-dog',
-        }
-    },
-    'went-to-movies': {
-        'translations': {
-            'en': 'went-to-the-movies',
-            'uk': 'went-to-the-movies',
         }
     },
 }
@@ -289,6 +125,13 @@ def get_about_card_handler(cid):
     return handler
 
 
+def get_redirect_handler(redirect_target):
+    def handler():
+        return flask.render_template(
+            'redirect.html', redirect_target=redirect_target)
+    return handler
+
+
 @app.before_request
 def populate_request():
     flask.g.babel = babel
@@ -306,13 +149,11 @@ def get_locale():
 
 def get_translations(page):
     translations = {}
-    languages = LANGUAGES
     if page.endswith('_card'):
         cid = page[:-5]  # Remove _card suffix
         if cid.startswith('about_'):
             cid = cid[6:]
-        languages = CARDS[cid]['translations']
-    for lang in languages:
+    for lang in LANGUAGES:
         translations[lang] = {
             'url': flask.url_for(page + '_' + lang),
             'name': LANGUAGES[lang]['name']
@@ -336,39 +177,131 @@ def inject_custom():
     }
 
 
+def get_card_redirects(language, directory, url):
+    translation = LANGUAGES[language]['translation']
+    redirects = set([
+        u'/{}/cards/{}'.format(language, directory),
+        u'/{}/cards/{}'.format(language, translation.gettext(directory)),
+        u'/{}/{}{}'.format(
+            language, translation.gettext('cards/'), directory),
+    ])
+    return [redirect for redirect in redirects if redirect != url]
+
+
+def get_card(directory):
+    card = collections.defaultdict(dict)
+
+    for language in LANGUAGES:
+        card[language]['name'] = directory[:-1]  # Remove trailing slash.
+        translation = LANGUAGES[language]['translation']
+        url = u'/{}/{}{}'.format(
+            language,
+            translation.gettext('cards/'),
+            translation.gettext(directory))
+        card[language]['url'] = url
+        card[language]['redirects'] = get_card_redirects(
+            language, directory, url)
+
+    return card
+
+
 def get_all_cards():
-    all_cards = {}
-    for cid in CARDS:
-        card = CARDS[cid]
-        translations = card['translations']
-        all_cards[cid] = {}
-        for language in translations:
-            all_cards[cid][language] = {}
-            translated_name = translations[language]
-            all_cards[cid][language]['name'] = translated_name
-            gtranslations = LANGUAGES[language]['translations']
-            all_cards[cid][language]['url'] = u'/{}/{}/{}/'.format(
-                language,
-                gtranslations['cards'],
-                translated_name)
+    # The translation object for the default language should be the null
+    # translation. That means it returns what you give it. The purpose in
+    # using it is to trick gettext into extracting these as messages to
+    # translate.
+    translation = LANGUAGES[DEFAULT_LANGUAGE]['translation']
+
+    # Include a trailing / in each translation so it is clear it is a URL.
+    all_cards = {
+        'award': get_card(translation.gettext('award/')),
+        'baking': get_card(translation.gettext('baking/')),
+        'batteries': get_card(translation.gettext('batteries/')),
+        'birthday': get_card(translation.gettext('birthday/')),
+        'building': get_card(translation.gettext('building/')),
+        'buttons': get_card(translation.gettext('buttons/')),
+        'drawing': get_card(translation.gettext('drawing/')),
+        'd20': get_card(translation.gettext('d20/')),
+        'flat-tire': get_card(translation.gettext('flat-tire/')),
+        'foreign-language':
+            get_card(translation.gettext('foreign-language/')),
+        'hammock': get_card(translation.gettext('hammock/')),
+        'junk-mail': get_card(translation.gettext('junk-mail/')),
+        'light-bulb': get_card(translation.gettext('light-bulb/')),
+        'litter-box': get_card(translation.gettext('litter-box/')),
+        'oldest-movie': get_card(translation.gettext('oldest-movie/')),
+        'onion': get_card(translation.gettext('onion/')),
+        'pizza': get_card(translation.gettext('pizza/')),
+        'post-office': get_card(translation.gettext('post-office/')),
+        'postcard': get_card(translation.gettext('postcard/')),
+        'stung': get_card(translation.gettext('stung/')),
+        'survey': get_card(translation.gettext('survey/')),
+        'train': get_card(translation.gettext('train/')),
+        'trash': get_card(translation.gettext('trash/')),
+        'tv': get_card(translation.gettext('television/')),
+        'walk-dog': get_card(translation.gettext('walk-a-dog/')),
+        'went-to-movies':
+            get_card(translation.gettext('went-to-the-movies/')),
+    }
     return all_cards
 
 
 def populate_card_url_rules():
     all_cards = get_all_cards()
+
     for cid, card in all_cards.items():
         for language, translated_card in card.items():
-            gtranslations = LANGUAGES[language]['translations']
+            translation = LANGUAGES[language]['translation']
             card_url = translated_card['url']
+            about_url = u'{}{}'.format(
+                card_url, translation.gettext('about/'))
             app.add_url_rule(
                 card_url, cid + '_card_' + language, get_card_handler(cid))
             app.add_url_rule(
-                card_url + gtranslations['about'] + '/',
+                about_url,
                 'about_' + cid + '_card_' + language,
                 get_about_card_handler(cid))
 
+            for i, redirect in enumerate(translated_card['redirects']):
+                app.add_url_rule(
+                    redirect,
+                    'redirect_{}_card_{}_{}'.format(cid, language, i),
+                    get_redirect_handler(card_url))
+                app.add_url_rule(
+                    redirect,
+                    'redirect_{}_card_{}_about_0_{}'.format(cid, language, i),
+                    get_redirect_handler(about_url))
+                if translation.gettext('about/') != 'about/':
+                    app.add_url_rule(
+                        redirect,
+                        'redirect_{}_card_{}_about_1_{}'.format(
+                            cid, language, i),
+                        get_redirect_handler(about_url))
 
-populate_card_url_rules()
+
+def load_translations():
+    for language in LANGUAGES:
+        if language == DEFAULT_LANGUAGE:
+            translation = gettext.NullTranslations()
+        else:
+            translation = gettext.translation(
+                'messages',
+                'translations',
+                [language])
+        LANGUAGES[language]['translation'] = translation
+
+
+def initialize():
+    """Initialize the module.
+
+    These actions are needed, regardless of whether this is being loaded as a
+    module (for freezing) or as the main script.
+    """
+    load_translations()
+    populate_card_url_rules()
+
+
+initialize()
 
 
 if __name__ == '__main__':
