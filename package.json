@@ -1,0 +1,31 @@
+{
+  "name": "whogoes1st",
+  "version": "1.0.0",
+  "description": "A selection game to help gamers pick who goes first. whogoes1st.com",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "standard"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/whogoes1st/whogoes1st.git"
+  },
+  "author": "Tim Swast <tswast@gmail.com>",
+  "license": "MPL-2.0",
+  "bugs": {
+    "url": "https://github.com/whogoes1st/whogoes1st/issues"
+  },
+  "homepage": "https://github.com/whogoes1st/whogoes1st#readme",
+  "devDependencies": {
+    "standard": "^8.5.0"
+  },
+  "standard": {
+    "globals": [
+      "wgf",
+      "localStorage",
+      "XMLHttpRequest"
+    ]
+  }
+}
