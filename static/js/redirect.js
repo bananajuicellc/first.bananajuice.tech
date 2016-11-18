@@ -7,9 +7,9 @@
    function () {
      // TODO: make path to root relative
      wgf.listCards({
-         rootPath: '',
-         preferredLanguage: wgf.loadPreferredLanguage()
-       })
+       rootPath: '',
+       preferredLanguage: wgf.loadPreferredLanguage()
+     })
        .then(wgf.getDeck)
        .then(wgf.getTopCardURL)
        .then(function (url) {

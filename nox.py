@@ -31,3 +31,7 @@ def session_freeze(session):
 def session_lint(session):
     session.install('flake8')
     session.run('flake8', '--exclude', '.nox,.cache,env', '.')
+
+
+def session_js(session):
+    session.run('npm', 'test')

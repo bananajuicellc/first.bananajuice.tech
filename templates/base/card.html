@@ -28,11 +28,11 @@
   {{_('About this card.')}}
   </a>
 
-  <script>
-    var CURRENT_LANGUAGE = '{{g.language}}'
-  </script>
   <script src="/static/js/wgf.js"></script>
   <script src="/static/js/index.js"></script>
+  <script>
+    wgf.index.loadDeck('{{g.language}}')
+  </script>
 {% endif %}
 
 {% block card_scripts %}{% endblock %}

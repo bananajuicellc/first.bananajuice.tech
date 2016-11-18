@@ -9,7 +9,8 @@ cache:
 install:
 - pip install --upgrade pip wheel virtualenv
 - pip install nox-automation codecov
+- npm install
 script:
-- nox -s lint freeze;
+- nox -s lint freeze js;
 after_script:
 - codecov

@@ -4,20 +4,18 @@
 
 // TODO: browserfy var wgf = require('wgf')
 
-if (location.hash) {
-  var hashParams = location.hash.split('?')[1]
-  CURRENT_LANGUAGE = hashParams.split('=')[1]
-}
+var wgf = wgf || {}
+wgf.index = wgf.index || {}
 
-document.addEventListener(
-  'DOMContentLoaded',
-  function () {
+;(function () {
+  wgf.index.loadDeck = function (preferredLanguage) {
     // TODO: make path to root relative
-    wgf.listCards({rootPath: '', preferredLanguage: CURRENT_LANGUAGE})
+    wgf.listCards({rootPath: '', preferredLanguage: preferredLanguage})
       .then(wgf.getDeck)
       .then(wgf.attachNextCard)
       .catch(
         function (error) {
           console.error('Failed to load the deck.\n', error, '\n', error.stack)
         })
-  })
+  }
+})()

@@ -2,10 +2,9 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-var wgf = wgf || {};
-wgf.card = wgf.card || {};
+var wgf = wgf || {}
 
-(function() {
+;(function () {
   // Wrap XMLHttpRequest in a Promise.
   // www.html5rocks.com/en/tutorials/es6/promises/
   var get = function (url) {
@@ -16,7 +15,7 @@ wgf.card = wgf.card || {};
       req.onload = function () {
         // This is called even on 404, etc.
         // so check the status.
-        if (req.status == 200) {
+        if (req.status === 200) {
           resolve(req.response)
         } else {
           // Otherwise reject with the status text
@@ -31,13 +30,13 @@ wgf.card = wgf.card || {};
       }
 
       // Make the request.
-      req.send();
+      req.send()
     })
   }
 
   wgf.loadPreferredLanguage = function () {
     var deckJSON = localStorage.getItem('deck')
-    if (!!deckJSON) {
+    if (deckJSON) {
       var loadedDeck = JSON.parse(deckJSON)
       return loadedDeck['preferredLanguage']
     }
@@ -56,7 +55,7 @@ wgf.card = wgf.card || {};
       .then(function (cards) {
         // Choose the most appropriate card URLs for the deck.
         var preferredLanguage = options['preferredLanguage']
-        deck = {
+        var deck = {
           'preferredLanguage': preferredLanguage,
           'cards': {},
           'cardLanguages': {}
@@ -90,21 +89,21 @@ wgf.card = wgf.card || {};
 
     var deckJSON = localStorage.getItem('deck')
 
-    if (!!deckJSON) {
+    if (deckJSON) {
       var loadedDeck = JSON.parse(deckJSON)
       deck['topCard'] = loadedDeck['topCard']
       deck['deck'] = []
 
       var allCards = {}
 
-      for (var cid in deck['cards']) {
+      for (cid in deck['cards']) {
         allCards[cid] = true
       }
 
       var i = 0
 
       while (loadedDeck['deck'].length > 0) {
-        var cid = loadedDeck['deck'].splice(0, 1)[0]
+        cid = loadedDeck['deck'].splice(0, 1)[0]
 
         if (cid in allCards) {
           deck['deck'].push(cid)
@@ -119,11 +118,11 @@ wgf.card = wgf.card || {};
             i = i - 1
           }
         }
-        i = i + 1;
+        i = i + 1
       }
 
       // These are the new cards that we missed.
-      for (var cid in allCards) {
+      for (cid in allCards) {
         deck['deck'].push(cid)
       }
     }
@@ -175,32 +174,27 @@ wgf.card = wgf.card || {};
     })
   }
 
-  // Shuffle the array from opt_left to the end of the array.
+  // Shuffle the array from optLeft to the end of the array.
   // http://stackoverflow.com/a/6274398
-  var shuffle = function(array, opt_left) {
-    opt_left = opt_left || 0;
-    var counter = array.length;
+  var shuffle = function (array, optLeft) {
+    optLeft = optLeft || 0
+    var counter = array.length
 
     // While there are elements in the array
-    while (counter > opt_left) {
+    while (counter > optLeft) {
       // Pick a random index
-      var index = Math.floor(Math.random() * (counter - opt_left))
-      index = index + opt_left;
+      var index = Math.floor(Math.random() * (counter - optLeft))
+      index = index + optLeft
 
       // Decrease counter by 1
-      counter--;
+      counter--
 
       // And swap the last element with it
-      var temp = array[counter];
-      array[counter] = array[index];
-      array[index] = temp;
+      var temp = array[counter]
+      array[counter] = array[index]
+      array[index] = temp
     }
 
-    return array;
+    return array
   }
-
-  // We export as a node module for automated testing.
-  if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
-    module.exports = wgf.card;
-  }
-})();
+})()
