@@ -13,8 +13,8 @@ body {
 }
 
 img.pixel-art {
-  image-rendering:-webkit-optimize-contrast; /* Safari */
-  image-rendering:pixelated;                 /* Chrome */
+  image-rendering:-moz-crisp-edges; /* Firefox */
+  image-rendering:pixelated;        /* Chrome */
 }
 
 /* card content */
