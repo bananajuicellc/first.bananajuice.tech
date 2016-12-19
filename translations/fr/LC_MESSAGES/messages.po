@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2016-11-17 18:41-0800\n"
+"POT-Creation-Date: 2016-12-18 21:33-0800\n"
 "PO-Revision-Date: 2016-10-27 19:25-0700\n"
 "Last-Translator: \n"
 "Language: fr\n"
@@ -47,86 +47,90 @@ msgid "buttons/"
 msgstr ""
 
 #: whogoesfirst.py:223
-msgid "drawing/"
+msgid "catnap/"
 msgstr ""
 
 #: whogoesfirst.py:224
-msgid "d20/"
+msgid "drawing/"
 msgstr ""
 
 #: whogoesfirst.py:225
+msgid "d20/"
+msgstr ""
+
+#: whogoesfirst.py:226
 msgid "flat-tire/"
 msgstr ""
 
-#: whogoesfirst.py:227
+#: whogoesfirst.py:228
 msgid "foreign-language/"
 msgstr ""
 
-#: whogoesfirst.py:228
+#: whogoesfirst.py:229
 msgid "hammock/"
 msgstr ""
 
-#: whogoesfirst.py:229
+#: whogoesfirst.py:230
 msgid "junk-mail/"
 msgstr ""
 
-#: whogoesfirst.py:230
+#: whogoesfirst.py:231
 msgid "light-bulb/"
 msgstr ""
 
-#: whogoesfirst.py:231
+#: whogoesfirst.py:232
 msgid "litter-box/"
 msgstr ""
 
-#: whogoesfirst.py:232
+#: whogoesfirst.py:233
 msgid "oldest-movie/"
 msgstr ""
 
-#: whogoesfirst.py:233
+#: whogoesfirst.py:234
 msgid "onion/"
 msgstr ""
 
-#: whogoesfirst.py:234
+#: whogoesfirst.py:235
 msgid "pizza/"
 msgstr ""
 
-#: whogoesfirst.py:235
+#: whogoesfirst.py:236
 msgid "post-office/"
 msgstr ""
 
-#: whogoesfirst.py:236
+#: whogoesfirst.py:237
 msgid "postcard/"
 msgstr ""
 
-#: whogoesfirst.py:237
+#: whogoesfirst.py:238
 msgid "stung/"
 msgstr ""
 
-#: whogoesfirst.py:238
+#: whogoesfirst.py:239
 msgid "survey/"
 msgstr ""
 
-#: whogoesfirst.py:239
+#: whogoesfirst.py:240
 msgid "train/"
 msgstr ""
 
-#: whogoesfirst.py:240
+#: whogoesfirst.py:241
 msgid "trash/"
 msgstr ""
 
-#: whogoesfirst.py:241
+#: whogoesfirst.py:242
 msgid "television/"
 msgstr ""
 
-#: whogoesfirst.py:242
+#: whogoesfirst.py:243
 msgid "walk-a-dog/"
 msgstr ""
 
-#: whogoesfirst.py:244
+#: whogoesfirst.py:245
 msgid "went-to-the-movies/"
 msgstr ""
 
-#: whogoesfirst.py:257 whogoesfirst.py:274
+#: whogoesfirst.py:258 whogoesfirst.py:275
 msgid "about/"
 msgstr "a-propos/"
 
@@ -360,7 +364,7 @@ msgstr "À propos de la carte prix."
 #: templates/cards/about_batteries.html:16
 #: templates/cards/about_birthday.html:16
 #: templates/cards/about_building.html:16 templates/cards/about_buttons.html:16
-#: templates/cards/about_drawing.html:16
+#: templates/cards/about_catnap.html:16 templates/cards/about_drawing.html:16
 #: templates/cards/about_flat_tire.html:16
 #: templates/cards/about_foreign_language.html:16
 #: templates/cards/about_hammock.html:16
@@ -384,7 +388,8 @@ msgstr ""
 #: templates/cards/about_batteries.html:23
 #: templates/cards/about_birthday.html:23
 #: templates/cards/about_building.html:23 templates/cards/about_buttons.html:23
-#: templates/cards/about_d20.html:20 templates/cards/about_drawing.html:23
+#: templates/cards/about_catnap.html:23 templates/cards/about_d20.html:20
+#: templates/cards/about_drawing.html:23
 #: templates/cards/about_flat_tire.html:23
 #: templates/cards/about_foreign_language.html:23
 #: templates/cards/about_hammock.html:23
@@ -425,6 +430,10 @@ msgstr ""
 
 #: templates/cards/about_buttons.html:6
 msgid "About the buttons card."
+msgstr ""
+
+#: templates/cards/about_catnap.html:6
+msgid "About the catnap card."
 msgstr ""
 
 #: templates/cards/about_d20.html:6
@@ -586,6 +595,14 @@ msgstr ""
 msgid ""
 "The player with the highest number of visible buttons on their garments\n"
 "goes first."
+msgstr ""
+
+#: templates/cards/catnap.html:6
+msgid "Catnap card."
+msgstr ""
+
+#: templates/cards/catnap.html:11
+msgid "The player who takes catnaps the most often goes first."
 msgstr ""
 
 #: templates/cards/d20.html:6

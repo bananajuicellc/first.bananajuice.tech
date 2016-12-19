@@ -220,6 +220,7 @@ def get_all_cards():
         'birthday': get_card(translation.gettext('birthday/')),
         'building': get_card(translation.gettext('building/')),
         'buttons': get_card(translation.gettext('buttons/')),
+        'catnap': get_card(translation.gettext('catnap/')),
         'drawing': get_card(translation.gettext('drawing/')),
         'd20': get_card(translation.gettext('d20/')),
         'flat-tire': get_card(translation.gettext('flat-tire/')),
