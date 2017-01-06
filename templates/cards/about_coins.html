@@ -1,0 +1,16 @@
+{% extends "base/card.html" %}
+{# This Source Code Form is subject to the terms of the Mozilla Public
+   License, v. 2.0. If a copy of the MPL was not distributed with this
+   file, You can obtain one at http://mozilla.org/MPL/2.0/. #}
+
+{% block card_title %}{{_('About the coins card.')}}{% endblock %}
+
+{% block card_body %}
+<img src="/static/cards/coins.jpg" class="wgf-card-image">
+
+<p>{{ _('<a href="http://www.loc.gov/pictures/resource/hec.24417/">Library of
+Congress</a> Washington, D.C., April 11, 1938. Mrs. Edness Wilkens, inspecting a
+half-dime in her collection, one of the first coins struck from the
+Philadelphia Mint in 1792.')
+| safe }}
+{% endblock %}

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2016-12-18 21:33-0800\n"
+"POT-Creation-Date: 2017-01-06 13:38-0800\n"
 "PO-Revision-Date: 2016-10-27 19:25-0700\n"
 "Last-Translator: \n"
 "Language: fr\n"
@@ -51,86 +51,90 @@ msgid "catnap/"
 msgstr ""
 
 #: whogoesfirst.py:224
-msgid "drawing/"
+msgid "coins/"
 msgstr ""
 
 #: whogoesfirst.py:225
-msgid "d20/"
+msgid "drawing/"
 msgstr ""
 
 #: whogoesfirst.py:226
+msgid "d20/"
+msgstr ""
+
+#: whogoesfirst.py:227
 msgid "flat-tire/"
 msgstr ""
 
-#: whogoesfirst.py:228
+#: whogoesfirst.py:229
 msgid "foreign-language/"
 msgstr ""
 
-#: whogoesfirst.py:229
+#: whogoesfirst.py:230
 msgid "hammock/"
 msgstr ""
 
-#: whogoesfirst.py:230
+#: whogoesfirst.py:231
 msgid "junk-mail/"
 msgstr ""
 
-#: whogoesfirst.py:231
+#: whogoesfirst.py:232
 msgid "light-bulb/"
 msgstr ""
 
-#: whogoesfirst.py:232
+#: whogoesfirst.py:233
 msgid "litter-box/"
 msgstr ""
 
-#: whogoesfirst.py:233
+#: whogoesfirst.py:234
 msgid "oldest-movie/"
 msgstr ""
 
-#: whogoesfirst.py:234
+#: whogoesfirst.py:235
 msgid "onion/"
 msgstr ""
 
-#: whogoesfirst.py:235
+#: whogoesfirst.py:236
 msgid "pizza/"
 msgstr ""
 
-#: whogoesfirst.py:236
+#: whogoesfirst.py:237
 msgid "post-office/"
 msgstr ""
 
-#: whogoesfirst.py:237
+#: whogoesfirst.py:238
 msgid "postcard/"
 msgstr ""
 
-#: whogoesfirst.py:238
+#: whogoesfirst.py:239
 msgid "stung/"
 msgstr ""
 
-#: whogoesfirst.py:239
+#: whogoesfirst.py:240
 msgid "survey/"
 msgstr ""
 
-#: whogoesfirst.py:240
+#: whogoesfirst.py:241
 msgid "train/"
 msgstr ""
 
-#: whogoesfirst.py:241
+#: whogoesfirst.py:242
 msgid "trash/"
 msgstr ""
 
-#: whogoesfirst.py:242
+#: whogoesfirst.py:243
 msgid "television/"
 msgstr ""
 
-#: whogoesfirst.py:243
+#: whogoesfirst.py:244
 msgid "walk-a-dog/"
 msgstr ""
 
-#: whogoesfirst.py:245
+#: whogoesfirst.py:246
 msgid "went-to-the-movies/"
 msgstr ""
 
-#: whogoesfirst.py:258 whogoesfirst.py:275
+#: whogoesfirst.py:259 whogoesfirst.py:276
 msgid "about/"
 msgstr "a-propos/"
 
@@ -436,6 +440,19 @@ msgstr ""
 msgid "About the catnap card."
 msgstr ""
 
+#: templates/cards/about_coins.html:6
+msgid "About the coins card."
+msgstr ""
+
+#: templates/cards/about_coins.html:11
+msgid ""
+"<a href=\"http://www.loc.gov/pictures/resource/hec.24417/\">Library of\n"
+"Congress</a> Washington, D.C., April 11, 1938. Mrs. Edness Wilkens, "
+"inspecting a\n"
+"half-dime in her collection, one of the first coins struck from the\n"
+"Philadelphia Mint in 1792."
+msgstr ""
+
 #: templates/cards/about_d20.html:6
 msgid "About the d20 card."
 msgstr "Sur la carte de la d20."
@@ -603,6 +620,14 @@ msgstr ""
 
 #: templates/cards/catnap.html:11
 msgid "The player who takes catnaps the most often goes first."
+msgstr ""
+
+#: templates/cards/coins.html:6
+msgid "Coins card."
+msgstr ""
+
+#: templates/cards/coins.html:11
+msgid "The player who is carrying the most coins goes first."
 msgstr ""
 
 #: templates/cards/d20.html:6
