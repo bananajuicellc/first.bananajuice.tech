@@ -236,6 +236,7 @@ def get_all_cards():
         'pizza': get_card(translation.gettext('pizza/')),
         'post-office': get_card(translation.gettext('post-office/')),
         'postcard': get_card(translation.gettext('postcard/')),
+        'sharpen': get_card(translation.gettext('sharpen/')),
         'stung': get_card(translation.gettext('stung/')),
         'survey': get_card(translation.gettext('survey/')),
         'train': get_card(translation.gettext('train/')),
