@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2017-01-06 13:38-0800\n"
+"POT-Creation-Date: 2017-01-29 20:59-0800\n"
 "PO-Revision-Date: 2016-10-27 19:01-0700\n"
 "Last-Translator: \n"
 "Language: uk\n"
@@ -108,34 +108,38 @@ msgid "postcard/"
 msgstr ""
 
 #: whogoesfirst.py:239
-msgid "stung/"
+msgid "sharpen/"
 msgstr ""
 
 #: whogoesfirst.py:240
-msgid "survey/"
+msgid "stung/"
 msgstr ""
 
 #: whogoesfirst.py:241
-msgid "train/"
+msgid "survey/"
 msgstr ""
 
 #: whogoesfirst.py:242
-msgid "trash/"
+msgid "train/"
 msgstr ""
 
 #: whogoesfirst.py:243
-msgid "television/"
+msgid "trash/"
 msgstr ""
 
 #: whogoesfirst.py:244
+msgid "television/"
+msgstr ""
+
+#: whogoesfirst.py:245
 msgid "walk-a-dog/"
 msgstr ""
 
-#: whogoesfirst.py:246
+#: whogoesfirst.py:247
 msgid "went-to-the-movies/"
 msgstr ""
 
-#: whogoesfirst.py:259 whogoesfirst.py:276
+#: whogoesfirst.py:260 whogoesfirst.py:277
 msgid "about/"
 msgstr ""
 
@@ -558,6 +562,18 @@ msgstr "Про поштовому відділенні картки."
 msgid "About the postcard card."
 msgstr "Про листівки картки."
 
+#: templates/cards/about_sharpen.html:6
+msgid "About the pencil sharpening card."
+msgstr ""
+
+#: templates/cards/about_sharpen.html:13
+msgid ""
+"<a href=\"http://www.loc.gov/pictures/item/2004671734/\">Library of\n"
+"Congress</a> circa 1870. Old school teacher sharpening feather pen, and "
+"pupil\n"
+"observing."
+msgstr ""
+
 #: templates/cards/about_stung.html:6
 msgid "About the stung card."
 msgstr "Про ужалений картки."
@@ -777,6 +793,16 @@ msgstr "Листівка картки."
 #: templates/cards/postcard.html:11
 msgid "The player who most recently sent or received a postcard goes first."
 msgstr "Гравець, який останнім послав або отримав листівку, йде першим."
+
+#: templates/cards/sharpen.html:6
+msgid "Pencil sharpening card."
+msgstr ""
+
+#: templates/cards/sharpen.html:13
+msgid ""
+"The player who has sharpened the most pencils in the past year goes\n"
+"first."
+msgstr ""
 
 #: templates/cards/stung.html:6
 msgid "Stung card."
