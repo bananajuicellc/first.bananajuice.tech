@@ -13,6 +13,8 @@ body {
 }
 
 img.pixel-art {
+  -ms-interpolation-mode: nearest-neighbor; /* Internet Explorer */
+  image-rendering:-webkit-crisp-edges; /* Safari on iOS 9.3 */
   image-rendering:-moz-crisp-edges; /* Firefox */
   image-rendering:pixelated;        /* Chrome */
 }
