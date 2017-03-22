@@ -218,6 +218,7 @@ def get_all_cards():
         'baking': get_card(translation.gettext('baking/')),
         'batteries': get_card(translation.gettext('batteries/')),
         'birthday': get_card(translation.gettext('birthday/')),
+        'bowling': get_card(translation.gettext('bowling/')),
         'building': get_card(translation.gettext('building/')),
         'buttons': get_card(translation.gettext('buttons/')),
         'catnap': get_card(translation.gettext('catnap/')),

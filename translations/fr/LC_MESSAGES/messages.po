@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2017-02-09 18:43-0800\n"
+"POT-Creation-Date: 2017-03-21 18:22-0700\n"
 "PO-Revision-Date: 2016-10-27 19:25-0700\n"
 "Last-Translator: \n"
 "Language: fr\n"
@@ -39,110 +39,114 @@ msgid "birthday/"
 msgstr ""
 
 #: whogoesfirst.py:221
-msgid "building/"
+msgid "bowling/"
 msgstr ""
 
 #: whogoesfirst.py:222
-msgid "buttons/"
+msgid "building/"
 msgstr ""
 
 #: whogoesfirst.py:223
-msgid "catnap/"
+msgid "buttons/"
 msgstr ""
 
 #: whogoesfirst.py:224
-msgid "coins/"
+msgid "catnap/"
 msgstr ""
 
 #: whogoesfirst.py:225
-msgid "dessert/"
+msgid "coins/"
 msgstr ""
 
 #: whogoesfirst.py:226
-msgid "drawing/"
+msgid "dessert/"
 msgstr ""
 
 #: whogoesfirst.py:227
-msgid "d20/"
+msgid "drawing/"
 msgstr ""
 
 #: whogoesfirst.py:228
+msgid "d20/"
+msgstr ""
+
+#: whogoesfirst.py:229
 msgid "flat-tire/"
 msgstr ""
 
-#: whogoesfirst.py:230
+#: whogoesfirst.py:231
 msgid "foreign-language/"
 msgstr ""
 
-#: whogoesfirst.py:231
+#: whogoesfirst.py:232
 msgid "hammock/"
 msgstr ""
 
-#: whogoesfirst.py:232
+#: whogoesfirst.py:233
 msgid "junk-mail/"
 msgstr ""
 
-#: whogoesfirst.py:233
+#: whogoesfirst.py:234
 msgid "light-bulb/"
 msgstr ""
 
-#: whogoesfirst.py:234
+#: whogoesfirst.py:235
 msgid "litter-box/"
 msgstr ""
 
-#: whogoesfirst.py:235
+#: whogoesfirst.py:236
 msgid "oldest-movie/"
 msgstr ""
 
-#: whogoesfirst.py:236
+#: whogoesfirst.py:237
 msgid "onion/"
 msgstr ""
 
-#: whogoesfirst.py:237
+#: whogoesfirst.py:238
 msgid "pizza/"
 msgstr ""
 
-#: whogoesfirst.py:238
+#: whogoesfirst.py:239
 msgid "post-office/"
 msgstr ""
 
-#: whogoesfirst.py:239
+#: whogoesfirst.py:240
 msgid "postcard/"
 msgstr ""
 
-#: whogoesfirst.py:240
+#: whogoesfirst.py:241
 msgid "sharpen/"
 msgstr ""
 
-#: whogoesfirst.py:241
+#: whogoesfirst.py:242
 msgid "stung/"
 msgstr ""
 
-#: whogoesfirst.py:242
+#: whogoesfirst.py:243
 msgid "survey/"
 msgstr ""
 
-#: whogoesfirst.py:243
+#: whogoesfirst.py:244
 msgid "train/"
 msgstr ""
 
-#: whogoesfirst.py:244
+#: whogoesfirst.py:245
 msgid "trash/"
 msgstr ""
 
-#: whogoesfirst.py:245
+#: whogoesfirst.py:246
 msgid "television/"
 msgstr ""
 
-#: whogoesfirst.py:246
+#: whogoesfirst.py:247
 msgid "walk-a-dog/"
 msgstr ""
 
-#: whogoesfirst.py:248
+#: whogoesfirst.py:249
 msgid "went-to-the-movies/"
 msgstr ""
 
-#: whogoesfirst.py:261 whogoesfirst.py:278
+#: whogoesfirst.py:262 whogoesfirst.py:279
 msgid "about/"
 msgstr "a-propos/"
 
@@ -374,7 +378,7 @@ msgstr "À propos de la carte prix."
 
 #: templates/cards/about_award.html:16 templates/cards/about_baking.html:16
 #: templates/cards/about_batteries.html:16
-#: templates/cards/about_birthday.html:16
+#: templates/cards/about_birthday.html:16 templates/cards/about_bowling.html:16
 #: templates/cards/about_building.html:16 templates/cards/about_buttons.html:16
 #: templates/cards/about_catnap.html:16 templates/cards/about_dessert.html:16
 #: templates/cards/about_drawing.html:16
@@ -399,7 +403,7 @@ msgstr ""
 
 #: templates/cards/about_award.html:23 templates/cards/about_baking.html:23
 #: templates/cards/about_batteries.html:23
-#: templates/cards/about_birthday.html:23
+#: templates/cards/about_birthday.html:23 templates/cards/about_bowling.html:23
 #: templates/cards/about_building.html:23 templates/cards/about_buttons.html:23
 #: templates/cards/about_catnap.html:23 templates/cards/about_d20.html:20
 #: templates/cards/about_dessert.html:23 templates/cards/about_drawing.html:23
@@ -435,6 +439,10 @@ msgstr ""
 
 #: templates/cards/about_birthday.html:6
 msgid "About the birthday card."
+msgstr ""
+
+#: templates/cards/about_bowling.html:6
+msgid "About the bowling card."
 msgstr ""
 
 #: templates/cards/about_building.html:6
@@ -619,6 +627,14 @@ msgstr ""
 
 #: templates/cards/birthday.html:11
 msgid "The player whose birthday is nearest to today goes first."
+msgstr ""
+
+#: templates/cards/bowling.html:6
+msgid "Bowling card."
+msgstr ""
+
+#: templates/cards/bowling.html:11
+msgid "The player who most recently went bowling goes first."
 msgstr ""
 
 #: templates/cards/building.html:6
