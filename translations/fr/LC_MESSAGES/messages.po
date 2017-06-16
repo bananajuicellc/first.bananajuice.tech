@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2017-03-21 18:22-0700\n"
-"PO-Revision-Date: 2017-06-16 02:19+0000\n"
+"PO-Revision-Date: 2017-06-16 02:32+0000\n"
 "Last-Translator: Tim Swast <tswast@gmail.com>\n"
 "Language-Team: French <https://translate.whogoes1st.com/projects/who-goes-"
 "first/who-goes-first/fr/>\n"
@@ -863,7 +863,7 @@ msgstr ""
 
 #: templates/cards/went_to_movies.html:6
 msgid "Went to the movies card."
-msgstr ""
+msgstr "Passé à la carte de film."
 
 #: templates/cards/went_to_movies.html:11
 msgid "The player who most recently went to the movies goes first."
