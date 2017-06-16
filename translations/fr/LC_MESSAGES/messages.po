@@ -8,14 +8,16 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2017-03-21 18:22-0700\n"
-"PO-Revision-Date: 2016-10-27 19:25-0700\n"
-"Last-Translator: \n"
+"PO-Revision-Date: 2017-06-16 02:19+0000\n"
+"Last-Translator: Tim Swast <tswast@gmail.com>\n"
+"Language-Team: French <https://translate.whogoes1st.com/projects/who-goes-"
+"first/who-goes-first/fr/>\n"
 "Language: fr\n"
-"Language-Team: fr <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n > 1)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 2.13.1\n"
 "Generated-By: Babel 2.3.4\n"
 
 #: whogoesfirst.py:186 whogoesfirst.py:199
@@ -866,6 +868,7 @@ msgstr ""
 #: templates/cards/went_to_movies.html:11
 msgid "The player who most recently went to the movies goes first."
 msgstr ""
+"Le joueur qui a le plus récemment regardé un film au théâtre est en premier."
 
 #~ msgid "The player who last won and award goes first."
 #~ msgstr "Le joueur qui a récemment remporté un prix va d'abord."
@@ -944,4 +947,3 @@ msgstr ""
 
 #~ msgid "went-to-the-movies"
 #~ msgstr ""
-
