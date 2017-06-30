@@ -8,148 +8,150 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2017-03-21 18:22-0700\n"
-"PO-Revision-Date: 2016-10-27 19:01-0700\n"
-"Last-Translator: \n"
+"PO-Revision-Date: 2017-06-30 01:49+0000\n"
+"Last-Translator: Test User <bananajuicellc@gmail.com>\n"
+"Language-Team: Ukrainian <https://translate.whogoes1st.com/projects/who-goes-"
+"first/who-goes-first/uk/>\n"
 "Language: uk\n"
-"Language-Team: uk <LL@li.org>\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<="
+"4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 2.13.1\n"
 "Generated-By: Babel 2.3.4\n"
 
 #: whogoesfirst.py:186 whogoesfirst.py:199
 msgid "cards/"
-msgstr ""
+msgstr "cards/"
 
 #: whogoesfirst.py:217
 msgid "award/"
-msgstr ""
+msgstr "award/"
 
 #: whogoesfirst.py:218
 msgid "baking/"
-msgstr ""
+msgstr "baking/"
 
 #: whogoesfirst.py:219
 msgid "batteries/"
-msgstr ""
+msgstr "batteries/"
 
 #: whogoesfirst.py:220
 msgid "birthday/"
-msgstr ""
+msgstr "birthday/"
 
 #: whogoesfirst.py:221
 msgid "bowling/"
-msgstr ""
+msgstr "bowling/"
 
 #: whogoesfirst.py:222
 msgid "building/"
-msgstr ""
+msgstr "building/"
 
 #: whogoesfirst.py:223
 msgid "buttons/"
-msgstr ""
+msgstr "buttons/"
 
 #: whogoesfirst.py:224
 msgid "catnap/"
-msgstr ""
+msgstr "catnap/"
 
 #: whogoesfirst.py:225
 msgid "coins/"
-msgstr ""
+msgstr "coins/"
 
 #: whogoesfirst.py:226
 msgid "dessert/"
-msgstr ""
+msgstr "dessert/"
 
 #: whogoesfirst.py:227
 msgid "drawing/"
-msgstr ""
+msgstr "drawing/"
 
 #: whogoesfirst.py:228
 msgid "d20/"
-msgstr ""
+msgstr "d20/"
 
 #: whogoesfirst.py:229
 msgid "flat-tire/"
-msgstr ""
+msgstr "flat-tire/"
 
 #: whogoesfirst.py:231
 msgid "foreign-language/"
-msgstr ""
+msgstr "foreign-language/"
 
 #: whogoesfirst.py:232
 msgid "hammock/"
-msgstr ""
+msgstr "hammock/"
 
 #: whogoesfirst.py:233
 msgid "junk-mail/"
-msgstr ""
+msgstr "junk-mail/"
 
 #: whogoesfirst.py:234
 msgid "light-bulb/"
-msgstr ""
+msgstr "light-bulb/"
 
 #: whogoesfirst.py:235
 msgid "litter-box/"
-msgstr ""
+msgstr "litter-box/"
 
 #: whogoesfirst.py:236
 msgid "oldest-movie/"
-msgstr ""
+msgstr "oldest-movie/"
 
 #: whogoesfirst.py:237
 msgid "onion/"
-msgstr ""
+msgstr "onion/"
 
 #: whogoesfirst.py:238
 msgid "pizza/"
-msgstr ""
+msgstr "pizza/"
 
 #: whogoesfirst.py:239
 msgid "post-office/"
-msgstr ""
+msgstr "post-office/"
 
 #: whogoesfirst.py:240
 msgid "postcard/"
-msgstr ""
+msgstr "postcard/"
 
 #: whogoesfirst.py:241
 msgid "sharpen/"
-msgstr ""
+msgstr "sharpen/"
 
 #: whogoesfirst.py:242
 msgid "stung/"
-msgstr ""
+msgstr "stung/"
 
 #: whogoesfirst.py:243
 msgid "survey/"
-msgstr ""
+msgstr "survey/"
 
 #: whogoesfirst.py:244
 msgid "train/"
-msgstr ""
+msgstr "train/"
 
 #: whogoesfirst.py:245
 msgid "trash/"
-msgstr ""
+msgstr "trash/"
 
 #: whogoesfirst.py:246
 msgid "television/"
-msgstr ""
+msgstr "television/"
 
 #: whogoesfirst.py:247
 msgid "walk-a-dog/"
-msgstr ""
+msgstr "walk-a-dog/"
 
 #: whogoesfirst.py:249
 msgid "went-to-the-movies/"
-msgstr ""
+msgstr "went-to-the-movies/"
 
 #: whogoesfirst.py:262 whogoesfirst.py:279
 msgid "about/"
-msgstr ""
+msgstr "about/"
 
 #: templates/about_index.html:6
 msgid "About Who Goes First?"
@@ -971,4 +973,3 @@ msgstr "Гравець, який останнім був у кіно, йде п�
 
 #~ msgid "went-to-the-movies"
 #~ msgstr ""
-
