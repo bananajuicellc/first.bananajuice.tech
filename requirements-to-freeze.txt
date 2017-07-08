@@ -1,0 +1,9 @@
+# https://www.kennethreitz.org/essays/a-better-pip-workflow
+# dependencies
+Flask
+Flask-Babel
+Frozen-Flask
+
+# dev dependencies
+flake8
+nox-automation
