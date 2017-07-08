@@ -1,9 +1,0 @@
-# https://github.com/nvie/pip-tools
-Flask
-Flask-Babel
-Frozen-Flask
-
-# dev dependencies
-flake8
-nox-automation
-pip-tools
