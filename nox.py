@@ -9,6 +9,7 @@ import nox
 @nox.session
 def translations(session):
     session.install('Babel')
+    session.install('jinja2')
 
     # Extract messages and compile all translations.
     # https://github.com/whogoesfirst/who-goes-first/blob/master/docs/TRANSLATING.md

@@ -7,18 +7,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2017-03-21 18:22-0700\n"
+"POT-Creation-Date: 2018-03-07 20:23-0800\n"
 "PO-Revision-Date: 2017-06-16 02:32+0000\n"
 "Last-Translator: Tim Swast <tswast@gmail.com>\n"
-"Language-Team: French <https://translate.whogoes1st.com/projects/who-goes-"
-"first/who-goes-first/fr/>\n"
 "Language: fr\n"
+"Language-Team: French <https://translate.whogoes1st.com/projects/who-"
+"goes-first/who-goes-first/fr/>\n"
+"Plural-Forms: nplurals=2; plural=n > 1\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 2.13.1\n"
-"Generated-By: Babel 2.3.4\n"
+"Generated-By: Babel 2.5.3\n"
 
 #: whogoesfirst.py:186 whogoesfirst.py:199
 msgid "cards/"
@@ -199,7 +198,7 @@ msgstr ""
 "href=\"http://swast.net/alexandra/\">Alexandra Swast</a> et nos amis, "
 "nées de notre amour pour les jeux de société."
 
-#: templates/base/base.html:47 templates/contribute.html:6
+#: templates/base/base.html:44 templates/contribute.html:6
 msgid "Contribute"
 msgstr "Contribuer"
 
@@ -211,29 +210,23 @@ msgstr ""
 msgid "Here are some ways you can help:"
 msgstr ""
 
-#: templates/contribute.html:16
-msgid ""
-"Donate money to help\n"
-"    pay for development and hosting."
-msgstr ""
-
-#: templates/contribute.html:19
+#: templates/contribute.html:17
 msgid "Submit an idea for a new card."
 msgstr ""
 
-#: templates/contribute.html:21
+#: templates/contribute.html:19
 msgid "Report a problem."
 msgstr ""
 
-#: templates/contribute.html:23
+#: templates/contribute.html:21
 msgid "Translate Who Goes First to your language."
 msgstr ""
 
-#: templates/contribute.html:25
+#: templates/contribute.html:23
 msgid "Code a new feature or bug fix."
 msgstr ""
 
-#: templates/base/base.html:48 templates/help.html:6 templates/help.html:11
+#: templates/base/base.html:45 templates/help.html:6 templates/help.html:11
 msgid "Help"
 msgstr ""
 
@@ -354,11 +347,11 @@ msgstr ""
 "JavaScript pour rendre le \"carte suivante\" flèche aller automatiquement"
 " à un aléatoirecarte."
 
-#: templates/base/base.html:45
+#: templates/base/base.html:42
 msgid "Home"
 msgstr ""
 
-#: templates/base/base.html:46
+#: templates/base/base.html:43
 msgid "Privacy"
 msgstr ""
 
@@ -868,7 +861,8 @@ msgstr "Passé à la carte de film."
 #: templates/cards/went_to_movies.html:11
 msgid "The player who most recently went to the movies goes first."
 msgstr ""
-"Le joueur qui a le plus récemment regardé un film au théâtre est en premier."
+"Le joueur qui a le plus récemment regardé un film au théâtre est en "
+"premier."
 
 #~ msgid "The player who last won and award goes first."
 #~ msgstr "Le joueur qui a récemment remporté un prix va d'abord."
@@ -947,3 +941,9 @@ msgstr ""
 
 #~ msgid "went-to-the-movies"
 #~ msgstr ""
+
+#~ msgid ""
+#~ "Donate money to help\n"
+#~ "    pay for development and hosting."
+#~ msgstr ""
+
