@@ -13,7 +13,7 @@ Having trouble with Who Goes First?
 
 - [Report a
   problem on the public issue
-  tracker](https://github.com/whogoesfirst/who-goes-first/issues/new).
+  tracker](https://github.com/whogoes1st/whogoes1st/issues/new).
 - [Contact us privately via email](mailto:support@whogoes1st.com).
 
 
@@ -21,11 +21,9 @@ Having trouble with Who Goes First?
 
 Here are some ways you can help
 
-- [Donate to help pay for development and
-  hosting](https://gratipay.com/Who-Goes-First/).
 - [Submit an idea for a new card](docs/ADDING_CARDS.md).
 - [Report a
-  problem](https://github.com/whogoesfirst/who-goes-first/issues/new).
+  problem](https://github.com/whogoes1st/whogoes1st/issues/new).
 - [Translate Who Goes First to your language](docs/TRANSLATING.md).
 - [Code a new feature or bug fix](CONTRIBUTING.md).
 
@@ -36,6 +34,4 @@ This Source Code Form is subject to the terms of the Mozilla Public License, v.
 2.0. See [LICENSE](LICENSE).
 
 [![license: MPL v2.0](https://img.shields.io/badge/license-MPL%20v2.0-blue.svg)](https://www.mozilla.org/en-US/MPL/2.0/)
-[![Build Status](https://img.shields.io/travis/whogoesfirst/who-goes-first.svg)](https://travis-ci.org/whogoesfirst/who-goes-first)
-[![Gratipay
-Team](https://img.shields.io/gratipay/team/Who-Goes-First.svg?maxAge=2592000)](https://gratipay.com/Who-Goes-First/)
+[![Build Status](https://img.shields.io/travis/whogoes1st/whogoes1st.svg)](https://travis-ci.org/whogoes1st/whogoes1st)
