@@ -867,9 +867,6 @@ msgstr ""
 #~ msgid "The player who last won and award goes first."
 #~ msgstr "Le joueur qui a récemment remporté un prix va d'abord."
 
-#~ msgid ""
-#~ msgstr ""
-
 #~ msgid "/"
 #~ msgstr ""
 

@@ -9,6 +9,7 @@ import argparse
 import collections
 import gettext
 import os.path
+import pathlib
 
 import flask
 from flask import Flask
@@ -40,7 +41,19 @@ LANGUAGES = {
     },
 }
 
+LOCALEDIR = pathlib.Path(__file__).resolve().parent / "translations"
 DEFAULT_LANGUAGE = 'en'
+
+
+def get_locale():
+    lang = flask.request.path[1:].split('/', 1)[0]
+    if lang in LANGUAGES:
+        return lang
+    else:
+        return DEFAULT_LANGUAGE
+
+
+babel.init_app(app, locale_selector=get_locale)
 
 
 @app.route('/')
@@ -99,14 +112,13 @@ def redirect_random_card_fr():
     target = '/fr/{}/'.format(LANGUAGES['fr']['translations']['random-card'])
     return flask.render_template('redirect.html', redirect_target=target)
 
-
-@app.route('/en/random-card/', endpoint='random_card_page_en')
 @app.route(
     '/fr/{}/'.format(LANGUAGES['fr']['translations']['random-card']),
     endpoint='random_card_page_fr')
 @app.route(
     '/uk/{}/'.format(LANGUAGES['uk']['translations']['random-card']),
     endpoint='random_card_page_uk')
+@app.route('/en/random-card/', endpoint='random_card_page_en')
 def random_card():
     return flask.render_template('random_card.html', cards=get_all_cards())
 
@@ -136,15 +148,6 @@ def get_redirect_handler(redirect_target):
 def populate_request():
     flask.g.babel = babel
     flask.g.language = get_locale()
-
-
-@babel.localeselector
-def get_locale():
-    lang = flask.request.path[1:].split('/', 1)[0]
-    if lang in LANGUAGES:
-        return lang
-    else:
-        return DEFAULT_LANGUAGE
 
 
 def get_translations(page):
@@ -291,8 +294,8 @@ def load_translations():
         else:
             translation = gettext.translation(
                 'messages',
-                'translations',
-                [language])
+                localedir=LOCALEDIR,
+                languages=[language])
         LANGUAGES[language]['translation'] = translation
 
 
@@ -304,9 +307,6 @@ def initialize():
     """
     load_translations()
     populate_card_url_rules()
-
-
-initialize()
 
 
 if __name__ == '__main__':
@@ -323,4 +323,5 @@ if __name__ == '__main__':
 
     args = parser.parse_args()
 
+    initialize()
     app.run(host=args.host, port=args.port, debug=args.debug)
