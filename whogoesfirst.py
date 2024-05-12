@@ -13,11 +13,11 @@ import pathlib
 
 import flask
 from flask import Flask
-from flask_babel import Babel
+import flask_babel
 
 
 app = Flask(__name__)
-babel = Babel(app)
+babel = flask_babel.Babel(app)
 
 
 LANGUAGES = {
@@ -54,6 +54,11 @@ def get_locale():
 
 
 babel.init_app(app, locale_selector=get_locale)
+
+
+@app.before_request
+def before_request():
+    flask_babel.refresh()  # Ensure we're using the right lang in frozen-flask.
 
 
 @app.route('/')
